@@ -1,0 +1,33 @@
+.catalog-cover-card {
+  position: relative;
+  aspect-ratio: 808 / 632;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #f4f4f5;
+  background: #f4f4f5;
+  isolation: isolate;
+}
+.catalog-cover-details {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(transparent, rgb(0 0 0 / 78%) 55%, rgb(0 0 0 / 94%));
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  overflow-y: auto;
+}
+.catalog-cover-card:hover .catalog-cover-details,
+a:focus-visible .catalog-cover-details,
+.catalog-cover-card:focus-visible .catalog-cover-details,
+.catalog-cover-card[data-revealed] .catalog-cover-details {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .catalog-cover-details { transition: none; transform: none; }
+}

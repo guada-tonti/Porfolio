@@ -1,0 +1,83 @@
+.tools-marquee-viewport {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  border-radius: 2px;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+.tools-marquee-viewport:focus-visible {
+  outline: 1px solid #a1a1aa;
+  outline-offset: 5px;
+}
+.tools-marquee-track {
+  display: flex;
+  width: max-content;
+}
+.tools-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 0 40px 0 0;
+  margin: 0;
+  list-style: none;
+  flex-shrink: 0;
+}
+.tools-marquee-logo {
+  flex: 0 0 96px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tools-marquee-duplicate {
+  display: none;
+}
+.tools-marquee-viewport[data-moving='true'] {
+  overflow-x: hidden;
+}
+.tools-marquee-viewport[data-moving='true'] .tools-marquee-duplicate {
+  display: flex;
+}
+.tools-marquee-viewport[data-moving='true'] .tools-marquee-track {
+  animation: tools-scroll var(--tools-duration, 80s) linear infinite;
+}
+.tools-marquee-viewport:hover .tools-marquee-track,
+.tools-marquee-viewport:focus-visible .tools-marquee-track,
+.tools-marquee-viewport[data-dragging='true'] .tools-marquee-track {
+  animation-play-state: paused;
+}
+@keyframes tools-scroll {
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tools-marquee-viewport[data-moving='true'] { overflow-x: auto; }
+  .tools-marquee-viewport[data-moving='true'] .tools-marquee-track { animation: none; }
+  .tools-marquee-viewport[data-moving='true'] .tools-marquee-duplicate { display: none; }
+}
+
+.tools-marquee-viewport[data-dragging='true'] {
+  cursor: grabbing;
+}
+
+.tools-marquee-shell {
+  position: relative;
+}
+.tools-marquee-tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  transform: translateX(-50%);
+  z-index: 10;
+  max-width: 180px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #20202b;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}

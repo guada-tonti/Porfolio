@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guadatonti.com/sitemap.xml

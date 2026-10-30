@@ -1,0 +1,1983 @@
+{
+  "aerolab-home": {
+    "sourceUrl": "https://www.behance.net/gallery/65718383/UXUI-Aerolabs-home-%282018%29",
+    "sourceTitle": "UX/UI - Aerolab´s home (2018)",
+    "sourceDescription": "Rediseño de sitio web de Aerolab",
+    "assets": [
+      {
+        "src": "/images/projects/behance-test/aerolab-home/cover.png",
+        "width": 1087,
+        "height": 850,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "cover",
+        "originalOrder": "cover"
+      },
+      {
+        "src": "/images/projects/behance-test/aerolab-home/image-1.png",
+        "width": 3335,
+        "height": 1772,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "1"
+      },
+      {
+        "src": "/images/projects/behance-test/aerolab-home/image-2.png",
+        "width": 3335,
+        "height": 2599,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "2"
+      },
+      {
+        "src": "/images/projects/behance-test/aerolab-home/image-3.png",
+        "width": 3335,
+        "height": 3099,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3"
+      },
+      {
+        "src": "/images/projects/behance-test/aerolab-home/image-4.png",
+        "width": 3334,
+        "height": 10599,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4"
+      }
+    ],
+    "elements": [
+      {
+        "order": 1,
+        "type": "ImageModule",
+        "assetIndices": [
+          1
+        ],
+        "caption": ""
+      },
+      {
+        "order": 2,
+        "type": "ImageModule",
+        "assetIndices": [
+          2
+        ],
+        "caption": ""
+      },
+      {
+        "order": 3,
+        "type": "ImageModule",
+        "assetIndices": [
+          3
+        ],
+        "caption": ""
+      },
+      {
+        "order": 4,
+        "type": "ImageModule",
+        "assetIndices": [
+          4
+        ],
+        "caption": ""
+      }
+    ],
+    "coverIndex": 0
+  },
+  "poap-design-system": {
+    "sourceUrl": "https://www.behance.net/gallery/214960327/Design-System-Web3-Platform",
+    "sourceTitle": "Design System - Web3 Platform",
+    "sourceDescription": "",
+    "assets": [
+      {
+        "src": "/images/projects/behance-test/poap-design-system/cover.png",
+        "width": 808,
+        "height": 632,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "cover",
+        "originalOrder": "cover"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-1.png",
+        "width": 2800,
+        "height": 1671,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "1"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-2.png",
+        "width": 2800,
+        "height": 1011,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "2"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-3.png",
+        "width": 2800,
+        "height": 1509,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-4.png",
+        "width": 2800,
+        "height": 975,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-5.png",
+        "width": 2800,
+        "height": 1078,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-6.png",
+        "width": 2800,
+        "height": 2015,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "6"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-8.png",
+        "width": 2800,
+        "height": 3525,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "8"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-9.png",
+        "width": 2800,
+        "height": 2322,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "9"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-10.png",
+        "width": 2800,
+        "height": 504,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "10"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-11.png",
+        "width": 2800,
+        "height": 481,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "11"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/animation-12-1.gif",
+        "width": 926,
+        "height": 632,
+        "format": "GIF",
+        "frames": 278,
+        "kind": "image",
+        "originalOrder": "12.1"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/animation-12-2.gif",
+        "width": 1017,
+        "height": 632,
+        "format": "GIF",
+        "frames": 148,
+        "kind": "image",
+        "originalOrder": "12.2"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-13.png",
+        "width": 2800,
+        "height": 1229,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "13"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-14.png",
+        "width": 2800,
+        "height": 4818,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "14"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-15.png",
+        "width": 2800,
+        "height": 3330,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "15"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/animation-16-1.gif",
+        "width": 1322,
+        "height": 502,
+        "format": "GIF",
+        "frames": 1338,
+        "kind": "image",
+        "originalOrder": "16.1"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/animation-16-2.gif",
+        "width": 476,
+        "height": 340,
+        "format": "GIF",
+        "frames": 644,
+        "kind": "image",
+        "originalOrder": "16.2"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-17.png",
+        "width": 2800,
+        "height": 484,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "17"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/animation-18.gif",
+        "width": 1920,
+        "height": 693,
+        "format": "GIF",
+        "frames": 157,
+        "kind": "image",
+        "originalOrder": "18"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/image-20.png",
+        "width": 2800,
+        "height": 869,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "20"
+      },
+      {
+        "src": "/images/projects/behance-test/poap-design-system/video-07.mp4",
+        "width": 1280,
+        "height": 694,
+        "format": "MP4/H.264",
+        "frames": 1,
+        "kind": "video",
+        "originalOrder": "7"
+      }
+    ],
+    "elements": [
+      {
+        "order": 1,
+        "type": "ImageModule",
+        "assetIndices": [
+          1
+        ],
+        "caption": ""
+      },
+      {
+        "order": 2,
+        "type": "ImageModule",
+        "assetIndices": [
+          2
+        ],
+        "caption": ""
+      },
+      {
+        "order": 3,
+        "type": "ImageModule",
+        "assetIndices": [
+          3
+        ],
+        "caption": ""
+      },
+      {
+        "order": 4,
+        "type": "ImageModule",
+        "assetIndices": [
+          4
+        ],
+        "caption": ""
+      },
+      {
+        "order": 5,
+        "type": "ImageModule",
+        "assetIndices": [
+          5
+        ],
+        "caption": ""
+      },
+      {
+        "order": 6,
+        "type": "ImageModule",
+        "assetIndices": [
+          6
+        ],
+        "caption": ""
+      },
+      {
+        "order": 7,
+        "type": "VideoModule",
+        "assetIndices": [
+          21
+        ],
+        "caption": ""
+      },
+      {
+        "order": 8,
+        "type": "ImageModule",
+        "assetIndices": [
+          7
+        ],
+        "caption": ""
+      },
+      {
+        "order": 9,
+        "type": "ImageModule",
+        "assetIndices": [
+          8
+        ],
+        "caption": ""
+      },
+      {
+        "order": 10,
+        "type": "ImageModule",
+        "assetIndices": [
+          9
+        ],
+        "caption": ""
+      },
+      {
+        "order": 11,
+        "type": "ImageModule",
+        "assetIndices": [
+          10
+        ],
+        "caption": ""
+      },
+      {
+        "order": 12,
+        "type": "MediaCollectionModule",
+        "assetIndices": [
+          11,
+          12
+        ],
+        "caption": "",
+        "layout": [
+          {
+            "flexWidth": 380.95238095238096,
+            "flexHeight": 68.25
+          },
+          {
+            "flexWidth": 418.230563002681,
+            "flexHeight": 62.16666666666667
+          }
+        ]
+      },
+      {
+        "order": 13,
+        "type": "ImageModule",
+        "assetIndices": [
+          13
+        ],
+        "caption": ""
+      },
+      {
+        "order": 14,
+        "type": "ImageModule",
+        "assetIndices": [
+          14
+        ],
+        "caption": ""
+      },
+      {
+        "order": 15,
+        "type": "ImageModule",
+        "assetIndices": [
+          15
+        ],
+        "caption": ""
+      },
+      {
+        "order": 16,
+        "type": "MediaCollectionModule",
+        "assetIndices": [
+          16,
+          17
+        ],
+        "caption": "",
+        "layout": [
+          {
+            "flexWidth": 684.7011952191235,
+            "flexHeight": 37.97276853252647
+          },
+          {
+            "flexWidth": 364,
+            "flexHeight": 71.42857142857143
+          }
+        ]
+      },
+      {
+        "order": 17,
+        "type": "ImageModule",
+        "assetIndices": [
+          18
+        ],
+        "caption": ""
+      },
+      {
+        "order": 18,
+        "type": "ImageModule",
+        "assetIndices": [
+          19
+        ],
+        "caption": ""
+      },
+      {
+        "order": 19,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\"><br></div><div style=\"text-align:center;\"><br></div><div style=\"text-align:center;\"><br></div><div style=\"text-align:center;\"><span class=\"texteditor-inline-fontsize\" style=\"font-size:12px;\"></span><span class=\"texteditor-inline-fontsize\" style=\"font-size:14px;\">This portfolio case study is still in progress. More components and templates will be added soon. Stay tuned.</span><br></div>",
+        "text": {
+          "en": "This portfolio case study is still in progress. More components and templates will be added soon. Stay tuned.",
+          "es": "Este caso de estudio todavía está en desarrollo. Pronto se agregarán más componentes y templates. Seguí las novedades."
+        },
+        "segments": [
+          {
+            "text": "This portfolio case study is still in progress. More components and templates will be added soon. Stay tuned."
+          },
+          {
+            "text": "\n"
+          }
+        ],
+        "translated": true,
+        "translationLink": null
+      },
+      {
+        "order": 20,
+        "type": "ImageModule",
+        "assetIndices": [
+          20
+        ],
+        "caption": ""
+      }
+    ],
+    "coverIndex": 0
+  },
+  "poaps-design-web3-communities": {
+    "sourceUrl": "https://www.behance.net/gallery/124445957/POAPs-Design-for-Web3-Communities",
+    "sourceTitle": "POAPs Design for Web3 Communities",
+    "sourceDescription": "Design of badges for POAP inc. during 2020 and 2021.\n\nWhat is a POAP?\n\nPOAPs are digital mementos, minted in celebration of life's remarkable moments. These badges are Non Fungible Tokens ( NFT ).\n\nEach POAP is a gift from an issuer to collectors, in celebration of a special shared memory. By minting these memories to the blockchain, collectors build a rich tapestry of tokenized experiences which unlock a world of possibilities.",
+    "assets": [
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/cover.png",
+        "width": 2084,
+        "height": 1667,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "cover",
+        "originalOrder": "cover"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-1.png",
+        "width": 3335,
+        "height": 875,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "1"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-3-1.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3.1"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-3-2.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3.2"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-3-3.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3.3"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-3-4.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3.4"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-3-5.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3.5"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-3-6.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3.6"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-3-7.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3.7"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-3-8.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3.8"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-3-9.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3.9"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-3-10.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3.10"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-3-11.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3.11"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-3-12.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "3.12"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-4-1.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4.1"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-4-2.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4.2"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-4-3.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4.3"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-4-4.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4.4"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-4-5.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4.5"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-4-6.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4.6"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-4-7.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4.7"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-4-8.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4.8"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-4-9.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4.9"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-4-10.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4.10"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-4-11.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4.11"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-4-12.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "4.12"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-5-1.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5.1"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-5-2.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5.2"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-5-3.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5.3"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-5-4.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5.4"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-5-5.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5.5"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-5-6.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5.6"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-5-7.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5.7"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-5-8.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5.8"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-5-9.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5.9"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-5-10.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5.10"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-5-11.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5.11"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-5-12.png",
+        "width": 548,
+        "height": 548,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "5.12"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-6.png",
+        "width": 3334,
+        "height": 1382,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "6"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-7.png",
+        "width": 3334,
+        "height": 858,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "7"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-9.png",
+        "width": 3334,
+        "height": 860,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "9"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-11.png",
+        "width": 3334,
+        "height": 859,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "11"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-13.png",
+        "width": 3334,
+        "height": 277,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "13"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-14.png",
+        "width": 3334,
+        "height": 711,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "14"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-15.png",
+        "width": 3334,
+        "height": 277,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "15"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/animation-16.gif",
+        "width": 1667,
+        "height": 430,
+        "format": "GIF",
+        "frames": 59,
+        "kind": "image",
+        "originalOrder": "16"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-18.png",
+        "width": 3334,
+        "height": 859,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "18"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/animation-20.gif",
+        "width": 1667,
+        "height": 430,
+        "format": "GIF",
+        "frames": 30,
+        "kind": "image",
+        "originalOrder": "20"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-22.png",
+        "width": 3334,
+        "height": 277,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "22"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-23.png",
+        "width": 3335,
+        "height": 711,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "23"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-25.png",
+        "width": 3334,
+        "height": 516,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "25"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/animation-26.gif",
+        "width": 1667,
+        "height": 440,
+        "format": "GIF",
+        "frames": 16,
+        "kind": "image",
+        "originalOrder": "26"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-28.png",
+        "width": 3334,
+        "height": 1232,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "28"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-29.png",
+        "width": 3334,
+        "height": 1578,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "29"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-30.png",
+        "width": 2800,
+        "height": 692,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "30"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-32.png",
+        "width": 3334,
+        "height": 277,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "32"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-33.png",
+        "width": 3335,
+        "height": 711,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "33"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-34.png",
+        "width": 3334,
+        "height": 277,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "34"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-35.png",
+        "width": 3334,
+        "height": 858,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "35"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-37.png",
+        "width": 3334,
+        "height": 860,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "37"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-39.png",
+        "width": 3334,
+        "height": 859,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "39"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-41.png",
+        "width": 5320,
+        "height": 1794,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "41"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-42.png",
+        "width": 1920,
+        "height": 160,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "42"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-43.png",
+        "width": 3334,
+        "height": 858,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "43"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-45.png",
+        "width": 3335,
+        "height": 860,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "45"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-47.png",
+        "width": 3334,
+        "height": 858,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "47"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-49.png",
+        "width": 3334,
+        "height": 277,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "49"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-50.png",
+        "width": 3335,
+        "height": 923,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "50"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-52.png",
+        "width": 3335,
+        "height": 279,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "52"
+      },
+      {
+        "src": "/images/projects/behance-test/poaps-design-web3-communities/image-54.png",
+        "width": 3200,
+        "height": 822,
+        "format": "PNG",
+        "frames": 1,
+        "kind": "image",
+        "originalOrder": "54"
+      }
+    ],
+    "elements": [
+      {
+        "order": 1,
+        "type": "ImageModule",
+        "assetIndices": [
+          1
+        ],
+        "caption": ""
+      },
+      {
+        "order": 2,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\" class=\"main-text\"><span style=\"font-size:24px;\" class=\"texteditor-inline-fontsize\"><span style=\"font-family:helvetica,arial,sans-serif;\" class=\"texteditor-inline-fontfamily\"><span class=\"bold\"><span style=\"color:#0b1e58;\" class=\"texteditor-inline-color\">Design of meaningful POAPs for the most relevant communities in the Web3 ecosystem.</span></span></span></span></div><div style=\"text-align:center;\" class=\"main-text\"><br></div>",
+        "text": {
+          "en": "Design of meaningful POAPs for the most relevant communities in the Web3 ecosystem.",
+          "es": "Diseño de POAPs significativos para las comunidades más relevantes del ecosistema Web3."
+        },
+        "segments": [
+          {
+            "text": "Design of meaningful POAPs for the most relevant communities in the Web3 ecosystem."
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "\n"
+          }
+        ],
+        "translated": true,
+        "translationLink": null
+      },
+      {
+        "order": 3,
+        "type": "MediaCollectionModule",
+        "assetIndices": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "caption": "",
+        "layout": [
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          }
+        ]
+      },
+      {
+        "order": 4,
+        "type": "MediaCollectionModule",
+        "assetIndices": [
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "caption": "",
+        "layout": [
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          }
+        ]
+      },
+      {
+        "order": 5,
+        "type": "MediaCollectionModule",
+        "assetIndices": [
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37
+        ],
+        "caption": "",
+        "layout": [
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          },
+          {
+            "flexWidth": 260,
+            "flexHeight": 100
+          }
+        ]
+      },
+      {
+        "order": 6,
+        "type": "ImageModule",
+        "assetIndices": [
+          38
+        ],
+        "caption": ""
+      },
+      {
+        "order": 7,
+        "type": "ImageModule",
+        "assetIndices": [
+          39
+        ],
+        "caption": ""
+      },
+      {
+        "order": 8,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\"><a href=\"https://collectors.poap.xyz/drop/12108\" target=\"_blank\" rel=\"nofollow\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\">View in POAP Gallery</span></span></a></div>",
+        "text": {
+          "en": "View in POAP Gallery",
+          "es": "Ver en POAP Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP Gallery",
+            "href": "https://collectors.poap.xyz/drop/12108"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://collectors.poap.xyz/drop/12108"
+      },
+      {
+        "order": 9,
+        "type": "ImageModule",
+        "assetIndices": [
+          40
+        ],
+        "caption": ""
+      },
+      {
+        "order": 10,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"color:#8076fa;text-align:center;\"><a href=\"https://poap.gallery/drops/12112\" target=\"_blank\" rel=\"nofollow\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\">View in POAP Gallery</span></span></a><br></div>",
+        "text": {
+          "en": "View in POAP Gallery",
+          "es": "Ver en POAP Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP Gallery",
+            "href": "https://poap.gallery/drops/12112"
+          },
+          {
+            "text": "\n"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://poap.gallery/drops/12112"
+      },
+      {
+        "order": 11,
+        "type": "ImageModule",
+        "assetIndices": [
+          41
+        ],
+        "caption": ""
+      },
+      {
+        "order": 12,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\" class=\"main-text\"><span class=\"texteditor-inline-color\" style=\"color:#8076fa;\"><a href=\"https://poap.gallery/event/885\" target=\"_blank\" rel=\"nofollow\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\">View in POAP.Gallery</span></a></span></div>",
+        "text": {
+          "en": "View in POAP.Gallery",
+          "es": "Ver en POAP.Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP.Gallery",
+            "href": "https://poap.gallery/event/885"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://poap.gallery/event/885"
+      },
+      {
+        "order": 13,
+        "type": "ImageModule",
+        "assetIndices": [
+          42
+        ],
+        "caption": ""
+      },
+      {
+        "order": 14,
+        "type": "ImageModule",
+        "assetIndices": [
+          43
+        ],
+        "caption": ""
+      },
+      {
+        "order": 15,
+        "type": "ImageModule",
+        "assetIndices": [
+          44
+        ],
+        "caption": ""
+      },
+      {
+        "order": 16,
+        "type": "ImageModule",
+        "assetIndices": [
+          45
+        ],
+        "caption": ""
+      },
+      {
+        "order": 17,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\"><span class=\"texteditor-inline-color\" style=\"color:#8076FA;\"><a href=\"https://poap.gallery/event/607\" target=\"_blank\" rel=\"nofollow\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\">View in POAP.Gallery</span></a></span></div>",
+        "text": {
+          "en": "View in POAP.Gallery",
+          "es": "Ver en POAP.Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP.Gallery",
+            "href": "https://poap.gallery/event/607"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://poap.gallery/event/607"
+      },
+      {
+        "order": 18,
+        "type": "ImageModule",
+        "assetIndices": [
+          46
+        ],
+        "caption": ""
+      },
+      {
+        "order": 19,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\" class=\"main-text\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\"><a href=\"https://poap.gallery/event/2457\" target=\"_blank\" rel=\"nofollow\">View in POAP.Gallery</a></span></span></div>",
+        "text": {
+          "en": "View in POAP.Gallery",
+          "es": "Ver en POAP.Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP.Gallery",
+            "href": "https://poap.gallery/event/2457"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://poap.gallery/event/2457"
+      },
+      {
+        "order": 20,
+        "type": "ImageModule",
+        "assetIndices": [
+          47
+        ],
+        "caption": ""
+      },
+      {
+        "order": 21,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"color:#8076fa;text-align:center;\"><a href=\"https://poap.gallery/drops/1158\" target=\"_blank\" rel=\"nofollow\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\">View in POAP.Gallery</span></span></a><br></div>",
+        "text": {
+          "en": "View in POAP.Gallery",
+          "es": "Ver en POAP.Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP.Gallery",
+            "href": "https://poap.gallery/drops/1158"
+          },
+          {
+            "text": "\n"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://poap.gallery/drops/1158"
+      },
+      {
+        "order": 22,
+        "type": "ImageModule",
+        "assetIndices": [
+          48
+        ],
+        "caption": ""
+      },
+      {
+        "order": 23,
+        "type": "ImageModule",
+        "assetIndices": [
+          49
+        ],
+        "caption": ""
+      },
+      {
+        "order": 24,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\"><a href=\"https://poap.gallery/event/8001\" target=\"_blank\" rel=\"nofollow\"><span class=\"texteditor-inline-fontsize\" style=\"font-size:12px;\"></span></a></div>",
+        "text": {
+          "en": "",
+          "es": ""
+        },
+        "segments": [],
+        "translated": false,
+        "translationLink": null
+      },
+      {
+        "order": 25,
+        "type": "ImageModule",
+        "assetIndices": [
+          50
+        ],
+        "caption": ""
+      },
+      {
+        "order": 26,
+        "type": "ImageModule",
+        "assetIndices": [
+          51
+        ],
+        "caption": ""
+      },
+      {
+        "order": 27,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\"><a href=\"https://poap.gallery/event/8001\" target=\"_blank\" rel=\"nofollow\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\">View in POAP.Gallery</span></span></a></div>",
+        "text": {
+          "en": "View in POAP.Gallery",
+          "es": "Ver en POAP.Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP.Gallery",
+            "href": "https://poap.gallery/event/8001"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://poap.gallery/event/8001"
+      },
+      {
+        "order": 28,
+        "type": "ImageModule",
+        "assetIndices": [
+          52
+        ],
+        "caption": ""
+      },
+      {
+        "order": 29,
+        "type": "ImageModule",
+        "assetIndices": [
+          53
+        ],
+        "caption": ""
+      },
+      {
+        "order": 30,
+        "type": "ImageModule",
+        "assetIndices": [
+          54
+        ],
+        "caption": ""
+      },
+      {
+        "order": 31,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><a href=\"https://thegraph.com/blog/poap-graph-nfts\" target=\"_blank\" rel=\"nofollow\">Learn more about The Graph - POAP</a> collaboration</span>​​​​​​​​​​​​​​</span></div>",
+        "text": {
+          "en": "Learn more about The Graph - POAP collaboration",
+          "es": "Más sobre la colaboración entre The Graph y POAP"
+        },
+        "segments": [
+          {
+            "text": "Learn more about The Graph - POAP",
+            "href": "https://thegraph.com/blog/poap-graph-nfts"
+          },
+          {
+            "text": " collaboration"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://thegraph.com/blog/poap-graph-nfts"
+      },
+      {
+        "order": 32,
+        "type": "ImageModule",
+        "assetIndices": [
+          55
+        ],
+        "caption": ""
+      },
+      {
+        "order": 33,
+        "type": "ImageModule",
+        "assetIndices": [
+          56
+        ],
+        "caption": ""
+      },
+      {
+        "order": 34,
+        "type": "ImageModule",
+        "assetIndices": [
+          57
+        ],
+        "caption": ""
+      },
+      {
+        "order": 35,
+        "type": "ImageModule",
+        "assetIndices": [
+          58
+        ],
+        "caption": ""
+      },
+      {
+        "order": 36,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"color:#8076fa;text-align:center;\"><a href=\"https://poap.gallery/drops/1777\" target=\"_blank\" rel=\"nofollow\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\">View in POAP.Gallery</span></span></a><br></div>",
+        "text": {
+          "en": "View in POAP.Gallery",
+          "es": "Ver en POAP.Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP.Gallery",
+            "href": "https://poap.gallery/drops/1777"
+          },
+          {
+            "text": "\n"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://poap.gallery/drops/1777"
+      },
+      {
+        "order": 37,
+        "type": "ImageModule",
+        "assetIndices": [
+          59
+        ],
+        "caption": ""
+      },
+      {
+        "order": 38,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"color:#8076fa;text-align:center;\"><a href=\"https://poap.gallery/drops/1387\" target=\"_blank\" rel=\"nofollow\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\">View in POAP.Gallery</span></span></a><br></div>",
+        "text": {
+          "en": "View in POAP.Gallery",
+          "es": "Ver en POAP.Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP.Gallery",
+            "href": "https://poap.gallery/drops/1387"
+          },
+          {
+            "text": "\n"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://poap.gallery/drops/1387"
+      },
+      {
+        "order": 39,
+        "type": "ImageModule",
+        "assetIndices": [
+          60
+        ],
+        "caption": ""
+      },
+      {
+        "order": 40,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\"><a href=\"https://poap.gallery/drops/587\" target=\"_blank\" rel=\"nofollow\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\">View in POAP.Gallery</span></span></a></div>",
+        "text": {
+          "en": "View in POAP.Gallery",
+          "es": "Ver en POAP.Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP.Gallery",
+            "href": "https://poap.gallery/drops/587"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://poap.gallery/drops/587"
+      },
+      {
+        "order": 41,
+        "type": "ImageModule",
+        "assetIndices": [
+          61
+        ],
+        "caption": ""
+      },
+      {
+        "order": 42,
+        "type": "ImageModule",
+        "assetIndices": [
+          62
+        ],
+        "caption": ""
+      },
+      {
+        "order": 43,
+        "type": "ImageModule",
+        "assetIndices": [
+          63
+        ],
+        "caption": ""
+      },
+      {
+        "order": 44,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"color:#8076fa;text-align:center;\"><a href=\"https://poap.gallery/drops/47144\" target=\"_blank\" rel=\"nofollow\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\">View in POAP.Gallery</span></span></a><br></div>",
+        "text": {
+          "en": "View in POAP.Gallery",
+          "es": "Ver en POAP.Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP.Gallery",
+            "href": "https://poap.gallery/drops/47144"
+          },
+          {
+            "text": "\n"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://poap.gallery/drops/47144"
+      },
+      {
+        "order": 45,
+        "type": "ImageModule",
+        "assetIndices": [
+          64
+        ],
+        "caption": ""
+      },
+      {
+        "order": 46,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\"><a href=\"https://poap.gallery/drops/174403\" target=\"_blank\" rel=\"nofollow\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\">View in POAP.Gallery</span></span></a></div>",
+        "text": {
+          "en": "View in POAP.Gallery",
+          "es": "Ver en POAP.Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP.Gallery",
+            "href": "https://poap.gallery/drops/174403"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://poap.gallery/drops/174403"
+      },
+      {
+        "order": 47,
+        "type": "ImageModule",
+        "assetIndices": [
+          65
+        ],
+        "caption": ""
+      },
+      {
+        "order": 48,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"color:#8076fa;text-align:center;\"><a href=\"https://poap.gallery/drops/189596\" target=\"_blank\" rel=\"nofollow\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><span style=\"font-size:12px;\" class=\"texteditor-inline-fontsize\">View in POAP.Gallery</span></span></a><br></div>",
+        "text": {
+          "en": "View in POAP.Gallery",
+          "es": "Ver en POAP.Gallery"
+        },
+        "segments": [
+          {
+            "text": "View in POAP.Gallery",
+            "href": "https://poap.gallery/drops/189596"
+          },
+          {
+            "text": "\n"
+          }
+        ],
+        "translated": true,
+        "translationLink": "https://poap.gallery/drops/189596"
+      },
+      {
+        "order": 49,
+        "type": "ImageModule",
+        "assetIndices": [
+          66
+        ],
+        "caption": ""
+      },
+      {
+        "order": 50,
+        "type": "ImageModule",
+        "assetIndices": [
+          67
+        ],
+        "caption": ""
+      },
+      {
+        "order": 51,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\"><span style=\"font-size:18px;\" class=\"texteditor-inline-fontsize\"><span style=\"color:#8076fa;\" class=\"texteditor-inline-color\"><a href=\"https://discord.com/invite/9s8U8Bn\" target=\"_blank\" rel=\"nofollow\"><span class=\"texteditor-inline-color\" style=\"color:#8076fa;\">​​​​​​​</span>Discord</a>             <a href=\"https://twitter.com/poapxyz\" target=\"_blank\" rel=\"nofollow\">Twitter</a>           <a href=\"http://www.poap.xyz\" target=\"_blank\" rel=\"nofollow\">Poap.xyz</a> </span></span></div>",
+        "text": {
+          "en": "Discord             Twitter           Poap.xyz",
+          "es": "Discord             Twitter           Poap.xyz"
+        },
+        "segments": [
+          {
+            "text": "Discord",
+            "href": "https://discord.com/invite/9s8U8Bn"
+          },
+          {
+            "text": "             "
+          },
+          {
+            "text": "Twitter",
+            "href": "https://twitter.com/poapxyz"
+          },
+          {
+            "text": "           "
+          },
+          {
+            "text": "Poap.xyz",
+            "href": "http://www.poap.xyz"
+          },
+          {
+            "text": " "
+          }
+        ],
+        "translated": false,
+        "translationLink": null
+      },
+      {
+        "order": 52,
+        "type": "ImageModule",
+        "assetIndices": [
+          68
+        ],
+        "caption": ""
+      },
+      {
+        "order": 53,
+        "type": "TextModule",
+        "assetIndices": [],
+        "caption": "",
+        "originalHtml": "<div style=\"text-align:center;\"><span class=\"texteditor-inline-color\" style=\"color:#8076fa;\"><span class=\"texteditor-inline-fontsize\" style=\"font-size:16px;\"><a href=\"https://collections.poap.xyz/artists/guada.eth\" target=\"_blank\" rel=\"nofollow\">collections.poap.xyz/artists/guada.eth</a></span></span></div>",
+        "text": {
+          "en": "collections.poap.xyz/artists/guada.eth",
+          "es": "collections.poap.xyz/artists/guada.eth"
+        },
+        "segments": [
+          {
+            "text": "collections.poap.xyz/artists/guada.eth",
+            "href": "https://collections.poap.xyz/artists/guada.eth"
+          }
+        ],
+        "translated": false,
+        "translationLink": "https://collections.poap.xyz/artists/guada.eth"
+      },
+      {
+        "order": 54,
+        "type": "ImageModule",
+        "assetIndices": [
+          69
+        ],
+        "caption": ""
+      }
+    ],
+    "coverIndex": 0
+  }
+}

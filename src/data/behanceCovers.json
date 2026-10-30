@@ -1,0 +1,17 @@
+{
+  "aerolab-home": {
+    "src": "/images/projects/behance-test/aerolab-home/cover.png",
+    "width": 1087,
+    "height": 850
+  },
+  "poap-design-system": {
+    "src": "/images/projects/behance-test/poap-design-system/cover.png",
+    "width": 808,
+    "height": 632
+  },
+  "poaps-design-web3-communities": {
+    "src": "/images/projects/behance-test/poaps-design-web3-communities/cover.png",
+    "width": 2084,
+    "height": 1667
+  }
+}
