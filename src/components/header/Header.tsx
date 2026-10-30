@@ -36,7 +36,7 @@ export function Header({ currentLocale }: HeaderProps) {
   ];
 
   return (
-    <header className="w-full bg-white relative z-50 pt-8 pb-4 px-6 md:px-12 max-w-7xl mx-auto">
+    <header className="w-full bg-white relative z-50 pt-4 md:pt-8 pb-4 px-6 md:px-12 max-w-7xl mx-auto">
       {/* 
         3-Column Layout with mathematically centered Nav Group:
         Col 1: Logo (flex-1)
@@ -124,7 +124,7 @@ export function Header({ currentLocale }: HeaderProps) {
       {/* Mobile Navigation bar */}
       <nav
         aria-label="Mobile Navigation"
-        className="flex md:hidden items-center justify-center gap-4 text-[10px] font-medium tracking-wider text-zinc-700 mt-4 pt-3 border-t border-zinc-100 overflow-x-auto"
+        className="flex md:hidden items-center justify-center gap-3 sm:gap-4 text-[10px] font-medium tracking-wider text-zinc-700 mt-4 pt-3 -mx-6 px-6 border-t border-zinc-100 overflow-x-auto"
       >
         {navItems.map((item) => {
           const isActive = pathname ? pathname === item.href || pathname.startsWith(`${item.href}/`) : false;
@@ -138,7 +138,7 @@ export function Header({ currentLocale }: HeaderProps) {
                   : 'text-zinc-500 hover:text-black'
               }`}
             >
-              {item.label}
+              {currentLocale === 'es' && item.href === `/${currentLocale}/work` ? 'TRABAJOS' : item.label}
             </Link>
           );
         })}

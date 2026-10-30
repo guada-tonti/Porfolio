@@ -61,9 +61,9 @@ export function Footer({ currentLocale }: FooterProps) {
   return (
     <footer className="w-full bg-white border-t border-zinc-200/80">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-12">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Wordmark and Copyright */}
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-center md:text-left">
             <Link
               href={`/${currentLocale}`}
               className="inline-flex items-center select-none"
@@ -85,7 +85,7 @@ export function Footer({ currentLocale }: FooterProps) {
           {/* Navigation Links in Center */}
           <nav
             aria-label="Footer Navigation"
-            className="flex items-center gap-6 text-[10px] font-medium tracking-wider text-zinc-600"
+            className="flex flex-wrap justify-center items-center gap-6 text-[10px] font-medium tracking-wider text-zinc-600"
           >
             {navLinks.map((item) => (
               <Link
@@ -93,7 +93,9 @@ export function Footer({ currentLocale }: FooterProps) {
                 href={item.href}
                 className="hover:text-black transition-colors"
               >
-                {item.label}
+                {currentLocale === 'es' && item.href === `/${currentLocale}/work` ? (
+                  <><span className="md:hidden">TRABAJOS</span><span className="hidden md:inline">{item.label}</span></>
+                ) : item.label}
               </Link>
             ))}
           </nav>
