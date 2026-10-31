@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useId, useRef, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import { Locale } from '@/data/types';
 import { dictionaries } from '@/data/content';
@@ -15,6 +15,10 @@ export function Header({ currentLocale }: HeaderProps) {
   const dict = dictionaries[currentLocale];
   const pathname = usePathname();
   const router = useRouter();
+  const [openPath, setOpenPath] = useState<string | null>(null);
+  const menuOpen = openPath === pathname;
+  const menuId = useId();
+  const menuButton = useRef<HTMLButtonElement>(null);
 
   // Helper to switch locale in the current path
   const getLocalizedPath = (targetLocale: Locale) => {
@@ -36,7 +40,12 @@ export function Header({ currentLocale }: HeaderProps) {
   ];
 
   return (
-    <header className="w-full bg-white relative z-50 pt-4 md:pt-8 pb-4 px-6 md:px-12 max-w-7xl mx-auto">
+    <header onKeyDown={(event) => {
+      if (event.key === 'Escape' && menuOpen) {
+        setOpenPath(null);
+        menuButton.current?.focus();
+      }
+    }} className="w-full bg-white relative z-50 pt-4 md:pt-8 pb-4 px-6 md:px-12 max-w-7xl mx-auto">
       {/* 
         3-Column Layout with mathematically centered Nav Group:
         Col 1: Logo (flex-1)
@@ -90,6 +99,7 @@ export function Header({ currentLocale }: HeaderProps) {
             onClick={(event) => {
               if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
               event.preventDefault();
+              setOpenPath(null);
               router.push(getLocalizedPath('en') + window.location.search + window.location.hash);
             }}
             className={`px-1 py-0.5 transition-colors ${
@@ -107,6 +117,7 @@ export function Header({ currentLocale }: HeaderProps) {
             onClick={(event) => {
               if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
               event.preventDefault();
+              setOpenPath(null);
               router.push(getLocalizedPath('es') + window.location.search + window.location.hash);
             }}
             className={`px-1 py-0.5 transition-colors ${
@@ -118,13 +129,22 @@ export function Header({ currentLocale }: HeaderProps) {
           >
             ES
           </Link>
+          <button ref={menuButton} type="button" aria-expanded={menuOpen} aria-controls={menuId}
+            aria-label={currentLocale === 'es' ? (menuOpen ? 'Cerrar menú' : 'Abrir menú') : (menuOpen ? 'Close menu' : 'Open menu')}
+            onClick={() => setOpenPath(menuOpen ? null : pathname)}
+            className="md:hidden ml-3 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-sm text-zinc-800 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+            {menuOpen ? <X className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" /> : <Menu className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation bar */}
+      <div className={`grid md:hidden transition-[grid-template-rows,opacity] duration-200 motion-reduce:transition-none ${menuOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+        id={menuId} inert={!menuOpen} aria-hidden={!menuOpen}>
+      <div className="overflow-hidden">
+      {/* Mobile Navigation menu */}
       <nav
         aria-label="Mobile Navigation"
-        className="flex md:hidden items-center justify-center gap-3 sm:gap-4 text-[10px] font-medium tracking-wider text-zinc-700 mt-4 pt-3 -mx-6 px-6 border-t border-zinc-100 overflow-x-auto"
+        className="flex flex-col items-stretch gap-1 text-[11px] font-medium tracking-wider text-zinc-700 mt-4 pt-3 border-t border-zinc-100"
       >
         {navItems.map((item) => {
           const isActive = pathname ? pathname === item.href || pathname.startsWith(`${item.href}/`) : false;
@@ -132,7 +152,9 @@ export function Header({ currentLocale }: HeaderProps) {
             <Link
               key={item.label}
               href={item.href}
-              className={`whitespace-nowrap py-1 px-1.5 transition-colors ${
+              onClick={() => setOpenPath(null)}
+              aria-current={isActive ? 'page' : undefined}
+              className={`py-3 px-1 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black ${
                 isActive
                   ? 'text-black font-semibold border-b-[1.5px] border-black'
                   : 'text-zinc-500 hover:text-black'
@@ -143,6 +165,8 @@ export function Header({ currentLocale }: HeaderProps) {
           );
         })}
       </nav>
+      </div>
+      </div>
     </header>
   );
 }
