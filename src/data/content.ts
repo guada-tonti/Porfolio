@@ -82,24 +82,265 @@ export const dictionaries: Record<Locale, Dictionary> = {
       experienceHeadline: '15 years of professional design. A lifetime of exploring.',
     },
     resumePage: {
-      title: 'Curriculum Vitae',
+      title: 'Resume',
+      eyebrow: 'THE JOURNEY SO FAR',
       subtitle: 'Product Designer / Visual Designer / Creative Technologist',
-      downloadPdf: 'Download PDF Resume',
+      downloadPdf: 'Download PDF',
       summaryTitle: 'Professional Summary',
       experienceTitle: 'Work Experience',
+      earlierExperienceExpand: '+ View earlier experience',
+      earlierExperienceCollapse: '− Show less',
+      experiences: [
+  {
+    "role": "Independent Design & Creative Exploration",
+    "company": "Independent",
+    "period": "Jul 2026 — Present",
+    "description": "Working independently while exploring creative development, AI and interactive experiences through continued learning and personal projects."
+  },
+  {
+    "role": "Senior UX/UI Designer",
+    "company": "POAP — The Proof of Attendance Protocol",
+    "period": "Jan 2021 – Jun 2026",
+    "progression": "Generalist Designer → UX/UI Designer → Senior UX/UI Designer",
+    "description": "Joined POAP as its first full-time designer, supporting its growth from a five-person startup into an international team of 70+. My role evolved alongside the company, from a multidisciplinary generalist handling a wide range of design needs to a Senior UX/UI Designer focused on product design and design system."
+  },
+  {
+    "role": "Mid-level UX/UI Designer",
+    "company": "Xivis",
+    "period": "Dec 2019 — Jan 2021",
+    "description": "Digital product design at an agency specializing in Web3."
+  },
+  {
+    "role": "Mid-level UX/UI Designer",
+    "company": "Mobillers",
+    "period": "Oct 2018 — Dec 2019",
+    "description": "UX/UI for gaming and augmented reality apps, from user flows and prototypes to testing, design systems and developer collaboration."
+  },
+  {
+    "role": "Co-Founder & Designer",
+    "company": "Agencia Bondiola",
+    "period": "Jun 2016 — Nov 2018",
+    "description": "Co-founded a digital agency for social impact initiatives, combining branding, web and graphic design, photography, video and social campaigns."
+  },
+  {
+    "role": "Jr. UX/UI Designer",
+    "company": "Aerolab Digital",
+    "period": "Jun 2017 — Mar 2018",
+    "description": "UX/UI internship contributing to Banco Galicia and Ualá, alongside redesigns of Aerolab’s homepage and blog."
+  },
+  {
+    "role": "Jr. UX/UI Designer",
+    "company": "Tril Corporation",
+    "period": "Nov 2016 — Apr 2017",
+    "description": "UX/UI internship on a civic participation platform, Mercado Libre app prototypes and iOS stickers."
+  },
+  {
+    "role": "Teaching Assistant",
+    "company": "FADU — Universidad de Buenos Aires",
+    "period": "Mar 2016 — Feb 2017",
+    "description": "Teaching assistant for Medios Expresivos 2, Cátedra La Ferla."
+  },
+  {
+    "role": "Jr. Designer",
+    "company": "Banco Hipotecario",
+    "period": "Apr 2014 — Jan 2015",
+    "description": "Marketing and advertising internship supporting the bank’s rebranding through digital and print communications, web styling and promotional materials."
+  }
+],
       skillsTitle: 'Core Capabilities',
       toolsTitle: 'Tools & Knowledge',
+      languagesTitle: 'Languages',
+      spanishLanguage: 'Spanish',
+      englishLanguage: 'English',
+      nativeLevel: 'Native',
+      englishLevel: 'C2 Proficient',
+      englishLevelContext: 'Overall EF SET result; does not certify all language skills.',
       tools: [
-        { label: 'Figma (advanced)', details: 'Components, variables, auto layout, prototyping.' },
-        { label: 'AI-assisted design and prototyping tools', details: 'Claude, Cursor, Replit, Lovable, Figma MCP or similar.' },
-        { label: 'Product analytics tools', details: 'PostHog, GA4 or similar.' },
-        { label: 'HTML/CSS and frontend concepts', details: 'For collaborating with developers.' },
-        { label: 'Accessibility standards', details: 'WCAG.' },
-      ],
+  {
+    "label": "Design & prototyping",
+    "details": "Figma (advanced), components, variables, design tokens, auto layout, interactive prototyping."
+  },
+  {
+    "label": "AI-assisted workflows",
+    "details": "Claude Code, Codex, Cursor, Lovable, Figma MCP."
+  },
+  {
+    "label": "AI image & video generation",
+    "details": "Generative visual content, image editing, video creation, and creative experimentation."
+  },
+  {
+    "label": "Frontend & development workflows",
+    "details": "HTML, CSS, JavaScript, Git/GitHub. Technical knowledge for collaborating with developers and AI coding agents."
+  },
+  {
+    "label": "Product analytics",
+    "details": "PostHog, Google Analytics."
+  },
+  {
+    "label": "Accessibility",
+    "details": "WCAG guidelines."
+  }
+],
       educationTitle: 'Education & Training',
       mainEducationTitle: 'Education',
-      mainEducationDegree: 'Graphic & Visual Design Degree',
+      mainEducationDegree: 'Graphic Design Degree',
       mainEducationInstitution: 'University of Buenos Aires (FADU - UBA)',
+      mainEducationDescription: "Built a strong foundation in typography, color theory, visual composition, and design thinking at one of Latin America's most prestigious public universities.",
+      additionalEducation: {
+  "expand": "+ View additional education & courses",
+  "collapse": "− Show less",
+  "groups": [
+    {
+      "title": "Creative & Product Design",
+      "courses": [
+        {
+          "title": "Product Design Summer Camp",
+          "institution": "Acámica",
+          "year": "2018"
+        },
+        {
+          "title": "Introduction to UX",
+          "institution": "Estudio Panda",
+          "year": "2017"
+        },
+        {
+          "title": "UX Design",
+          "institution": "Puerta 18",
+          "year": "2016"
+        },
+        {
+          "title": "Graphic Design for Web",
+          "institution": "Puerta 18",
+          "year": "2015"
+        },
+        {
+          "title": "Illustration & Animation",
+          "institution": "Puerta 18",
+          "year": "2011"
+        },
+        {
+          "title": "Graphic Communication",
+          "institution": "Puerta 18",
+          "year": "2013"
+        },
+        {
+          "title": "Photography",
+          "institution": "Puerta 18",
+          "year": "2013"
+        },
+        {
+          "title": "Design & Drawing with CorelDRAW",
+          "institution": "Centro Rojas / UBA",
+          "year": "2010"
+        }
+      ]
+    },
+    {
+      "title": "Technology & Interactive",
+      "courses": [
+        {
+          "title": "Build Your First Video Game (Unity)",
+          "institution": "Etermax",
+          "year": "2019"
+        },
+        {
+          "title": "HTML: Web Page Fundamentals",
+          "institution": "EducaciónIT",
+          "year": "2013"
+        },
+        {
+          "title": "CSS Layout",
+          "institution": "EducaciónIT",
+          "year": "2013"
+        },
+        {
+          "title": "Dreamweaver CS4/CS5: Professional Website Development",
+          "institution": "EducaciónIT",
+          "year": "2013"
+        },
+        {
+          "title": "Web Design",
+          "institution": "Puerta 18",
+          "year": "2010"
+        },
+        {
+          "title": "Flash CS5/CS6: Animation Development",
+          "institution": "EducaciónIT",
+          "year": "2013"
+        },
+        {
+          "title": "Thick Data for Innovation",
+          "institution": "LATIO",
+          "year": "2018"
+        }
+      ]
+    },
+    {
+      "title": "Business & Marketing",
+      "courses": [
+        {
+          "title": "Google Analytics",
+          "institution": "EducaciónIT",
+          "year": "2018"
+        },
+        {
+          "title": "Digital Marketing & Social Media",
+          "institution": "EducaciónIT",
+          "year": "2015"
+        },
+        {
+          "title": "SEO",
+          "institution": "EducaciónIT",
+          "year": "2015"
+        },
+        {
+          "title": "Content Marketing & Virality",
+          "institution": "EducaciónIT",
+          "year": "2015"
+        },
+        {
+          "title": "Google AdWords",
+          "institution": "EducaciónIT",
+          "year": "2016"
+        },
+        {
+          "title": "Email Marketing",
+          "institution": "EducaciónIT",
+          "year": "2016"
+        },
+        {
+          "title": "Entrepreneurship",
+          "institution": "Puerta 18",
+          "year": "2016"
+        },
+        {
+          "title": "Online Marketing Plan Development",
+          "institution": "EducaciónIT",
+          "year": "2017"
+        },
+        {
+          "title": "Entrepreneurship Seedbed",
+          "institution": "Inst Bakail",
+          "year": "2018"
+        }
+      ]
+    }
+  ],
+  "languages": {
+    "title": "Languages",
+    "courses": [
+      {
+        "title": "English Studies",
+        "institution": "Liceo Cultural Británico",
+        "year": "2007–2011"
+      }
+    ]
+  }
+},
+      educationCourses: [
+        { title: 'AI for Multimedia Production', institution: 'Image Campus', period: 'Aug 2026 — Nov 2026', description: 'Specialization in AI-assisted development and advanced generative AI workflows for images, video, and interactive and immersive experiences.' },
+        { title: 'User Experience & Research Course', institution: 'Digital House', period: 'Jan 2019 — Jul 2019', description: '140 hours of in-person training in research and UX methodologies: Design Thinking, personas, user interviews, journey mapping, card sorting, surveys, heuristic evaluation, user testing and analytics.' },
+      ],
     },
     otherThingsPage: {
       title: 'Other Things',
@@ -198,24 +439,265 @@ export const dictionaries: Record<Locale, Dictionary> = {
       experienceHeadline: '15 años diseñando por profesión. Toda una vida creando.',
     },
     resumePage: {
-      title: 'Currículum Vitae',
+      title: 'Curriculum',
+      eyebrow: 'RECORRIDO PROFESIONAL',
       subtitle: 'Product Designer / Visual Designer / Creative Technologist',
-      downloadPdf: 'Descargar CV en PDF',
+      downloadPdf: 'Descargar PDF',
       summaryTitle: 'Resumen Profesional',
       experienceTitle: 'Experiencia Laboral',
+      earlierExperienceExpand: '+ Ver experiencia anterior',
+      earlierExperienceCollapse: '− Mostrar menos',
+      experiences: [
+  {
+    "role": "Diseño independiente y exploración creativa",
+    "company": "Independiente",
+    "period": "Jul 2026 — Actualidad",
+    "description": "Trabajo de forma independiente mientras exploro desarrollo creativo, IA y experiencias interactivas a través de formación continua y proyectos propios."
+  },
+  {
+    "role": "Senior UX/UI Designer",
+    "company": "POAP — The Proof of Attendance Protocol",
+    "period": "Ene 2021 – Jun 2026",
+    "progression": "Generalist Designer → UX/UI Designer → Senior UX/UI Designer",
+    "description": "Me incorporé a POAP como su primera diseñadora a tiempo completo, acompañando su crecimiento desde una startup de cinco personas hasta un equipo internacional de más de 70. Mi rol evolucionó junto con la empresa: comencé como diseñadora generalista, cubriendo diversas necesidades de diseño, y progresivamente me especialicé en diseño de producto y sistema de diseño."
+  },
+  {
+    "role": "Mid-level UX/UI Designer",
+    "company": "Xivis",
+    "period": "Dic 2019 — Ene 2021",
+    "description": "Diseño de productos digitales en una agencia especializada en Web3."
+  },
+  {
+    "role": "Mid-level UX/UI Designer",
+    "company": "Mobillers",
+    "period": "Oct 2018 — Dic 2019",
+    "description": "Diseño UX/UI para apps de gaming y realidad aumentada: flujos, prototipos, pruebas con usuarios, sistemas de diseño y colaboración con desarrollo."
+  },
+  {
+    "role": "Cofundadora y diseñadora",
+    "company": "Agencia Bondiola",
+    "period": "Jun 2016 — Nov 2018",
+    "description": "Cofundé una agencia digital para iniciativas de impacto social, combinando branding, diseño gráfico y web, fotografía, video y campañas en redes."
+  },
+  {
+    "role": "Jr. UX/UI Designer",
+    "company": "Aerolab Digital",
+    "period": "Jun 2017 — Mar 2018",
+    "description": "Pasantía UX/UI con participación en proyectos para Banco Galicia y Ualá, y en el rediseño de la home y el blog de Aerolab."
+  },
+  {
+    "role": "Jr. UX/UI Designer",
+    "company": "Tril Corporation",
+    "period": "Nov 2016 — Abr 2017",
+    "description": "Pasantía UX/UI en una plataforma de participación ciudadana, prototipos para la app de Mercado Libre y stickers para iOS."
+  },
+  {
+    "role": "Ayudante de cátedra",
+    "company": "FADU — Universidad de Buenos Aires",
+    "period": "Mar 2016 — Feb 2017",
+    "description": "Ayudante de cátedra en Medios Expresivos 2, Cátedra La Ferla."
+  },
+  {
+    "role": "Jr. Designer",
+    "company": "Banco Hipotecario",
+    "period": "Abr 2014 — Ene 2015",
+    "description": "Pasantía en Marketing y Publicidad, acompañando el cambio de imagen del banco con comunicación digital e impresa, estilos web y piezas promocionales."
+  }
+],
       skillsTitle: 'Capacidades Principales',
       toolsTitle: 'Herramientas y conocimientos',
+      languagesTitle: 'Idiomas',
+      spanishLanguage: 'Español',
+      englishLanguage: 'Inglés',
+      nativeLevel: 'Nativo',
+      englishLevel: 'C2 Proficient',
+      englishLevelContext: 'Resultado global de EF SET; no certifica todas las habilidades lingüísticas.',
       tools: [
-        { label: 'Figma (avanzado)', details: 'Componentes, variables, auto layout y prototipado.' },
-        { label: 'Herramientas de diseño y prototipado asistidos por IA', details: 'Claude, Cursor, Replit, Lovable, Figma MCP o similares.' },
-        { label: 'Herramientas de analítica de producto', details: 'PostHog, GA4 o similares.' },
-        { label: 'HTML/CSS y conceptos de frontend', details: 'Para colaborar con desarrolladores.' },
-        { label: 'Estándares de accesibilidad', details: 'WCAG.' },
-      ],
+  {
+    "label": "Diseño y prototipado",
+    "details": "Figma (avanzado), componentes, variables, tokens de diseño, auto layout, prototipado interactivo."
+  },
+  {
+    "label": "Flujos de trabajo asistidos por IA",
+    "details": "Claude Code, Codex, Cursor, Lovable, Figma MCP."
+  },
+  {
+    "label": "Generación de imágenes y videos con IA",
+    "details": "Contenido visual generativo, edición de imágenes, creación de videos y experimentación creativa."
+  },
+  {
+    "label": "Frontend y flujos de desarrollo",
+    "details": "HTML, CSS, JavaScript, Git/GitHub. Conocimientos técnicos para colaborar con desarrolladores y agentes de programación con IA."
+  },
+  {
+    "label": "Analítica de producto",
+    "details": "PostHog, Google Analytics."
+  },
+  {
+    "label": "Accesibilidad",
+    "details": "Pautas WCAG."
+  }
+],
       educationTitle: 'Educación y Formación',
       mainEducationTitle: 'Formación',
       mainEducationDegree: 'Diseño Gráfico',
       mainEducationInstitution: 'Universidad de Buenos Aires (FADU - UBA)',
+      mainEducationDescription: "Desarrollé una sólida base en tipografía, teoría del color, composición visual y pensamiento de diseño en una de las universidades públicas más prestigiosas de América Latina.",
+      additionalEducation: {
+  "expand": "+ Ver formación y cursos complementarios",
+  "collapse": "− Ver menos",
+  "groups": [
+    {
+      "title": "Diseño creativo y de producto",
+      "courses": [
+        {
+          "title": "Product Design Summer Camp",
+          "institution": "Acámica",
+          "year": "2018"
+        },
+        {
+          "title": "Introducción a UX",
+          "institution": "Estudio Panda",
+          "year": "2017"
+        },
+        {
+          "title": "Diseño UX",
+          "institution": "Puerta 18",
+          "year": "2016"
+        },
+        {
+          "title": "Diseño gráfico para web",
+          "institution": "Puerta 18",
+          "year": "2015"
+        },
+        {
+          "title": "Ilustración y animación",
+          "institution": "Puerta 18",
+          "year": "2011"
+        },
+        {
+          "title": "Comunicación gráfica",
+          "institution": "Puerta 18",
+          "year": "2013"
+        },
+        {
+          "title": "Fotografía",
+          "institution": "Puerta 18",
+          "year": "2013"
+        },
+        {
+          "title": "Diseño y dibujo con CorelDRAW",
+          "institution": "Centro Rojas / UBA",
+          "year": "2010"
+        }
+      ]
+    },
+    {
+      "title": "Tecnología e interactividad",
+      "courses": [
+        {
+          "title": "Armá tu primer videojuego (Unity)",
+          "institution": "Etermax",
+          "year": "2019"
+        },
+        {
+          "title": "HTML: Fundamentos de una página web",
+          "institution": "EducaciónIT",
+          "year": "2013"
+        },
+        {
+          "title": "Maquetado CSS y DIVs",
+          "institution": "EducaciónIT",
+          "year": "2013"
+        },
+        {
+          "title": "Dreamweaver CS4/CS5: Construcción de sitios web profesionales",
+          "institution": "EducaciónIT",
+          "year": "2013"
+        },
+        {
+          "title": "Diseño de páginas web",
+          "institution": "Puerta 18",
+          "year": "2010"
+        },
+        {
+          "title": "Flash CS5/CS6: Desarrollo de animaciones",
+          "institution": "EducaciónIT",
+          "year": "2013"
+        },
+        {
+          "title": "Thick Data for Innovation",
+          "institution": "LATIO",
+          "year": "2018"
+        }
+      ]
+    },
+    {
+      "title": "Negocios y marketing",
+      "courses": [
+        {
+          "title": "Google Analytics",
+          "institution": "EducaciónIT",
+          "year": "2018"
+        },
+        {
+          "title": "Marketing digital y redes sociales",
+          "institution": "EducaciónIT",
+          "year": "2015"
+        },
+        {
+          "title": "Posicionamiento web, SEO",
+          "institution": "EducaciónIT",
+          "year": "2015"
+        },
+        {
+          "title": "Marketing de contenidos y viralización",
+          "institution": "EducaciónIT",
+          "year": "2015"
+        },
+        {
+          "title": "Google AdWords",
+          "institution": "EducaciónIT",
+          "year": "2016"
+        },
+        {
+          "title": "Email marketing",
+          "institution": "EducaciónIT",
+          "year": "2016"
+        },
+        {
+          "title": "Emprendimientos",
+          "institution": "Puerta 18",
+          "year": "2016"
+        },
+        {
+          "title": "Desarrollo de plan de marketing online",
+          "institution": "EducaciónIT",
+          "year": "2017"
+        },
+        {
+          "title": "Semillero de emprendedores",
+          "institution": "Inst Bakail",
+          "year": "2018"
+        }
+      ]
+    }
+  ],
+  "languages": {
+    "title": "Idiomas",
+    "courses": [
+      {
+        "title": "Estudios de inglés",
+        "institution": "Liceo Cultural Británico",
+        "year": "2007–2011"
+      }
+    ]
+  }
+},
+      educationCourses: [
+        { title: 'IA para producción multimedia', institution: 'Image Campus', period: 'Ago 2026 — Nov 2026', description: 'Especialización en Desarrollo asistido por IA y workflows avanzados de IA generativa para imágenes, video y experiencias interactivas e inmersivas.' },
+        { title: 'Curso de Experiencia de Usuario e Investigación', institution: 'Digital House', period: 'Ene 2019 — Jul 2019', description: '140 horas de formación presencial en metodologías de research y UX: Design Thinking, personas, entrevistas a usuarios, mapas de recorrido, card sorting, encuestas, evaluación heurística, pruebas de usabilidad y analítica.' },
+      ],
     },
     otherThingsPage: {
       title: 'Otras Cosas',
@@ -560,3 +1042,10 @@ export const socialLinks = [
   { name: 'Behance', url: 'https://www.behance.net/GuadaTonti', platform: 'behance' },
   { name: 'WhatsApp', url: 'https://wa.me/5491136417243', platform: 'whatsapp' },
 ];
+
+export const contactEmail = 'guada.tonti@gmail.com';
+
+export const professionalInfoLabels = {
+  en: { availability: 'Open to', opportunities: 'Freelance projects & Contractor roles', contact: 'Contact' },
+  es: { availability: 'Disponible para', opportunities: 'Proyectos freelance y contratos', contact: 'Contacto' },
+};

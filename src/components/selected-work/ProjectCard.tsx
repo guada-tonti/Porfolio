@@ -1,0 +1,43 @@
+import type { CatalogProject } from '@/data/catalog';
+import type { Locale } from '@/data/types';
+import { tagById } from '@/data/tags';
+import { CatalogThumb } from './CatalogThumb';
+
+export function ProjectCard({ project, currentLocale }: { project: CatalogProject; currentLocale: Locale }) {
+  return (
+                <div className="group flex flex-col h-full bg-white transition-all">
+                  {/* Thumbnail */}
+                  <div className="w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 relative shadow-xs border border-zinc-100 group-hover:-translate-y-1 transition-transform duration-300">
+                    <CatalogThumb id={project.id} title={project.localizedTitle?.[currentLocale] ?? project.title} />
+                  </div>
+
+                  {/* Title & Year */}
+                  <div className="flex items-baseline gap-2 mb-1.5">
+                    <h3 className="text-base font-bold text-zinc-950 tracking-tight group-hover:underline underline-offset-2">
+                      {project.localizedTitle?.[currentLocale] ?? project.title}
+                    </h3>
+                    <span className="text-xs font-mono text-zinc-400">
+                      {project.year}
+                    </span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-xs text-zinc-600 leading-relaxed mb-3">
+                    {project.description[currentLocale]}
+                  </p>
+
+                  {/* Tags Pill Badges (2 rows like reference) */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {[...project.disciplines, ...project.types, project.origin].map((id) => (
+                      <span
+                        key={id}
+                        className="text-[10px] font-medium px-2.5 py-0.5 rounded-full"
+                        style={{ backgroundColor: tagById[id].background, color: tagById[id].color }}
+                      >
+                        {tagById[id].label[currentLocale]}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+  );
+}

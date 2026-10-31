@@ -7,9 +7,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Locale } from '@/data/types';
 import { allCatalogProjects } from '@/data/catalog';
-import { catalogCategories, catalogOrigins, tagById, type CategoryId, type OriginId } from '@/data/tags';
+import { catalogCategories, catalogOrigins, type CategoryId, type OriginId } from '@/data/tags';
 import { matchesProject, countCategory, countOrigin } from '@/data/catalogFilters';
-import { CatalogThumb } from './CatalogThumb';
+import { ProjectCard } from './ProjectCard';
 import { CoverProjectCard } from './CoverProjectCard';
 
 interface ProjectCatalogProps {
@@ -22,7 +22,8 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
   const pillTransition = { duration: reducedMotion ? 0 : 0.2, ease: 'easeInOut' as const };
   const [categoriesCollapsed, setCategoriesCollapsed] = useState(true);
   const [typesCollapsed, setTypesCollapsed] = useState(true);
-  const [coverView, setCoverView] = useState(false);
+  // Cover-only preview is temporarily hidden.
+  const coverView = false;
   const selectedCategories = (searchParams.get('categories') ?? '').split(',').filter(
     (id): id is CategoryId => catalogCategories.some(tag => tag.id === id)
   ).slice(0, 1);
@@ -58,25 +59,6 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
   return (
     <section className="w-full bg-white pt-8 md:pt-10 pb-20 md:pb-28">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-between gap-4 mb-4 md:mb-6">
-        <h2 className="text-[11px] font-mono tracking-widest text-zinc-400 uppercase">
-          {isEs ? 'Ver todos los proyectos' : 'Explore all'}
-        </h2>
-          <label className="inline-flex shrink-0 cursor-pointer items-center gap-2 text-xs text-zinc-600">
-            <button
-              type="button"
-              role="switch"
-              aria-checked={coverView}
-              aria-label={isEs ? 'Vista de solo portadas' : 'Cover-only view'}
-              onClick={() => setCoverView(!coverView)}
-              className={`relative h-5 w-9 rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${coverView ? 'bg-zinc-900' : 'bg-zinc-200'}`}
-            >
-              <span className={`absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white transition-transform motion-reduce:transition-none ${coverView ? 'translate-x-4' : ''}`} />
-            </button>
-            {isEs ? 'Solo portadas' : 'Covers only'}
-          </label>
-        </div>
-
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-5 mb-10">
           <div className="flex min-w-0 flex-1 flex-wrap items-start gap-x-6 gap-y-3">
         {/* Category Filter Pills */}
@@ -197,40 +179,7 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
               const cardContent = coverView ? (
                 <CoverProjectCard project={project} currentLocale={currentLocale} />
               ) : (
-                <div className="group flex flex-col h-full bg-white transition-all">
-                  {/* Thumbnail */}
-                  <div className="w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 relative shadow-xs border border-zinc-100 group-hover:-translate-y-1 transition-transform duration-300">
-                    <CatalogThumb id={project.id} title={project.localizedTitle?.[currentLocale] ?? project.title} />
-                  </div>
-
-                  {/* Title & Year */}
-                  <div className="flex items-baseline gap-2 mb-1.5">
-                    <h3 className="text-base font-bold text-zinc-950 tracking-tight group-hover:underline underline-offset-2">
-                      {project.localizedTitle?.[currentLocale] ?? project.title}
-                    </h3>
-                    <span className="text-xs font-mono text-zinc-400">
-                      {project.year}
-                    </span>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-xs text-zinc-600 leading-relaxed mb-3">
-                    {project.description[currentLocale]}
-                  </p>
-
-                  {/* Tags Pill Badges (2 rows like reference) */}
-                  <div className="flex flex-wrap gap-1.5">
-                    {[...project.disciplines, ...project.types, project.origin].map((id) => (
-                      <span
-                        key={id}
-                        className="text-[10px] font-medium px-2.5 py-0.5 rounded-full"
-                        style={{ backgroundColor: tagById[id].background, color: tagById[id].color }}
-                      >
-                        {tagById[id].label[currentLocale]}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <ProjectCard project={project} currentLocale={currentLocale} />
               );
 
               return project.slug ? (

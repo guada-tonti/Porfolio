@@ -2,10 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowUpRight, Globe, CalendarDays } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Locale } from '@/data/types';
 import { dictionaries } from '@/data/content';
 import { HeroVisual } from './HeroVisual';
+import { ProfessionalInfo } from '@/components/professional-info/ProfessionalInfo';
 
 interface HeroProps {
   currentLocale: Locale;
@@ -61,23 +62,7 @@ export function Hero({ currentLocale }: HeroProps) {
             </Link>
           </div>
 
-          {/* Matching location and availability metadata blocks. */}
-          <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-10">
-            <div className="flex shrink-0 items-start gap-2.5 text-xs text-zinc-700">
-              <Globe className="w-4 h-4 text-zinc-600 mt-0.5 shrink-0" strokeWidth={1.5} aria-hidden="true" />
-              <div>
-                <p className="text-zinc-600 leading-tight">{dict.hero.locationCity}</p>
-                <p className="font-bold text-zinc-950 leading-tight">{dict.hero.locationStatus}</p>
-              </div>
-            </div>
-            <div className="flex min-w-0 items-start gap-2.5 text-xs text-zinc-700">
-              <CalendarDays className="w-4 h-4 text-zinc-600 mt-0.5 shrink-0" strokeWidth={1.5} aria-hidden="true" />
-              <div className="min-w-0">
-                <p className="text-zinc-600 leading-tight">{currentLocale === 'en' ? 'Open to' : 'Disponible para'}</p>
-                <p className="font-bold text-zinc-950 leading-tight">{currentLocale === 'es' ? 'Proyectos freelance y contratos' : 'Freelance projects & Contractor roles'}</p>
-              </div>
-            </div>
-          </div>
+          <ProfessionalInfo currentLocale={currentLocale} />
         </div>
 
         {/* Right Column: Layered Creative Collage */}

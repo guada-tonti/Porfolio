@@ -1,4 +1,7 @@
 import React from 'react';
+import { ProfessionalInfo } from '@/components/professional-info/ProfessionalInfo';
+import { WorkExperience } from '@/components/resume/WorkExperience';
+import { AdditionalEducation } from '@/components/resume/AdditionalEducation';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Download, ExternalLink } from 'lucide-react';
@@ -12,8 +15,8 @@ interface ResumePageProps {
 export async function generateMetadata({ params }: ResumePageProps): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'es' ? 'Currículum Vitae — Guada Tonti' : 'Resume & Experience — Guada Tonti',
-    description: '15 years designing professionally. Product Design, Visual Systems & Creative Technology.',
+    title: locale === 'es' ? 'Curriculum — Guada Tonti' : 'Resume — Guada Tonti',
+    description: 'Product Designer with 12+ years of professional design experience. Product Design, Visual Systems & Creative Technology.',
   };
 }
 
@@ -27,38 +30,16 @@ export default async function ResumePage({ params }: ResumePageProps) {
   const dict = dictionaries[currentLocale];
   const isEs = currentLocale === 'es';
 
-  const experiences = [
-    {
-      role: isEs ? 'Lead Product Designer' : 'Lead Product Designer',
-      company: 'Digital Product Studio & Global Clients',
-      period: '2021 — Present',
-      description: isEs
-        ? 'Liderazgo en diseño de producto, sistemas de diseño multi-marca y prototipado interactivo para plataformas SaaS e iniciativas de alto impacto.'
-        : 'Leading end-to-end product design, multi-brand design systems, and rapid interactive prototyping for enterprise SaaS and venture-backed startups.',
-    },
-    {
-      role: isEs ? 'Senior Visual & Interaction Designer' : 'Senior Visual & Interaction Designer',
-      company: 'Creative Technology Lab',
-      period: '2016 — 2021',
-      description: isEs
-        ? 'Conceptualización de experiencias web interactivas, interfaces experimentales, dirección de arte digital y colaboración estrecha con ingeniería frontend.'
-        : 'Conceptualized immersive interactive web applications, digital art direction, design system tokens, and direct hands-on pairing with frontend engineers.',
-    },
-    {
-      role: isEs ? 'Product & Graphic Designer' : 'Product & Graphic Designer',
-      company: 'Brand & Digital Agency',
-      period: '2010 — 2016',
-      description: isEs
-        ? 'Diseño de identidades visuales, packaging, arquitectura de información y primeras aplicaciones web responsivas.'
-        : 'Shaped brand identities, responsive web interfaces, user flows, and editorial print systems across multiple international accounts.',
-    },
-  ];
+  const experiences = dict.resumePage.experiences;
 
   return (
     <article className="w-full max-w-4xl mx-auto px-6 md:px-12 py-12 md:py-20">
       {/* Header and Download Button */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-zinc-200 pb-8 mb-12">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-zinc-200 pb-8">
         <div>
+          <p className="text-[11px] font-mono tracking-widest text-zinc-400 uppercase mb-3">
+            {dict.resumePage.eyebrow}
+          </p>
           <h1 className="text-3xl md:text-5xl font-black text-zinc-950 tracking-tight mb-2">
             {dict.resumePage.title}
           </h1>
@@ -80,6 +61,10 @@ export default async function ResumePage({ params }: ResumePageProps) {
         </div>
       </div>
 
+      <div className="py-8 mb-14 border-b border-zinc-200">
+        <ProfessionalInfo currentLocale={currentLocale} compact showContact />
+      </div>
+
       <div className="space-y-14">
         {/* Summary */}
         <section>
@@ -88,8 +73,8 @@ export default async function ResumePage({ params }: ResumePageProps) {
           </h2>
           <p className="text-base text-zinc-700 leading-relaxed max-w-3xl">
             {isEs
-              ? '15 años diseñando profesionalmente para clientes globales y productos digitales. Experiencia integral combinando diseño centrado en el usuario, solidez tipográfica y ejecución técnica en código moderno.'
-              : '15 years designing professionally across international products, startups, and creative ventures. Deep focus on user-centered systems, editorial typography, and bridging design with engineering.'}
+              ? 'Product Designer con más de 12 años de experiencia profesional en diseño. Combino pensamiento de producto, diseño visual y tecnología creativa con una comprensión sólida de patrones de interacción y heurísticas de usabilidad para crear experiencias intuitivas, cuidadas y fáciles de usar.'
+              : 'Product Designer with 12+ years of professional design experience. I combine product thinking, visual design, and creative technology with a solid understanding of interaction patterns and usability heuristics to create experiences that feel intuitive, polished, and effortless to use.'}
           </p>
         </section>
 
@@ -98,18 +83,7 @@ export default async function ResumePage({ params }: ResumePageProps) {
           <h2 className="text-xs font-mono tracking-widest text-zinc-400 uppercase mb-6">
             {dict.resumePage.experienceTitle}
           </h2>
-          <div className="space-y-8">
-            {experiences.map((exp, idx) => (
-              <div key={idx} className="border-l-2 border-zinc-200 pl-4 space-y-1">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between text-sm">
-                  <h3 className="font-bold text-zinc-950">{exp.role}</h3>
-                  <span className="text-xs font-mono text-zinc-500">{exp.period}</span>
-                </div>
-                <p className="text-xs font-medium text-zinc-600">{exp.company}</p>
-                <p className="text-sm text-zinc-600 pt-1 leading-relaxed">{exp.description}</p>
-              </div>
-            ))}
-          </div>
+          <WorkExperience experiences={experiences} expand={dict.resumePage.earlierExperienceExpand} collapse={dict.resumePage.earlierExperienceCollapse} />
         </section>
 
         {/* Main education uses the same editorial timeline as work experience. */}
@@ -118,41 +92,47 @@ export default async function ResumePage({ params }: ResumePageProps) {
             {dict.resumePage.mainEducationTitle}
           </h2>
           <div className="space-y-8">
+            {dict.resumePage.educationCourses.map(course => (
+              <div key={course.institution} className="border-l-2 border-zinc-200 pl-4 space-y-1">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between text-sm gap-x-4">
+                  <h3 className="font-bold text-zinc-950">{course.title}</h3>
+                  <span className="text-xs font-mono text-zinc-500 shrink-0">{course.period}</span>
+                </div>
+                <p className="text-xs font-medium text-zinc-600">{course.institution}</p>
+                <p className="text-sm text-zinc-600 pt-1 leading-relaxed">{course.description}</p>
+              </div>
+            ))}
             <div className="border-l-2 border-zinc-200 pl-4 space-y-1">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between text-sm">
                 <h3 className="font-bold text-zinc-950">{dict.resumePage.mainEducationDegree}</h3>
                 <span className="text-xs font-mono text-zinc-500">2011 - 2017</span>
               </div>
               <p className="text-xs font-medium text-zinc-600">{dict.resumePage.mainEducationInstitution}</p>
+              <p className="text-sm text-zinc-600 pt-1 leading-relaxed">{dict.resumePage.mainEducationDescription}</p>
             </div>
           </div>
+          <AdditionalEducation content={dict.resumePage.additionalEducation} />
         </section>
 
-        {/* Skills */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-zinc-200">
-          <div>
-            <h2 className="text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
-              {dict.resumePage.skillsTitle}
-            </h2>
-            <div className="flex flex-wrap gap-2 text-xs font-mono">
-              {[
-                'Product Design',
-                'Design Systems',
-                'Prototyping',
-                'UI Architecture',
-                'Figma',
-                'HTML/CSS/JS',
-                'React / Next.js',
-                'WebGL / Three.js',
-                'AI Workflows',
-                'Design Tokens',
-              ].map((skill) => (
-                <span key={skill} className="bg-zinc-100 text-zinc-800 px-2.5 py-1 rounded">
-                  {skill}
-                </span>
-              ))}
-            </div>
-            <section className="mt-8" aria-labelledby="tools-knowledge-title">
+        <section aria-labelledby="languages-title">
+              <h2 id="languages-title" className="text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
+                {dict.resumePage.languagesTitle}
+              </h2>
+              <ul className="space-y-2 text-sm text-zinc-700 leading-relaxed">
+                <li><span className="font-semibold">{dict.resumePage.spanishLanguage}</span> — {dict.resumePage.nativeLevel}</li>
+                <li>
+                  <span className="font-semibold">{dict.resumePage.englishLanguage}</span> — <span title={dict.resumePage.englishLevelContext}>{dict.resumePage.englishLevel}</span> ·{' '}
+                  <a href="https://cert.efset.org/x9HhdX" target="_blank" rel="noopener noreferrer"
+                    aria-describedby="english-level-context"
+                    className="inline-flex items-center gap-1 whitespace-nowrap underline underline-offset-4 decoration-zinc-300 hover:text-zinc-950 hover:decoration-zinc-600 transition-colors motion-reduce:transition-none rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-600">
+                    EF SET 75/100 <span aria-hidden="true">↗</span>
+                  </a>
+                  <span id="english-level-context" className="sr-only">{dict.resumePage.englishLevelContext}</span>
+                </li>
+              </ul>
+        </section>
+
+            <section aria-labelledby="tools-knowledge-title">
               <h2 id="tools-knowledge-title" className="text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
                 {dict.resumePage.toolsTitle}
               </h2>
@@ -165,24 +145,6 @@ export default async function ResumePage({ params }: ResumePageProps) {
                 ))}
               </ul>
             </section>
-          </div>
-
-          <div>
-            <h2 className="text-xs font-mono tracking-widest text-zinc-400 uppercase mb-4">
-              {dict.resumePage.educationTitle}
-            </h2>
-            <div className="space-y-3 text-xs text-zinc-700">
-              <div>
-                <p className="font-bold text-zinc-900">Graphic &amp; Visual Design Degree</p>
-                <p className="text-zinc-500">University of Buenos Aires (FADU - UBA)</p>
-              </div>
-              <div>
-                <p className="font-bold text-zinc-900">Creative Coding &amp; Interaction Studies</p>
-                <p className="text-zinc-500">Continuous Independent Specialization &amp; Labs</p>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </article>
   );

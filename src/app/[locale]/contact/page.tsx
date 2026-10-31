@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Mail, Globe, ArrowUpRight } from 'lucide-react';
 import { Locale } from '@/data/types';
-import { dictionaries, socialLinks } from '@/data/content';
+import { dictionaries, socialLinks, contactEmail } from '@/data/content';
 
 interface ContactPageProps {
   params: Promise<{ locale: string }>;
@@ -47,7 +47,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
           <form
             onSubmit={undefined}
             className="space-y-6"
-            action="mailto:guada.tonti@gmail.com"
+            action={`mailto:${contactEmail}`}
             method="GET"
           >
             <div>
@@ -93,10 +93,10 @@ export default async function ContactPage({ params }: ContactPageProps) {
           <div>
             <h3 className="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Direct Email</h3>
             <a
-              href="mailto:guada.tonti@gmail.com"
+              href={`mailto:${contactEmail}`}
               className="text-sm font-bold text-zinc-950 hover:underline"
             >
-              guada.tonti@gmail.com
+              {contactEmail}
             </a>
           </div>
 

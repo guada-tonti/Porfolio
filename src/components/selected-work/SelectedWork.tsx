@@ -4,10 +4,9 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Locale } from '@/data/types';
-import { projects, dictionaries } from '@/data/content';
+import { dictionaries } from '@/data/content';
 import { allCatalogProjects } from '@/data/catalog';
-import { tagById } from '@/data/tags';
-import { CatalogThumb } from './CatalogThumb';
+import { ProjectCard } from './ProjectCard';
 
 const featuredProjectIds = ['poap-moments-redesign', 'poap-design-system', 'remera-chenziqiang-argentina'];
 const featuredProjects = featuredProjectIds.flatMap(id => allCatalogProjects.filter(project => project.id === id));
@@ -40,45 +39,16 @@ export function SelectedWork({ currentLocale, showViewAll = true }: SelectedWork
           )}
         </div>
 
-        {/* Featured grid: 1 column on mobile, 2 on tablet, 3 on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
-          {featuredProjects.map((project) => {
-            const subtitle = projects.find(item => item.slug === project.slug)?.subtitle ?? project.description;
-            const tags = [...project.disciplines, ...project.types, project.origin];
-            return (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredProjects.map(project => (
             <Link
-              key={project.slug}
+              key={project.id}
               href={`/${currentLocale}/work/${project.slug}`}
-              className="group flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-black rounded"
+              className="focus:outline-none focus-visible:ring-2 focus-visible:ring-black rounded-xl"
             >
-              {/* Large Image-first Thumbnail container without unnecessary borders/shadows */}
-              <div className="w-full aspect-[16/10] rounded-xl overflow-hidden bg-zinc-100 border border-zinc-100 mb-3.5 relative transition-transform duration-300 group-hover:-translate-y-1">
-                <CatalogThumb id={project.id} title={project.localizedTitle?.[currentLocale] ?? project.title} />
-              </div>
-
-              {/* Project title */}
-              <h3 className="text-sm md:text-base font-bold text-zinc-950 tracking-tight group-hover:underline underline-offset-2">
-                {project.localizedTitle?.[currentLocale] ?? project.title}
-              </h3>
-
-              {/* Small descriptive metadata */}
-              <p className="text-xs text-zinc-500 mt-0.5">
-                {subtitle[currentLocale]}
-              </p>
-              <div className="flex flex-wrap gap-1.5 mt-3">
-                {tags.map(id => (
-                  <span
-                    key={id}
-                    className="text-[10px] font-medium px-2.5 py-0.5 rounded-full"
-                    style={{ backgroundColor: tagById[id].background, color: tagById[id].color }}
-                  >
-                    {tagById[id].label[currentLocale]}
-                  </span>
-                ))}
-              </div>
+              <ProjectCard project={project} currentLocale={currentLocale} />
             </Link>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>

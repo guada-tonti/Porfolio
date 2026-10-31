@@ -143,18 +143,31 @@ export interface Dictionary {
     experienceHeadline: string;
   };
   resumePage: {
+    eyebrow: string;
     title: string;
     subtitle: string;
     downloadPdf: string;
     summaryTitle: string;
     experienceTitle: string;
+    earlierExperienceExpand: string;
+    earlierExperienceCollapse: string;
+    experiences: { role: string; company: string; period: string; progression?: string; description: string }[];
     skillsTitle: string;
     toolsTitle: string;
+    languagesTitle: string;
+    spanishLanguage: string;
+    englishLanguage: string;
+    nativeLevel: string;
+    englishLevel: string;
+    englishLevelContext: string;
     tools: { label: string; details: string }[];
     educationTitle: string;
     mainEducationTitle: string;
     mainEducationDegree: string;
     mainEducationInstitution: string;
+    mainEducationDescription: string;
+    additionalEducation: { expand: string; collapse: string; languages: { title: string; courses: { title: string; institution: string; year: string }[] }; groups: { title: string; courses: { title: string; institution: string; year: string }[] }[] };
+    educationCourses: { title: string; institution: string; period: string; description: string }[];
   };
   otherThingsPage: {
     title: string;
