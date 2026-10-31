@@ -28,7 +28,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
   const isEs = currentLocale === 'es';
 
   return (
-    <article className="w-full max-w-4xl mx-auto px-6 md:px-12 py-12 md:py-20">
+    <article className="w-full max-w-4xl mx-auto px-6 md:px-12 pt-6 pb-12 md:py-20">
       <div className="border-b border-zinc-200 pb-8 mb-12">
         <p className="text-[11px] font-mono tracking-widest text-zinc-400 uppercase mb-3">
           {isEs ? 'HABLEMOS' : 'GET IN TOUCH'}

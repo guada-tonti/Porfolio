@@ -87,6 +87,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       subtitle: 'Product Designer / Visual Designer / Creative Technologist',
       downloadPdf: 'Download PDF',
       summaryTitle: 'Professional Summary',
+      summary: 'Product Designer with 12+ years of professional design experience. I combine product thinking, visual design, and creative technology with a solid understanding of interaction patterns and usability heuristics to create experiences that feel intuitive, polished, and effortless to use.',
+      mainEducationPeriod: '2011 - 2017',
       experienceTitle: 'Work Experience',
       earlierExperienceExpand: '+ View earlier experience',
       earlierExperienceCollapse: '− Show less',
@@ -102,6 +104,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     "company": "POAP — The Proof of Attendance Protocol",
     "period": "Jan 2021 – Jun 2026",
     "progression": "Generalist Designer → UX/UI Designer → Senior UX/UI Designer",
+  "pdfDescription": "Joined as POAP’s first full-time designer, supporting its growth from five people to an international team of 70+. Evolved from generalist design to product design and design system.",
     "description": "Joined POAP as its first full-time designer, supporting its growth from a five-person startup into an international team of 70+. My role evolved alongside the company, from a multidisciplinary generalist handling a wide range of design needs to a Senior UX/UI Designer focused on product design and design system."
   },
   {
@@ -193,6 +196,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
     {
       "title": "Creative & Product Design",
       "courses": [
+        {
+          "title": "Interface Design Patterns UX Training",
+          "institution": "Smashing Magazine",
+          "year": "2025"
+        },
         {
           "title": "Product Design Summer Camp",
           "institution": "Acámica",
@@ -444,6 +452,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       subtitle: 'Product Designer / Visual Designer / Creative Technologist',
       downloadPdf: 'Descargar PDF',
       summaryTitle: 'Resumen Profesional',
+      summary: 'Product Designer con más de 12 años de experiencia profesional en diseño. Combino pensamiento de producto, diseño visual y tecnología creativa con una comprensión sólida de patrones de interacción y heurísticas de usabilidad para crear experiencias intuitivas, cuidadas y fáciles de usar.',
+      mainEducationPeriod: '2011 - 2017',
       experienceTitle: 'Experiencia Laboral',
       earlierExperienceExpand: '+ Ver experiencia anterior',
       earlierExperienceCollapse: '− Mostrar menos',
@@ -459,6 +469,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     "company": "POAP — The Proof of Attendance Protocol",
     "period": "Ene 2021 – Jun 2026",
     "progression": "Generalist Designer → UX/UI Designer → Senior UX/UI Designer",
+  "pdfDescription": "Primera diseñadora a tiempo completo de POAP, acompañando su crecimiento de cinco personas a un equipo internacional de más de 70. Evolución del diseño generalista al diseño de producto y sistema de diseño.",
     "description": "Me incorporé a POAP como su primera diseñadora a tiempo completo, acompañando su crecimiento desde una startup de cinco personas hasta un equipo internacional de más de 70. Mi rol evolucionó junto con la empresa: comencé como diseñadora generalista, cubriendo diversas necesidades de diseño, y progresivamente me especialicé en diseño de producto y sistema de diseño."
   },
   {
@@ -550,6 +561,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
     {
       "title": "Diseño creativo y de producto",
       "courses": [
+        {
+          "title": "Interface Design Patterns UX Training",
+          "institution": "Smashing Magazine",
+          "year": "2025"
+        },
         {
           "title": "Product Design Summer Camp",
           "institution": "Acámica",
@@ -1049,3 +1065,5 @@ export const professionalInfoLabels = {
   en: { availability: 'Open to', opportunities: 'Freelance projects & Contractor roles', contact: 'Contact' },
   es: { availability: 'Disponible para', opportunities: 'Proyectos freelance y contratos', contact: 'Contacto' },
 };
+
+export const efSetCertificateUrl = "https://cert.efset.org/x9HhdX";

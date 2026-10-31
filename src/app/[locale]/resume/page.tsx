@@ -4,9 +4,9 @@ import { WorkExperience } from '@/components/resume/WorkExperience';
 import { AdditionalEducation } from '@/components/resume/AdditionalEducation';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Download, ExternalLink } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { Locale } from '@/data/types';
-import { dictionaries } from '@/data/content';
+import { dictionaries, efSetCertificateUrl } from '@/data/content';
 
 interface ResumePageProps {
   params: Promise<{ locale: string }>;
@@ -28,12 +28,11 @@ export default async function ResumePage({ params }: ResumePageProps) {
 
   const currentLocale = locale as Locale;
   const dict = dictionaries[currentLocale];
-  const isEs = currentLocale === 'es';
 
   const experiences = dict.resumePage.experiences;
 
   return (
-    <article className="w-full max-w-4xl mx-auto px-6 md:px-12 py-12 md:py-20">
+    <article className="w-full max-w-4xl mx-auto px-6 md:px-12 pt-6 pb-12 md:py-20">
       {/* Header and Download Button */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-zinc-200 pb-8">
         <div>
@@ -50,9 +49,8 @@ export default async function ResumePage({ params }: ResumePageProps) {
 
         <div>
           <a
-            href="/resume-guada-tonti.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`/${currentLocale}/resume/pdf`}
+            download={currentLocale === 'es' ? 'Guada_Tonti_CV_ES.pdf' : 'Guada_Tonti_Resume_EN.pdf'}
             className="inline-flex items-center gap-2 bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-medium px-4 py-2.5 rounded-full shadow-sm transition-colors"
           >
             <Download className="w-3.5 h-3.5" />
@@ -72,9 +70,7 @@ export default async function ResumePage({ params }: ResumePageProps) {
             {dict.resumePage.summaryTitle}
           </h2>
           <p className="text-base text-zinc-700 leading-relaxed max-w-3xl">
-            {isEs
-              ? 'Product Designer con más de 12 años de experiencia profesional en diseño. Combino pensamiento de producto, diseño visual y tecnología creativa con una comprensión sólida de patrones de interacción y heurísticas de usabilidad para crear experiencias intuitivas, cuidadas y fáciles de usar.'
-              : 'Product Designer with 12+ years of professional design experience. I combine product thinking, visual design, and creative technology with a solid understanding of interaction patterns and usability heuristics to create experiences that feel intuitive, polished, and effortless to use.'}
+            {dict.resumePage.summary}
           </p>
         </section>
 
@@ -105,7 +101,7 @@ export default async function ResumePage({ params }: ResumePageProps) {
             <div className="border-l-2 border-zinc-200 pl-4 space-y-1">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between text-sm">
                 <h3 className="font-bold text-zinc-950">{dict.resumePage.mainEducationDegree}</h3>
-                <span className="text-xs font-mono text-zinc-500">2011 - 2017</span>
+                <span className="text-xs font-mono text-zinc-500">{dict.resumePage.mainEducationPeriod}</span>
               </div>
               <p className="text-xs font-medium text-zinc-600">{dict.resumePage.mainEducationInstitution}</p>
               <p className="text-sm text-zinc-600 pt-1 leading-relaxed">{dict.resumePage.mainEducationDescription}</p>
@@ -122,7 +118,7 @@ export default async function ResumePage({ params }: ResumePageProps) {
                 <li><span className="font-semibold">{dict.resumePage.spanishLanguage}</span> — {dict.resumePage.nativeLevel}</li>
                 <li>
                   <span className="font-semibold">{dict.resumePage.englishLanguage}</span> — <span title={dict.resumePage.englishLevelContext}>{dict.resumePage.englishLevel}</span> ·{' '}
-                  <a href="https://cert.efset.org/x9HhdX" target="_blank" rel="noopener noreferrer"
+                  <a href={efSetCertificateUrl} target="_blank" rel="noopener noreferrer"
                     aria-describedby="english-level-context"
                     className="inline-flex items-center gap-1 whitespace-nowrap underline underline-offset-4 decoration-zinc-300 hover:text-zinc-950 hover:decoration-zinc-600 transition-colors motion-reduce:transition-none rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-600">
                     EF SET 75/100 <span aria-hidden="true">↗</span>

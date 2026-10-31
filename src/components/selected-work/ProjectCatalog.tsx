@@ -41,7 +41,7 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
   const toggleCategory = (id: CategoryId | 'all') => updateFilters({
     categories: id === 'all' || selectedCategories.includes(id) ? '' : id,
   });
-  const priorityProjectIds = ['poap-design-system', 'poap-moments-redesign', 'remera-chenziqiang-argentina', 'goal-scream-challenge'];
+  const priorityProjectIds = ['poap-moments-redesign', 'poap-design-system', 'guitarravisual', 'remera-chenziqiang-argentina', 'goal-scream-challenge'];
   const orderedProjects = [
     ...priorityProjectIds.flatMap(id => allCatalogProjects.filter(project => project.id === id)),
     ...allCatalogProjects.filter(project => !priorityProjectIds.includes(project.id)),
@@ -59,7 +59,7 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
   return (
     <section className="w-full bg-white pt-8 md:pt-10 pb-20 md:pb-28">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-5 mb-10">
+        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-5 mb-6 md:mb-10">
           <div className="flex min-w-0 flex-1 flex-wrap items-start gap-x-6 gap-y-3">
         {/* Category Filter Pills */}
         <motion.div layout transition={pillTransition} className="relative flex max-w-full flex-wrap items-center gap-2">
@@ -75,7 +75,12 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={pillTransition}
-                onClick={() => categoriesCollapsed ? setCategoriesCollapsed(false) : isSelected ? setCategoriesCollapsed(true) : toggleCategory(cat.id)}
+                onClick={() => {
+                  if (categoriesCollapsed) { setCategoriesCollapsed(false); return; }
+                  if (isSelected) { setCategoriesCollapsed(true); return; }
+                  toggleCategory(cat.id);
+                  if (window.matchMedia('(max-width: 767px)').matches) setCategoriesCollapsed(true);
+                }}
                 aria-pressed={isSelected}
                 style={{ backgroundColor: cat.background, color: cat.color }}
                 className={`whitespace-nowrap inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-2 ${isSelected ? 'ring-1 ring-inset ring-[#20202B]' : cat.id === 'all' ? 'ring-1 ring-inset ring-zinc-200' : ''}` }
@@ -119,7 +124,12 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={pillTransition}
-                  onClick={() => typesCollapsed ? setTypesCollapsed(false) : isSelected ? setTypesCollapsed(true) : updateFilters({ origin: t.id === 'all' ? '' : t.id })}
+                  onClick={() => {
+                    if (typesCollapsed) { setTypesCollapsed(false); return; }
+                    if (isSelected) { setTypesCollapsed(true); return; }
+                    updateFilters({ origin: t.id === 'all' ? '' : t.id });
+                    if (window.matchMedia('(max-width: 767px)').matches) setTypesCollapsed(true);
+                  }}
                   aria-pressed={isSelected}
                   style={{ backgroundColor: t.background, color: t.color }}
                   className={`whitespace-nowrap inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-colors ${

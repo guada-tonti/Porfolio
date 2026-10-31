@@ -16,17 +16,17 @@ export function Hero({ currentLocale }: HeroProps) {
   const dict = dictionaries[currentLocale];
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 md:px-12 pt-8 md:pt-14 pb-16 md:pb-20">
+    <section className="w-full max-w-7xl mx-auto px-6 md:px-12 pt-6 md:pt-14 pb-16 md:pb-20">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Typography and CTAs */}
         <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
           {/* Small uppercase label */}
-          <p className="text-[10px] md:text-[11px] font-mono tracking-widest text-zinc-400 uppercase mb-6 md:mb-8">
+          <p className="text-[10px] md:text-[11px] font-mono tracking-widest text-zinc-400 uppercase mb-4 md:mb-8">
             {dict.hero.tagline}
           </p>
 
           {/* Main Headline: Bold Sans-Serif */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-zinc-950 mb-3">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-zinc-950 mb-2 md:mb-3">
             <span>{dict.hero.titleLine1}</span>
             <br />
             <span>{dict.hero.titleLine2}</span>
@@ -35,12 +35,12 @@ export function Hero({ currentLocale }: HeroProps) {
           </h1>
 
           {/* Second Headline: Smaller Italic Serif */}
-          <p className="text-2xl sm:text-3xl md:text-4xl italic font-serif text-zinc-800 tracking-tight mb-6">
+          <p className="text-2xl sm:text-3xl md:text-4xl italic font-serif text-zinc-800 tracking-tight mb-4 md:mb-6">
             {dict.hero.subtitleItalic}
           </p>
 
           {/* Supporting text */}
-          <p className="text-sm md:text-base text-zinc-600 max-w-lg leading-relaxed mb-8">
+          <p className="text-sm md:text-base text-zinc-600 max-w-lg leading-relaxed mb-6 md:mb-8">
             {dict.hero.description}
           </p>
 

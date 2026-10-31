@@ -18,7 +18,7 @@ export const catalogTags = [
   { id: 'tool', dimension: 'type', label: { en: 'Tool', es: 'Herramienta' }, background: '#ECECF0', color: '#20202B', order: 10 },
   { id: 'irl-experience', dimension: 'type', label: { en: 'IRL Experience', es: 'Experiencia IRL' }, background: '#ECECF0', color: '#20202B', order: 11 },
   { id: 'work', dimension: 'origin', label: { en: 'Work', es: 'Trabajo' }, background: '#ECECF0', color: '#20202B', order: 12 },
-  { id: 'side-project', dimension: 'origin', label: { en: 'Side Project', es: 'Proyecto Personal' }, background: '#ECECF0', color: '#20202B', order: 13 },
+  { id: 'side-project', dimension: 'origin', label: { en: 'Side Projects', es: 'Proyectos Personales' }, background: '#ECECF0', color: '#20202B', order: 13 },
   { id: 'experimental', dimension: 'origin', label: { en: 'Experimental', es: 'Experimental' }, background: '#ECECF0', color: '#20202B', order: 14 },
  ] as const;
 export type CatalogTag = typeof catalogTags[number];

@@ -21,7 +21,7 @@ export function ProfessionalInfo({ currentLocale, compact = false, showContact =
   const itemClass = `flex min-w-0 items-start ${compact ? 'gap-2 text-[11px]' : 'gap-2.5 text-xs'} text-zinc-700`;
   const iconClass = `${compact ? 'w-3.5 h-3.5' : 'w-4 h-4'} text-zinc-600 mt-0.5 shrink-0`;
   return (
-    <div className={compact ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1.25fr_1fr] items-center gap-y-5 gap-x-6' : 'flex flex-col sm:flex-row items-start gap-6 sm:gap-10'}>
+    <div className={compact ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1.25fr_1fr] items-center gap-y-5 gap-x-6' : 'flex flex-col sm:flex-row items-start gap-y-3 gap-x-6 sm:gap-10'}>
       <div className={`${itemClass} shrink-0`}>
         <Globe className={iconClass} strokeWidth={1.5} aria-hidden="true" />
         <div>

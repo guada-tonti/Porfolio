@@ -148,10 +148,12 @@ export interface Dictionary {
     subtitle: string;
     downloadPdf: string;
     summaryTitle: string;
+    summary: string;
+    mainEducationPeriod: string;
     experienceTitle: string;
     earlierExperienceExpand: string;
     earlierExperienceCollapse: string;
-    experiences: { role: string; company: string; period: string; progression?: string; description: string }[];
+    experiences: { role: string; company: string; period: string; progression?: string; pdfDescription?: string; description: string }[];
     skillsTitle: string;
     toolsTitle: string;
     languagesTitle: string;
