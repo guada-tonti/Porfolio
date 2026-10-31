@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useId, useRef, useState } from 'react';
+import React, { useEffect, useId, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
@@ -19,6 +19,24 @@ export function Header({ currentLocale }: HeaderProps) {
   const menuOpen = openPath === pathname;
   const menuId = useId();
   const menuButton = useRef<HTMLButtonElement>(null);
+
+  const panel = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    const dialog = panel.current;
+    if (!dialog) return;
+    if (!menuOpen) { dialog.close(); return; }
+    dialog.showModal();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const desktop = window.matchMedia('(min-width: 768px)');
+    const closeOnDesktop = () => { if (desktop.matches) setOpenPath(null); };
+    desktop.addEventListener('change', closeOnDesktop);
+    return () => {
+      dialog.close();
+      document.body.style.overflow = previousOverflow;
+      desktop.removeEventListener('change', closeOnDesktop);
+    };
+  }, [menuOpen]);
 
   // Helper to switch locale in the current path
   const getLocalizedPath = (targetLocale: Locale) => {
@@ -40,12 +58,14 @@ export function Header({ currentLocale }: HeaderProps) {
   ];
 
   return (
+    <>
+    <div className="h-[72px] md:hidden" aria-hidden="true" />
     <header onKeyDown={(event) => {
       if (event.key === 'Escape' && menuOpen) {
         setOpenPath(null);
         menuButton.current?.focus();
       }
-    }} className="w-full bg-white relative z-50 pt-4 md:pt-8 pb-4 px-6 md:px-12 max-w-7xl mx-auto">
+    }} className="w-full bg-white fixed top-0 left-0 right-0 md:relative z-50 pt-4 md:pt-8 pb-4 px-6 md:px-12 max-w-7xl mx-auto">
       {/* 
         3-Column Layout with mathematically centered Nav Group:
         Col 1: Logo (flex-1)
@@ -138,35 +158,42 @@ export function Header({ currentLocale }: HeaderProps) {
         </div>
       </div>
 
-      <div className={`grid md:hidden transition-[grid-template-rows,opacity] duration-200 motion-reduce:transition-none ${menuOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
-        id={menuId} inert={!menuOpen} aria-hidden={!menuOpen}>
-      <div className="overflow-hidden">
-      {/* Mobile Navigation menu */}
-      <nav
-        aria-label="Mobile Navigation"
-        className="flex flex-col items-stretch gap-1 text-[11px] font-medium tracking-wider text-zinc-700 mt-4 pt-3 border-t border-zinc-100"
-      >
-        {navItems.map((item) => {
-          const isActive = pathname ? pathname === item.href || pathname.startsWith(`${item.href}/`) : false;
-          return (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={() => setOpenPath(null)}
-              aria-current={isActive ? 'page' : undefined}
-              className={`py-3 px-1 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black ${
-                isActive
-                  ? 'text-black font-semibold border-b-[1.5px] border-black'
-                  : 'text-zinc-500 hover:text-black'
-              }`}
-            >
-              {currentLocale === 'es' && item.href === `/${currentLocale}/work` ? 'TRABAJOS' : item.label}
+      <dialog ref={panel} id={menuId} aria-label={currentLocale === 'es' ? 'Menú de navegación' : 'Navigation menu'}
+        onCancel={() => setOpenPath(null)}
+        onClick={event => { if (event.target === event.currentTarget) setOpenPath(null); }}
+        className="fixed inset-y-0 left-auto right-0 m-0 h-dvh max-h-none w-[calc(100%-24px)] max-w-none border-0 bg-white p-0 text-zinc-950 backdrop:bg-black/35 md:hidden">
+        <div className="min-h-full flex flex-col px-7 py-6 sm:px-10" onClick={event => event.stopPropagation()}>
+          <div className="flex items-center justify-between gap-6">
+            <Link href={`/${currentLocale}`} onClick={() => setOpenPath(null)} aria-label="Guada Tonti Homepage" className="rounded focus-visible:outline-2 focus-visible:outline-offset-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt="Guada Tonti" className="h-12 w-auto" />
             </Link>
-          );
-        })}
-      </nav>
-      </div>
-      </div>
+            <button type="button" onClick={() => setOpenPath(null)} aria-label={currentLocale === 'es' ? 'Cerrar menú' : 'Close menu'}
+              className="h-11 w-11 flex items-center justify-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2">
+              <X className="h-6 w-6" strokeWidth={1.5} aria-hidden="true" />
+            </button>
+          </div>
+          <nav aria-label="Mobile Navigation" className="flex flex-1 flex-col justify-center gap-6 py-12 sm:gap-9">
+            {navItems.map((item, index) => {
+              const active = pathname === item.href || pathname?.startsWith(`${item.href}/`);
+              const labels = currentLocale === 'es' ? ['Trabajos', 'Curriculum', 'Sobre mí', 'Contacto'] : ['Work & Projects', 'Resume', 'About', 'Contact'];
+              return <Link key={item.href} href={item.href} onClick={() => setOpenPath(null)} aria-current={active ? 'page' : undefined}
+                className={`flex items-baseline gap-5 py-2 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 ${active ? 'text-zinc-950' : 'text-zinc-500 hover:text-zinc-950'}`}>
+                <span className="text-sm font-mono text-zinc-300" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <span className={`text-[clamp(24px,6.5vw,36px)] leading-tight tracking-tight ${active ? 'underline underline-offset-8 decoration-1' : ''}`}>{labels[index]}</span>
+              </Link>;
+            })}
+          </nav>
+          <div className="flex items-center gap-4 text-xs font-medium pb-6" aria-label={currentLocale === 'es' ? 'Idioma' : 'Language'}>
+            {(['en', 'es'] as const).map(lang => <Link key={lang} href={getLocalizedPath(lang)} onClick={event => {
+              if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+              event.preventDefault(); setOpenPath(null);
+              router.push(getLocalizedPath(lang) + window.location.search + window.location.hash);
+            }} className={`py-2 focus-visible:outline-2 focus-visible:outline-offset-4 ${lang === currentLocale ? 'text-black underline underline-offset-8' : 'text-zinc-400'}`}>{lang.toUpperCase()}</Link>)}
+          </div>
+        </div>
+      </dialog>
     </header>
+    </>
   );
 }
