@@ -72,14 +72,50 @@ export const dictionaries: Record<Locale, Dictionary> = {
       prevProject: 'Previous Project',
     },
     aboutPage: {
+      workingStyleTitle: "How I like to work",
+      workingStyle: [
+  {
+    "title": "Small teams, close collaboration.",
+    "description": "I enjoy working with people from different disciplines in teams where there is room for close collaboration and exchanging ideas, without unnecessary bureaucracy or formality."
+  },
+  {
+    "title": "Time to focus.",
+    "description": "I value clear communication, asynchronous work, and uninterrupted time to focus. Not everything needs a meeting, and good ideas need time to develop. I like having moments to exchange ideas, define goals, and clarify direction, alongside focused time to turn that direction into something tangible."
+  },
+  {
+    "title": "Curiosity before ego.",
+    "description": "I appreciate environments where, regardless of our years of experience, we can ask questions, share what we know and what we do not, and enjoy the fact that we are always learning. Nobody has all the answers, and that is part of what makes working with others interesting."
+  },
+  {
+    "title": "Experiment, learn, improve.",
+    "description": "I am excited by teams that try new things, question their own decisions, and learn from the results without expecting everything to be perfect on the first attempt. I enjoy environments that value and encourage continuous learning and growth."
+  }
+],
       title: 'About Guada',
-      subtitle: 'Designing thoughtful digital systems with 15 years of craft and curiosity.',
+      moreSections: [
+  {
+    "title": "What draws me in",
+    "paragraphs": [
+      "I am especially drawn to projects that have a positive impact on people, animals, or the environment. I also enjoy creative products, interactive experiences, and ideas that explore new possibilities in technology."
+    ]
+  },
+  {
+    "title": "Beyond the screen",
+    "paragraphs": [
+      "I live with two cats, Muzarella and Oliva. In my free time, I practice martial arts, mostly tai chi and kung fu, to balance out so much time at the computer.",
+      "I also play a little guitar and have a blues band that plays live every now and then. What I enjoy about blues is how much room there is for improvisation and how it calls for communication on stage: you establish a foundation, but what happens over it is dynamic.",
+      "And I usually have a creative experiment underway. Every two or three days, my brain goes, “What if I made an app for this?” I try to keep it in check and be selective."
+    ]
+  }
+],
+      closingQuote: 'Not everything has to feel complicated. Things can be simple and fun without being any less important.',
+      subtitle: 'Creating is also a way to reclaim our ability to act on the world.',
       openToLabel: 'Open to:',
       openToOptions: 'Freelance projects · Fixed-term contracts · Long-term contracts',
-      bioParagraph1: 'I am a multidisciplinary Product Designer, Visual Designer, and Creative Technologist based in Buenos Aires, Argentina, collaborating with companies and founders globally.',
-      bioParagraph2: 'Over 15 years of professional practice, I have shaped complex enterprise platforms, high-velocity consumer apps, and expressive brand touchpoints. I bridge design fidelity and frontend execution with an engineer’s mindset.',
-      bioParagraph3: 'Outside of client and product engagements, I explore music, generative code, modular synthesis, and interactive curiosities.',
-      experienceHeadline: '15 years of professional design. A lifetime of exploring.',
+      bioParagraph1: "One of the things I enjoy most about design is its ability to make information that feels complex, distant, and overwhelming become simple, accessible, and approachable. That is one of design’s greatest powers, and part of what drew me to it from the beginning. Reordering, grouping, shaping, and prioritizing information can make it easier for people to understand and navigate.",
+      bioParagraph2: "I have worked in design for more than 12 years. My practice spans several disciplines, with a particular focus on digital products and interaction.",
+      bioParagraph3: "I also studied frontend fundamentals early on, which helped me collaborate closely with developers. In recent years, I have started exploring the full process myself: taking an idea or hypothesis through to a product in production, then following its evolution by measuring how people interact with it.",
+      experienceHeadline: '12+ years of professional design. A lifetime of exploring.',
     },
     resumePage: {
       title: 'Resume',
@@ -437,14 +473,50 @@ export const dictionaries: Record<Locale, Dictionary> = {
       prevProject: 'Proyecto Anterior',
     },
     aboutPage: {
+      workingStyleTitle: "Cómo me gusta trabajar",
+      workingStyle: [
+  {
+    "title": "Equipos pequeños, colaboración cercana.",
+    "description": "Disfruto trabajar con personas de distintas disciplinas, en equipos donde hay espacio para interactuar e intercambiar ideas de forma cercana, sin necesidad de burocracias y formalismos."
+  },
+  {
+    "title": "Tiempo de foco.",
+    "description": "Valoro la comunicación clara, el trabajo asíncrono y los momentos de foco. Creo que no todo necesita una reunión y que las buenas ideas también necesitan tiempo para desarrollarse. Me gusta que haya momentos para intercambiar, definir y aclarar objetivos, pero también momentos de foco donde esa dirección pueda tomar forma."
+  },
+  {
+    "title": "Curiosidad antes que ego.",
+    "description": "Me gustan los entornos donde, más allá de nuestros años de experiencia, podemos hacer preguntas, compartir lo que sabemos y lo que no, y reconocer y disfrutar que siempre estamos aprendiendo. Nadie tiene todas las respuestas, y eso es parte de lo interesante de trabajar con otras personas."
+  },
+  {
+    "title": "Experimentar, aprender, mejorar.",
+    "description": "Me entusiasman los equipos que se animan a probar cosas nuevas, cuestionar sus propias decisiones y aprender de los resultados, sin esperar que todo salga perfecto desde el primer intento. Me gustan los espacios donde se valora y potencia el aprendizaje y el crecimiento constante."
+  }
+],
       title: 'Sobre Guada',
-      subtitle: 'Diseñando sistemas digitales con 15 años de oficio y curiosidad constante.',
+      moreSections: [
+  {
+    "title": "Qué proyectos me entusiasman",
+    "paragraphs": [
+      "Me atraen especialmente los proyectos que tienen un impacto positivo en las personas, los animales o el entorno. También disfruto los productos creativos, las experiencias interactivas y las ideas que exploran nuevas posibilidades de la tecnología."
+    ]
+  },
+  {
+    "title": "Fuera de la pantalla",
+    "paragraphs": [
+      "Vivo con dos gatos, Muzarella y Oliva. En mi tiempo libre entreno artes marciales, sobre todo taichi y kung fu, para contrarrestar tanto tiempo en la compu.",
+      "También toco algo de guitarra y tengo una banda de blues con la que cada tanto hacemos shows. Del blues me gusta mucho que tiene mucha improvisación y requiere comunicación en el escenario: se construyen las bases, pero lo que sucede sobre ellas es dinámico.",
+      "Y bueno, siempre suelo tener algún experimento creativo en marcha. Cada dos o tres días mi cabeza piensa: “¿Y si hago una aplicación para esto?”. Pero trato de controlarla y filtrar."
+    ]
+  }
+],
+      closingQuote: 'No todo tiene que sentirse complejo. Las cosas pueden ser simples y divertidas y no por eso ser menos importantes.',
+      subtitle: 'Crear también es una forma de recuperar nuestra capacidad de actuar sobre el mundo.',
       openToLabel: 'Disponible para:',
       openToOptions: 'Proyectos freelance · Contratos a plazo fijo · Contratos a largo plazo',
-      bioParagraph1: 'Soy Product Designer, Visual Designer y Creative Technologist de Buenos Aires, Argentina, colaborando con equipos y empresas de todo el mundo.',
-      bioParagraph2: 'A lo largo de 15 años de práctica profesional he diseñado plataformas complejas, aplicaciones de consumo masivo y lenguajes de marca integrales. Uno el diseño y la tecnología con una mentalidad ágil y técnica.',
-      bioParagraph3: 'Fuera de proyectos profesionales, exploro música, código generativo, síntesis modular y experimentos interactivos.',
-      experienceHeadline: '15 años diseñando por profesión. Toda una vida creando.',
+      bioParagraph1: "Una de las cosas que más disfruto de diseñar es la posibilidad de transformar información que parece compleja, distante e inabarcable en algo simple, accesible y cercano. Ese es uno de los grandes poderes del diseño y parte de lo que me atrapó desde el principio. Reordenar, agrupar, moldear y jerarquizar información puede hacerla mucho más accesible cognitivamente para las personas.",
+      bioParagraph2: "Trabajo en diseño desde hace más de 12 años. Si bien mi práctica abarca varias áreas, me enfoco y especializo principalmente en productos digitales e interacción.",
+      bioParagraph3: "Desde el comienzo también me formé en conceptos de frontend, lo que me permitió trabajar fluidamente con programadores. En los últimos años empecé a experimentar por mí misma el proceso completo: desde una idea o hipótesis hasta un producto en producción, y seguir su evolución midiendo cómo interactúan las personas con él.",
+      experienceHeadline: 'más de 12 años diseñando por profesión. Toda una vida creando.',
     },
     resumePage: {
       title: 'Curriculum',

@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Locale } from '@/data/types';
 import { dictionaries } from '@/data/content';
-import { ProjectAvailability } from '@/components/availability/ProjectAvailability';
 
 interface AboutPageProps {
   params: Promise<{ locale: string }>;
@@ -15,8 +14,8 @@ export async function generateMetadata({ params }: AboutPageProps): Promise<Meta
   return {
     title: isEs ? 'Sobre Guada Tonti — Trayectoria y Filosofía' : 'About Guada Tonti — Practice & Background',
     description: isEs
-      ? 'Product Designer, Visual Designer y Creative Technologist con 15 años de experiencia diseñando productos digitales.'
-      : 'Product Designer, Visual Designer, and Creative Technologist with 15 years crafting digital products.',
+      ? 'Product Designer, Visual Designer y Creative Technologist con más de 12 años de experiencia profesional en diseño.'
+      : 'Product Designer, Visual Designer, and Creative Technologist with 12+ years of professional design experience.',
   };
 }
 
@@ -41,49 +40,49 @@ export default async function AboutPage({ params }: AboutPageProps) {
         <p className="text-xl md:text-2xl text-zinc-600 font-serif italic">
           {dict.aboutPage.subtitle}
         </p>
-        <p className="mt-5 text-sm leading-relaxed text-zinc-500">
-          <span className="font-semibold text-zinc-700">{dict.aboutPage.openToLabel}</span>{' '}
-          {dict.aboutPage.openToOptions}
-        </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 leading-relaxed text-zinc-700">
-        <div className="md:col-span-8 space-y-6 text-base">
+      <div className="leading-relaxed text-zinc-700">
+        <div className="space-y-6 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
           <p>{dict.aboutPage.bioParagraph1}</p>
           <p>{dict.aboutPage.bioParagraph2}</p>
           <p>{dict.aboutPage.bioParagraph3}</p>
 
-          <div className="pt-6 border-t border-zinc-200">
-            <h2 className="text-xl font-bold text-zinc-950 mb-3">
-              {dict.aboutPage.experienceHeadline}
+          <section className="pt-4" aria-labelledby="working-style-title">
+            <h2 id="working-style-title" className="text-[11px] font-mono tracking-widest text-zinc-400 uppercase mb-6">
+              {dict.aboutPage.workingStyleTitle}
             </h2>
-            <p className="text-sm text-zinc-600 leading-relaxed">
-              {currentLocale === 'es'
-                ? 'El diseño no es únicamente cómo se ve, sino cómo opera, escala y se siente en manos de personas reales. Cada proyecto combina rigor en sistemas de diseño con sensibilidad artesanal.'
-                : 'Design is not merely how it looks, but how it scales, operates, and resonates in the hands of real people. Every project balances robust design systems with artisanal craft.'}
+            <div className="space-y-6">
+              {dict.aboutPage.workingStyle.map(item => (
+                <div key={item.title}>
+                  <h3 className="font-semibold text-zinc-950 mb-1">{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <div className="py-6 border-y border-zinc-200">
+            <p className="text-xl md:text-2xl text-zinc-600 font-serif italic">
+              {dict.aboutPage.closingQuote}
             </p>
           </div>
+
+          {dict.aboutPage.moreSections.map((section, index) => (
+            <section key={section.title} className="pt-4" aria-labelledby={`about-extra-${index}`}>
+              <h2 id={`about-extra-${index}`} className="text-[11px] font-mono tracking-widest text-zinc-400 uppercase mb-6">
+                {section.title}
+              </h2>
+              <div className="space-y-6">
+                {section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+              </div>
+            </section>
+          ))}
         </div>
 
-        <div className="md:col-span-4 space-y-6 border-t md:border-t-0 md:border-l border-zinc-200 md:pl-8 text-xs font-mono text-zinc-600">
-          <div>
-            <h3 className="font-bold uppercase tracking-wider text-zinc-900 mb-2">Location</h3>
-            <p>Buenos Aires, Argentina</p>
-            <p className="text-zinc-400">UTC-3 / Worldwide Remote</p>
-          </div>
 
-          <div>
-            <h3 className="font-bold uppercase tracking-wider text-zinc-900 mb-2">Focus Areas</h3>
-            <ul className="space-y-1 text-zinc-600">
-              <li>• Product Strategy &amp; UX</li>
-              <li>• Design Systems (Figma + Code)</li>
-              <li>• WebGL &amp; Creative Tech</li>
-              <li>• AI Prototyping &amp; Workflows</li>
-            </ul>
-          </div>
-        </div>
       </div>
-      <ProjectAvailability currentLocale={currentLocale} variant="rows" />
+      {/* Availability calendar temporarily hidden. Restore the ProjectAvailability import and render here when needed. */}
     </article>
   );
 }

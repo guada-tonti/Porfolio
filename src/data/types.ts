@@ -133,6 +133,10 @@ export interface Dictionary {
     prevProject: string;
   };
   aboutPage: {
+    moreSections: { title: string; paragraphs: string[] }[];
+    closingQuote: string;
+    workingStyleTitle: string;
+    workingStyle: { title: string; description: string }[];
     title: string;
     subtitle: string;
     openToLabel: string;
