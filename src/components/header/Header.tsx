@@ -1,6 +1,7 @@
 'use client';
 
-import React from 'react';
+import './Header.css';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
@@ -15,6 +16,40 @@ export function Header({ currentLocale }: HeaderProps) {
   const dict = dictionaries[currentLocale];
   const pathname = usePathname();
   const router = useRouter();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateScrolled = () => setIsScrolled(previous => previous ? window.scrollY > 16 : window.scrollY > 48);
+    updateScrolled();
+    window.addEventListener('scroll', updateScrolled, { passive: true });
+    return () => window.removeEventListener('scroll', updateScrolled);
+  }, []);
+
+  useEffect(() => {
+    const surface = document.querySelector<HTMLElement>('.site-header-surface');
+    if (!surface) return;
+    let frame: number | null = null;
+    const measure = () => {
+      frame = null;
+      document.documentElement.style.setProperty('--site-header-bottom', `${surface.getBoundingClientRect().bottom}px`);
+    };
+    const schedule = () => {
+      if (frame === null) frame = requestAnimationFrame(measure);
+    };
+    // Observe the animated surface rather than the unchanged sticky shell.
+    const observer = new ResizeObserver(measure);
+    observer.observe(surface);
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    measure();
+    return () => {
+      observer.disconnect();
+      if (frame !== null) cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+      document.documentElement.style.removeProperty('--site-header-bottom');
+    };
+  }, []);
 
   // Helper to switch locale in the current path
   const getLocalizedPath = (targetLocale: Locale) => {
@@ -36,7 +71,9 @@ export function Header({ currentLocale }: HeaderProps) {
   ];
 
   return (
-    <header className="w-full bg-white relative z-50 pt-4 md:pt-8 pb-4 px-6 md:px-12 max-w-7xl mx-auto">
+    <header className="site-header-shell" data-scrolled={isScrolled} data-variant={currentLocale === 'en' ? 'traditional' : 'floating'}>
+      <div className="site-header-surface">
+      <div className="site-header-inner">
       {/* 
         3-Column Layout with mathematically centered Nav Group:
         Col 1: Logo (flex-1)
@@ -55,7 +92,7 @@ export function Header({ currentLocale }: HeaderProps) {
             <img
               src="/logo.svg"
               alt="Guada Tonti"
-              className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+              className="site-header-logo w-auto object-contain group-hover:scale-105"
             />
           </Link>
         </div>
@@ -143,6 +180,8 @@ export function Header({ currentLocale }: HeaderProps) {
           );
         })}
       </nav>
+      </div>
+      </div>
     </header>
   );
 }

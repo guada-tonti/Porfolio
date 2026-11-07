@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import mediaData from '@/data/behanceMedia.json';
 import type { CatalogProject } from '@/data/catalog';
 import type { Locale } from '@/data/types';
@@ -13,14 +12,10 @@ type Element = {
 };
 type Gallery = { assets: Asset[]; elements: Element[]; sourceTitle: string };
 const galleries = mediaData as Record<string, Gallery>;
-const projectOrder = ['aerolab-home', 'poap-design-system', 'poaps-design-web3-communities'];
-const titles = ['UX/UI — Aerolab’s home', 'POAP Design System', 'POAPs Design for Web3 Communities'];
 
 export function BehanceProjectContent({ project, currentLocale }: { project: CatalogProject; currentLocale: Locale }) {
   const gallery = galleries[project.behanceGallery!];
   const isEs = currentLocale === 'es';
-  const index = projectOrder.indexOf(project.id);
-  const adjacent = [(index + projectOrder.length - 1) % projectOrder.length, (index + 1) % projectOrder.length];
   const renderAsset = (asset: Asset) => asset.kind === 'video' ? (
     <video controls playsInline preload="none" width={asset.width} height={asset.height} className="block w-full h-auto rounded-sm bg-zinc-100" aria-label={isEs ? `${project.title}: video original` : `${project.title}: original video`}>
       <source src={asset.src} type="video/mp4" />
@@ -38,11 +33,7 @@ export function BehanceProjectContent({ project, currentLocale }: { project: Cat
       <p className="text-xs text-zinc-500 mb-8">
         {isEs ? 'Prueba de integración · Traducciones y resúmenes editoriales generados, pendientes de revisión.' : 'Integration preview · Generated translations and editorial summaries pending review.'}
       </p>
-      <section className="border-t border-zinc-200 pt-8 mb-10">
-        <h2 className="text-xs font-mono tracking-wider text-zinc-400 uppercase mb-3">{isEs ? 'Sobre el proyecto' : 'About the project'}</h2>
-        <p className="text-base text-zinc-700 leading-relaxed whitespace-pre-line max-w-2xl">{project.overview?.[currentLocale]}</p>
-        <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-5 text-sm font-medium underline underline-offset-4">{isEs ? 'Ver el proyecto original en Behance' : 'View the original project on Behance'}</a>
-      </section>
+
       <div className="space-y-6" aria-label={isEs ? 'Contenido original en orden' : 'Original content in order'}>
         {gallery.elements.map(element => (
           <section key={element.order} data-behance-order={element.order}>
@@ -66,12 +57,7 @@ export function BehanceProjectContent({ project, currentLocale }: { project: Cat
           </section>
         ))}
       </div>
-      <nav aria-label={isEs ? 'Proyectos de la prueba de integración' : 'Integration preview projects'} className="border-t border-zinc-200 pt-8 mt-14 flex flex-col sm:flex-row justify-between gap-6">
-        {adjacent.map((i, direction) => <Link key={i} href={`/${currentLocale}/work/${projectOrder[i]}`} className={`text-xs text-zinc-600 hover:text-black ${direction ? 'sm:text-right' : ''}`}>
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono mb-1">{direction ? (isEs ? 'Proyecto siguiente' : 'Next project') : (isEs ? 'Proyecto anterior' : 'Previous project')}</span>
-          <span className="font-bold text-zinc-900">{titles[i]}</span>
-        </Link>)}
-      </nav>
+
     </>
   );
 }

@@ -1,3 +1,6 @@
+import { ProjectHero, ProjectHeroVisual } from '@/components/selected-work/ProjectHero';
+import { ProjectNavigation } from '@/components/selected-work/ProjectNavigation';
+import { ProjectCaseContent } from '@/components/selected-work/ProjectCaseContent';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,53 +28,46 @@ export default async function RemeraPage({ params }: Props) {
   const isEs = locale === 'es';
 
   return (
-    <article className="w-full max-w-5xl mx-auto px-6 md:px-12 py-10 md:py-16">
+    <article className="relative w-full max-w-5xl mx-auto px-6 md:px-12 py-10 md:py-16">
       <Link
         href={`/${locale}/work`}
-        className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-zinc-500 hover:text-black mb-10 transition-colors"
+        className="md:fixed md:top-[calc(var(--site-header-bottom,96px)_+_32px)] md:left-[max(48px,calc((100vw_-_1280px)/2_+_48px))] md:z-40 inline-flex items-center gap-1.5 rounded-full bg-white/85 backdrop-blur-xl px-3.5 py-2 text-xs font-mono uppercase tracking-wider text-zinc-600 hover:text-black hover:bg-white/95 mb-10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-500"
       >
         <ArrowLeft className="w-3.5 h-3.5" />
-        {isEs ? 'Volver a trabajos y proyectos' : 'Back to work & projects'}
+        BACK
       </Link>
 
-      <header className="mb-8">
-        <div className="flex flex-wrap gap-1.5 mb-4">
+      <ProjectHero backgroundSrc="/images/projects/remera-chenziqiang-title-background.png">
+        <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-4">
+          {project.localizedTitle?.[locale] ?? project.title}
+        </h1>
+        <p className="text-lg md:text-xl text-zinc-600 md:max-w-[720px] md:mx-auto leading-relaxed">
+          {project.description[locale]}
+        </p>
+        <div className="flex flex-wrap justify-center gap-1.5 mt-4">
+          {project.year && <span className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white border border-zinc-200 text-[#20202B]">{project.year}</span>}
           {[...project.disciplines, ...project.types, project.origin].map(id => (
-            <span key={id} className="text-[10px] font-medium px-2.5 py-0.5 rounded-full"
-              style={{ backgroundColor: tagById[id].background, color: tagById[id].color }}>
+            <span key={id} className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white border border-zinc-200"
+              style={{ color: tagById[id].color }}>
               {tagById[id].label[locale]}
             </span>
           ))}
         </div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-950 tracking-tight mb-4">
-          {project.localizedTitle?.[locale] ?? project.title}
-        </h1>
-        <p className="text-lg md:text-xl text-zinc-600 max-w-2xl leading-relaxed">
-          {project.description[locale]}
-        </p>
-      </header>
+      </ProjectHero>
 
+      <ProjectHeroVisual>
       <Image
         src="/images/projects/remera-chenziqiang-argentina-portada.png"
         alt={isEs ? 'Vista del frente y dorso de la remera ChenZiqiang Argentina en un estudio' : 'Studio view of the front and back of the ChenZiqiang Argentina T-shirt'}
         width={1312} height={1199} sizes="(min-width: 1024px) 928px, 100vw"
-        className="w-full h-auto rounded-sm mb-14" preload
+        className="w-full h-auto rounded-xl mb-14" preload
       />
-
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 border-t border-zinc-200 pt-12 pb-16">
-        <aside className="md:col-span-4">
-          <h2 className="text-xs font-mono tracking-wider text-zinc-400 uppercase mb-2">{isEs ? 'Mi rol' : 'My role'}</h2>
-          <p className="text-sm font-medium text-zinc-900">{isEs ? 'Diseño gráfico freelance' : 'Freelance graphic design'}</p>
-        </aside>
-        <section className="md:col-span-8">
-          <h2 className="text-xs font-mono tracking-wider text-zinc-400 uppercase mb-3">{isEs ? 'Sobre el proyecto' : 'About the project'}</h2>
-          <p className="text-base text-zinc-700 leading-relaxed">
-            {isEs
+      </ProjectHeroVisual>
+      <ProjectCaseContent tools={project.tools} locale={locale} role={isEs ? 'Diseño gráfico freelance' : 'Freelance graphic design'}
+        overview={project.description[locale]} about={isEs
               ? 'Una remera para la escuela de taichi Chenjiagou en Argentina, diseñada con motivo de la visita de su maestro Chen Ziqiang. La propuesta combina la identificación de la escuela en el frente con una composición gráfica de taichi en el dorso.'
-              : 'A T-shirt for the Chenjiagou tai chi school in Argentina, designed to mark a visit from its master Chen Ziqiang. The design combines the school identity on the front with a tai chi graphic composition on the back.'}
-          </p>
-        </section>
-      </div>
+              : 'A T-shirt for the Chenjiagou tai chi school in Argentina, designed to mark a visit from its master Chen Ziqiang. The design combines the school identity on the front with a tai chi graphic composition on the back.'} />
+
 
       <section className="border-t border-zinc-200 pt-12">
         <h2 className="text-2xl font-bold text-zinc-950 tracking-tight mb-8">{isEs ? 'El diseño' : 'The design'}</h2>
@@ -88,6 +84,7 @@ export default async function RemeraPage({ params }: Props) {
           <figcaption className="text-xs text-zinc-500 mt-3">{isEs ? 'Mockup del frente y dorso.' : 'Front and back mockup.'}</figcaption>
         </figure>
       </section>
+      <ProjectNavigation slug={project.slug!} locale={locale} />
     </article>
   );
 }

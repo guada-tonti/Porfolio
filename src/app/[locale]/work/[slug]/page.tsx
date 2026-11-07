@@ -1,9 +1,12 @@
+import { ProjectHero, ProjectHeroVisual } from '@/components/selected-work/ProjectHero';
+import { ProjectNavigation } from '@/components/selected-work/ProjectNavigation';
 import React from 'react';
+import { ProjectCaseContent } from '@/components/selected-work/ProjectCaseContent';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { Locale } from '@/data/types';
 import { projects, dictionaries } from '@/data/content';
 import { allCatalogProjects } from '@/data/catalog';
@@ -63,11 +66,6 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   }
 
   const project = projects[projectIndex];
-  const prevProject =
-    projectIndex > 0 ? projects[projectIndex - 1] : projects[projects.length - 1];
-  const nextProject =
-    projectIndex < projects.length - 1 ? projects[projectIndex + 1] : projects[0];
-
   const renderHeroVisual = (slugName: string) => {
     switch (slugName) {
       case 'saturno-v':
@@ -88,35 +86,41 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   };
 
   return (
-    <article className="w-full max-w-5xl mx-auto px-6 md:px-12 py-10 md:py-16">
+    <article className="relative w-full max-w-5xl mx-auto px-6 md:px-12 py-10 md:py-16">
       {/* Back link */}
       <Link
-        href={`/${currentLocale}#selected-work`}
-        className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-zinc-500 hover:text-black mb-10 transition-colors"
+        href={`/${currentLocale}/work`}
+        className="md:fixed md:top-[calc(var(--site-header-bottom,96px)_+_32px)] md:left-[max(48px,calc((100vw_-_1280px)/2_+_48px))] md:z-40 inline-flex items-center gap-1.5 rounded-full bg-white/85 backdrop-blur-xl px-3.5 py-2 text-xs font-mono uppercase tracking-wider text-zinc-600 hover:text-black hover:bg-white/95 mb-10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-500"
       >
         <ArrowLeft className="w-3.5 h-3.5" />
-        <span>{dict.projectDetail.backToWork}</span>
+        <span>BACK</span>
       </Link>
 
       {/* Header Info */}
-      <div className="mb-8">
-        <div className="flex items-center gap-3 text-xs font-mono text-zinc-400 uppercase tracking-widest mb-3">
-          <span>{project.category[currentLocale]}</span>
-          <span>·</span>
-          <span>{project.year}</span>
-        </div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-950 tracking-tight mb-4">
+      <ProjectHero backgroundSrc={project.slug === 'guitarravisual' ? '/images/projects/guitarravisual-title-background.png' : undefined}>
+        <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-4">
           {project.title}
         </h1>
-        <p className="text-lg md:text-xl text-zinc-600 max-w-2xl font-normal leading-relaxed">
+        <p className="text-lg md:text-xl text-zinc-600 md:max-w-[720px] md:mx-auto font-normal leading-relaxed">
           {project.subtitle[currentLocale]}
         </p>
-      </div>
+        <div className="flex flex-wrap justify-center items-center gap-1.5 text-[10px] font-medium text-[#20202B] mt-4">
+          {project.year && <span className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white border border-zinc-200 text-[#20202B]">{project.year}</span>}
+          <span className="rounded-full bg-white border border-zinc-200 px-2.5 py-0.5">{project.category[currentLocale]}</span>
+        </div>
+      </ProjectHero>
 
+      <ProjectHeroVisual>
       {/* Hero Visual Container */}
-      <div className="w-full aspect-[16/9] rounded-sm overflow-hidden bg-zinc-100 border border-zinc-200/80 mb-14 shadow-sm">
+      <div className="w-full aspect-[16/9] rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 mb-14 shadow-sm">
         {renderHeroVisual(project.slug)}
       </div>
+
+      </ProjectHeroVisual>
+      <ProjectCaseContent tools={allCatalogProjects.find(item => item.slug === project.slug)?.tools} locale={currentLocale} about={project.overview[currentLocale]}
+        role={project.role[currentLocale]} overview={project.subtitle[currentLocale]}
+        challenge={project.challenge[currentLocale]} process={project.process[currentLocale]} results={project.results[currentLocale]}
+        links={project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-6 text-xs font-bold underline underline-offset-4">{dict.projectDetail.visitLive}<ArrowUpRight className="w-3.5 h-3.5" /></a>} />
 
       {project.slug === 'guitarravisual' && (
         <figure className="mb-14">
@@ -134,102 +138,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </figure>
       )}
 
-      {/* Project Breakdown Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 border-t border-zinc-200 pt-12 pb-16">
-        {/* Left Column: Metadata & Role */}
-        <div className="md:col-span-4 space-y-8">
-          <div>
-            <h3 className="text-xs font-mono tracking-wider text-zinc-400 uppercase mb-2">
-              {dict.projectDetail.role}
-            </h3>
-            <p className="text-sm font-medium text-zinc-900 leading-snug">
-              {project.role[currentLocale]}
-            </p>
-          </div>
-
-          {project.liveUrl && (
-            <div>
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 underline underline-offset-4 hover:text-zinc-700 transition-colors"
-              >
-                <span>{dict.projectDetail.visitLive}</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
-          )}
-        </div>
-
-        {/* Right Column: Case Details */}
-        <div className="md:col-span-8 space-y-10 text-zinc-800">
-          <div>
-            <h3 className="text-xs font-mono tracking-wider text-zinc-400 uppercase mb-3">
-              {dict.projectDetail.overview}
-            </h3>
-            <p className="text-base text-zinc-700 leading-relaxed font-normal">
-              {project.overview[currentLocale]}
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-xs font-mono tracking-wider text-zinc-400 uppercase mb-3">
-              {dict.projectDetail.challenge}
-            </h3>
-            <p className="text-base text-zinc-700 leading-relaxed font-normal">
-              {project.challenge[currentLocale]}
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-xs font-mono tracking-wider text-zinc-400 uppercase mb-3">
-              {dict.projectDetail.process}
-            </h3>
-            <p className="text-base text-zinc-700 leading-relaxed font-normal">
-              {project.process[currentLocale]}
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-xs font-mono tracking-wider text-zinc-400 uppercase mb-3">
-              {dict.projectDetail.results}
-            </h3>
-            <p className="text-base text-zinc-700 leading-relaxed font-normal">
-              {project.results[currentLocale]}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Prev / Next Navigation Footer */}
-      <div className="border-t border-zinc-200 pt-8 flex items-center justify-between">
-        <Link
-          href={`/${currentLocale}/work/${prevProject.slug}`}
-          className="group flex items-center gap-2 text-xs font-medium text-zinc-600 hover:text-black"
-        >
-          <ChevronLeft className="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" />
-          <div>
-            <p className="text-[10px] text-zinc-400 uppercase font-mono">
-              {dict.projectDetail.prevProject}
-            </p>
-            <p className="font-bold text-zinc-900">{prevProject.title}</p>
-          </div>
-        </Link>
-
-        <Link
-          href={`/${currentLocale}/work/${nextProject.slug}`}
-          className="group flex items-center gap-2 text-right text-xs font-medium text-zinc-600 hover:text-black"
-        >
-          <div>
-            <p className="text-[10px] text-zinc-400 uppercase font-mono">
-              {dict.projectDetail.nextProject}
-            </p>
-            <p className="font-bold text-zinc-900">{nextProject.title}</p>
-          </div>
-          <ChevronRight className="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" />
-        </Link>
-      </div>
+      <ProjectNavigation slug={project.slug} locale={currentLocale} />
     </article>
   );
 }

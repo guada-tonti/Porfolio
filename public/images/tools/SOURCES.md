@@ -25,3 +25,9 @@ ComfyUI monochrome: https://raw.githubusercontent.com/lobehub/lobe-icons/master/
 - javascript: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/javascript.svg
 
 - figma-weave: https://cdn.prod.website-files.com/681b040781d5b5e278a69989/69d4f1efa9dc89ccca92be1a_logo%20-%20squeare%20Weavy%20W.svg (official weave.figma.com navigation logo)
+
+- notion: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/notion.svg
+
+- sketch: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/sketch.svg (Sketch design app, https://www.sketch.com/)
+- chatgpt: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/openai.svg (OpenAI mark)
+- p5js: https://raw.githubusercontent.com/devicons/devicon/master/icons/p5js/p5js-original.svg (Devicon, MIT, https://github.com/devicons/devicon/blob/master/LICENSE)

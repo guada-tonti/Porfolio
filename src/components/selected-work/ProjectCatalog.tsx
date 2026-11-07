@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Locale } from '@/data/types';
-import { allCatalogProjects } from '@/data/catalog';
+import { orderedCatalogProjects, allCatalogProjects } from '@/data/catalog';
 import { catalogCategories, catalogOrigins, type CategoryId, type OriginId } from '@/data/tags';
 import { matchesProject, countCategory, countOrigin } from '@/data/catalogFilters';
 import { ProjectCard } from './ProjectCard';
@@ -41,18 +41,14 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
   const toggleCategory = (id: CategoryId | 'all') => updateFilters({
     categories: id === 'all' || selectedCategories.includes(id) ? '' : id,
   });
-  const priorityProjectIds = ['poap-moments-redesign', 'poap-design-system', 'guitarravisual', 'remera-chenziqiang-argentina', 'goal-scream-challenge'];
-  const orderedProjects = [
-    ...priorityProjectIds.flatMap(id => allCatalogProjects.filter(project => project.id === id)),
-    ...allCatalogProjects.filter(project => !priorityProjectIds.includes(project.id)),
-  ];
+  const orderedProjects = orderedCatalogProjects;
   const filteredProjects = orderedProjects.filter(project => matchesProject(project, filters));
   const sortedCategories = catalogCategories
     .map(tag => ({ ...tag, count: countCategory(allCatalogProjects, filters, tag.id) }))
-    .sort((a, b) => b.count - a.count || a.order - b.order);
+    .sort((a, b) => a.order - b.order);
   const sortedOrigins = catalogOrigins
     .map(tag => ({ ...tag, count: countOrigin(allCatalogProjects, filters, tag.id) }))
-    .sort((a, b) => b.count - a.count || a.order - b.order);
+    .sort((a, b) => a.order - b.order);
   const allCategory = { id: 'all' as const, label: { en: 'All categories', es: 'Todas las categorías' }, background: '#FFFFFF', color: '#20202B', count: countCategory(allCatalogProjects, filters) };
   const allOrigin = { id: 'all' as const, label: { en: 'All types', es: 'Todos los tipos' }, background: '#FFFFFF', color: '#20202B', count: countOrigin(allCatalogProjects, filters, 'all') };
 
@@ -82,8 +78,8 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
                   if (window.matchMedia('(max-width: 767px)').matches) setCategoriesCollapsed(true);
                 }}
                 aria-pressed={isSelected}
-                style={{ backgroundColor: cat.background, color: cat.color }}
-                className={`whitespace-nowrap inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-2 ${isSelected ? 'ring-1 ring-inset ring-[#20202B]' : cat.id === 'all' ? 'ring-1 ring-inset ring-zinc-200' : ''}` }
+                style={{ backgroundColor: !categoriesCollapsed ? '#FFFFFF' : cat.background, color: cat.color }}
+                className={`whitespace-nowrap inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-2 ${isSelected ? (categoriesCollapsed ? 'ring-1 ring-inset ring-zinc-200' : 'ring-1 ring-inset ring-[#20202B]') : !categoriesCollapsed || cat.id === 'all' ? 'ring-1 ring-inset ring-zinc-200' : ''}` }
               >
                 <span>{cat.label[currentLocale]}</span>
                 <span
@@ -131,11 +127,11 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
                     if (window.matchMedia('(max-width: 767px)').matches) setTypesCollapsed(true);
                   }}
                   aria-pressed={isSelected}
-                  style={{ backgroundColor: t.background, color: t.color }}
+                  style={{ backgroundColor: !typesCollapsed ? '#FFFFFF' : t.background, color: t.color }}
                   className={`whitespace-nowrap inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                     isSelected
-                      ? 'border-[#20202B]'
-                      : t.id === 'all' ? 'border-zinc-200 hover:opacity-85' : 'border-transparent hover:opacity-85'
+                      ? (typesCollapsed ? 'border-zinc-200' : 'border-[#20202B]')
+                      : !typesCollapsed || t.id === 'all' ? 'border-zinc-200 hover:opacity-85' : 'border-transparent hover:opacity-85'
                   }`}
                 >
                   <span>{t.label[currentLocale]}</span>

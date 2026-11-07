@@ -68,8 +68,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       results: 'Results & Learnings',
       visitLive: 'Visit live project',
       backToWork: 'Back to Selected Work',
-      nextProject: 'Next Project',
-      prevProject: 'Previous Project',
+      nextProject: 'Next',
+      prevProject: 'Previous',
     },
     aboutPage: {
       workingStyleTitle: "How I like to work",
@@ -469,8 +469,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       results: 'Resultados y Aprendizajes',
       visitLive: 'Visitar proyecto en vivo',
       backToWork: 'Volver a Trabajos Seleccionados',
-      nextProject: 'Siguiente Proyecto',
-      prevProject: 'Proyecto Anterior',
+      nextProject: 'Siguiente',
+      prevProject: 'Anterior',
     },
     aboutPage: {
       workingStyleTitle: "Cómo me gusta trabajar",
