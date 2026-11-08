@@ -1,0 +1,84 @@
+{
+  "mode": "built-in image_gen",
+  "prompt": "Create a mobile portrait website title background. Image 1 is the project's desktop artwork: preserve its own subjects, colors and delicate line illustration style. Image 2 (Tres Tipos) is ONLY the exact layout and motif-size reference. Match image 2 portrait canvas ratio 1184:1328, same sparse composition and comparable visual scale of motifs. Arrange a small set of image 1 subjects in the upper band y=200–350 (on a 1184x1328 canvas), mainly x=450–1150, leaving top-left empty for a Back button. Arrange remaining motifs in the bottom corners y=1040–1290, leaving bottom center blank. The entire middle from y=390 to y=1000 must be completely white with no lines or artwork: title/description/tags overlay there. Keep top y=0–180 entirely white. Use 2–3 primary motifs top and 1–2 per bottom corner, with a few tiny stars or circles. Same airy precise thin strokes as source. No new text, no labels, no watermark. Do not use typographic letters from image 2 unless they are already part of image 1's subject. Output portrait 1184x1328.",
+  "assets": [
+    {
+      "id": "bigotes",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/title-backgrounds/bigotes.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-ef885de7-aeb4-481f-a75e-a2032b100c4b.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/bigotes.png"
+    },
+    {
+      "id": "multi-signature-wallet",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/title-backgrounds/multi-signature-wallet.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-3979cb60-d5e8-40dc-b7c7-4eb203072f40.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/multi-signature-wallet.png"
+    },
+    {
+      "id": "bairesdao",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/title-backgrounds/bairesdao.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-b6a0e7ff-a561-449e-89a3-36e54194e599.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/bairesdao.png"
+    },
+    {
+      "id": "gitpoap",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/title-backgrounds/gitpoap.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-4f209d12-e879-498d-a477-9f90d0a69646.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/gitpoap.png"
+    },
+    {
+      "id": "holobox",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/title-backgrounds/holobox.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-4903bf2a-d1e0-4b7d-abb9-fb7ec34640d2.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/holobox.png"
+    },
+    {
+      "id": "trivia-game",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/title-backgrounds/trivia-game.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-9adf3797-1ff0-4420-b542-c5dfcb104a98.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/trivia-game.png"
+    },
+    {
+      "id": "law-audiobooks",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/title-backgrounds/law-audiobooks.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-4bb002b4-5c1d-4d32-a111-573b4fae3713.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/law-audiobooks.png"
+    },
+    {
+      "id": "dubai-storage",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/title-backgrounds/dubai-storage-blue.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-6e9c100a-07b7-42ce-9b9e-096670a464d7.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/dubai-storage.png"
+    },
+    {
+      "id": "aerolab-home",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/aerolab-title-background.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-0e658026-9db0-470b-b3d4-44a009e77024.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/aerolab-home.png"
+    },
+    {
+      "id": "gig-flyers",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/gig-flyers/title-background-retro.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-91adb545-0990-484d-8dda-c04c9dd705f4.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/gig-flyers.png"
+    },
+    {
+      "id": "philatelist",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/philatelist-title-background-lines.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-663631ee-e930-4782-92fd-8ceafed7d2c4.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/philatelist.png"
+    },
+    {
+      "id": "health-clarity",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/health-clarity-title-background.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-af50cdc7-7bc9-4653-b790-e86e54836c3b.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/health-clarity.png"
+    },
+    {
+      "id": "saturno-v",
+      "path": "/Users/guada/Desktop/1 Guada/0 Proyectos/Porfolio26 v2/public/images/projects/saturno-v-title-background.png",
+      "generated": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-fbf561de-aa8c-46c5-9f17-707b028056ec.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/saturno-v.png"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "tool": "Built-in image generation",
+  "prompt": "Portrait 780x874 mobile adaptation of each original desktop banner. Tiny monoline motifs only in top/bottom bands; blank central title, description and tags zone; original color and style.",
+  "projects": [
+    {
+      "id": "poap-moments-redesign",
+      "reference": "poap-moments-title-background-26.png",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-2c481123-6039-4226-811d-0aac4629b7e1.png"
+    },
+    {
+      "id": "poap-design-system",
+      "reference": "poap-design-system-title-background.png",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-46bddb3a-eb66-40d3-8e12-31188ee0ea40.png"
+    },
+    {
+      "id": "guitarravisual",
+      "reference": "guitarravisual-title-background.png",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-c0bdb90f-c18a-4c71-adc2-bece28f8e16a.png"
+    },
+    {
+      "id": "remera-chenziqiang-argentina",
+      "reference": "remera-chenziqiang-title-background.png",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-e95f3f5d-f764-4101-b037-0aa5a407388f.png"
+    },
+    {
+      "id": "bioy-casares",
+      "reference": "title-backgrounds/bioy-casares.png",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-f0ef8d91-1d6f-407b-ada2-6249c505e7f8.png"
+    },
+    {
+      "id": "typography-composition",
+      "reference": "title-backgrounds/typography-composition.png",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-6b20e3ef-5ba4-4d81-8ff6-789fc4f53af0.png"
+    }
+  ]
+}

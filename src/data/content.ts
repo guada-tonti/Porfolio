@@ -32,7 +32,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       contact: 'CONTACT',
     },
     hero: {
-      tagline: 'SENIOR PRODUCT DESIGNER / VISUAL DESIGNER / CREATIVE TECHNOLOGIST',
+      tagline: 'SENIOR PRODUCT DESIGNER & VISUAL DESIGNER · AI-FLUENT',
       titleLine1: '12 years',
       titleLine2: 'designing',
       titleLine3: 'professionally.',
@@ -433,7 +433,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       contact: 'CONTACTO',
     },
     hero: {
-      tagline: 'SENIOR PRODUCT DESIGNER / VISUAL DESIGNER / CREATIVE TECHNOLOGIST',
+      tagline: 'SENIOR PRODUCT DESIGNER & VISUAL DESIGNER · AI-FLUENT',
       titleLine1: '12 años',
       titleLine2: 'diseñando por',
       titleLine3: 'profesión.',

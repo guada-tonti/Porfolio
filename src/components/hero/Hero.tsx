@@ -22,7 +22,9 @@ export function Hero({ currentLocale }: HeroProps) {
         <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
           {/* Small uppercase label */}
           <p className="text-[10px] md:text-[11px] font-mono tracking-widest text-zinc-400 uppercase mb-4 md:mb-8">
-            {dict.hero.tagline}
+            {dict.hero.tagline.split(' · ')[0]}
+            <span className="hidden md:inline"> · </span>
+            <span className="block md:inline">AI-FLUENT</span>
           </p>
 
           {/* Main Headline: Bold Sans-Serif */}

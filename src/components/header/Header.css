@@ -3,7 +3,7 @@
   top: 0;
   z-index: 50;
   width: 100%;
-  height: 116px;
+  height: 72px;
   flex-shrink: 0;
   pointer-events: none;
 }
@@ -120,3 +120,37 @@
 }
 
 .site-header-shell[data-variant='traditional']::before { display: none; }
+
+/* Native disclosure keeps mobile navigation usable before hydration. */
+.site-mobile-menu-toggle,
+.site-mobile-menu-close {
+  position: fixed;
+  top: calc(var(--site-header-bottom, 72px) - 56px);
+  right: 24px;
+  z-index: 110;
+  pointer-events: auto;
+}
+.site-mobile-menu-toggle::-webkit-details-marker { display: none; }
+.site-mobile-menu[open] .site-mobile-menu-toggle { visibility: hidden; }
+body:has(.site-mobile-menu[open]) { overflow: hidden; }
+@media (min-width: 768px) {
+  body:has(.site-mobile-menu[open]) { overflow: auto; }
+}
+
+.site-mobile-menu-overlay { display: none; }
+.site-mobile-menu[open] + .site-mobile-menu-overlay,
+.site-mobile-menu-overlay:target { display: flex; }
+body:has(.site-mobile-menu-overlay:target) { overflow: hidden; }
+.site-mobile-menu:has(+ .site-mobile-menu-overlay:target) .site-mobile-menu-toggle { visibility: hidden; }
+@media (min-width: 768px) {
+  .site-mobile-menu[open] + .site-mobile-menu-overlay,
+  .site-mobile-menu-overlay:target { display: none; }
+  body:has(.site-mobile-menu-overlay:target) { overflow: auto; }
+}
+
+.site-mobile-menu-brand {
+  position: fixed;
+  left: var(--site-header-logo-left, 24px);
+  top: var(--site-header-logo-top, 16px);
+}
+.site-mobile-menu-logo { height: var(--site-header-logo-height, 40px); }

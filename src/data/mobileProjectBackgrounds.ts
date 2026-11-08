@@ -1,0 +1,23 @@
+export const mobileProjectBackgrounds: Record<string, string> = {
+  'poap-moments-redesign': '/images/projects/title-backgrounds/mobile/poap-moments-redesign-v2.png',
+  'poap-design-system': '/images/projects/title-backgrounds/mobile/poap-design-system-v2.png',
+  'guitarravisual': '/images/projects/title-backgrounds/mobile/guitarravisual-v2.png',
+  'remera-chenziqiang-argentina': '/images/projects/title-backgrounds/mobile/remera-chenziqiang-argentina-v2.png',
+  'bioy-casares': '/images/projects/title-backgrounds/mobile/bioy-casares-v2.png',
+  'typography-composition': '/images/projects/title-backgrounds/mobile/typography-composition-v2.png',
+
+  'bigotes': '/images/projects/title-backgrounds/mobile/bigotes.png',
+  'multi-signature-wallet': '/images/projects/title-backgrounds/mobile/multi-signature-wallet.png',
+  'bairesdao': '/images/projects/title-backgrounds/mobile/bairesdao.png',
+  'gitpoap': '/images/projects/title-backgrounds/mobile/gitpoap.png',
+  'holobox': '/images/projects/title-backgrounds/mobile/holobox.png',
+  'trivia-game': '/images/projects/title-backgrounds/mobile/trivia-game.png',
+  'law-audiobooks': '/images/projects/title-backgrounds/mobile/law-audiobooks.png',
+  'dubai-storage': '/images/projects/title-backgrounds/mobile/dubai-storage.png',
+  'aerolab-home': '/images/projects/title-backgrounds/mobile/aerolab-home.png',
+  'gig-flyers': '/images/projects/title-backgrounds/mobile/gig-flyers.png',
+  'philatelist': '/images/projects/title-backgrounds/mobile/philatelist.png',
+  'health-clarity': '/images/projects/title-backgrounds/mobile/health-clarity.png',
+  'saturno-v': '/images/projects/title-backgrounds/mobile/saturno-v.png',
+  'poaps-design-web3-communities': '/images/projects/title-backgrounds/mobile/poap-moments-redesign-v2.png',
+};

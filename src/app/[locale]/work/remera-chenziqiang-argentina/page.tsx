@@ -28,20 +28,20 @@ export default async function RemeraPage({ params }: Props) {
   const isEs = locale === 'es';
 
   return (
-    <article className="relative w-full max-w-5xl mx-auto px-6 md:px-12 py-10 md:py-16">
+    <article className="relative w-full max-w-5xl mx-auto px-6 md:px-12 pt-12 pb-10 md:py-16">
       <Link
         href={`/${locale}/work`}
-        className="md:fixed md:top-[calc(var(--site-header-bottom,96px)_+_32px)] md:left-[max(48px,calc((100vw_-_1280px)/2_+_48px))] md:z-40 inline-flex items-center gap-1.5 rounded-full bg-white/85 backdrop-blur-xl px-3.5 py-2 text-xs font-mono uppercase tracking-wider text-zinc-600 hover:text-black hover:bg-white/95 mb-10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-500"
+        className="fixed z-40 top-[calc(var(--site-header-bottom,72px)_+_4px)] left-3 md:top-[calc(var(--site-header-bottom,96px)_+_32px)] md:left-[max(48px,calc((100vw_-_1280px)/2_+_48px))] md:z-40 inline-flex items-center gap-1.5 rounded-full bg-white/85 backdrop-blur-xl px-3.5 py-2 text-xs font-mono uppercase tracking-wider text-zinc-600 hover:text-black hover:bg-white/95 mb-0 md:mb-10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-500"
       >
         <ArrowLeft className="w-3.5 h-3.5" />
         BACK
       </Link>
 
-      <ProjectHero backgroundSrc="/images/projects/remera-chenziqiang-title-background.png">
-        <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-4">
+      <ProjectHero projectId={project.slug} backgroundSrc="/images/projects/remera-chenziqiang-title-background.png">
+        <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-2 md:mb-4">
           {project.localizedTitle?.[locale] ?? project.title}
         </h1>
-        <p className="text-lg md:text-xl text-zinc-600 md:max-w-[720px] md:mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-zinc-600 md:max-w-[720px] md:mx-auto leading-relaxed">
           {project.description[locale]}
         </p>
         <div className="flex flex-wrap justify-center gap-1.5 mt-4">

@@ -1,0 +1,36 @@
+{
+  "mode": "built-in image_gen edit",
+  "prompt": "Use case: precise-object-edit. Edit target: attached mobile website title background. Create version 2: enlarge each decorative illustrated motif approximately 50% (1.5 times its current width and height). Keep the same portrait canvas proportions, white background, delicate thin line style, exact existing color palette, and same subjects. Keep the motifs confined to the top and bottom edges, with the large middle region completely empty white for title, description and tags. Keep the top-left area clear for the Back button. Reposition motifs slightly within their existing top/bottom bands if needed to fit their larger size. Do not zoom or crop the entire canvas. Do not add text or new subjects. Preserve the airy minimal composition, but make individual decorative elements visibly larger.",
+  "assets": [
+    {
+      "id": "poap-moments-redesign",
+      "source": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-f6c91b5f-5d57-4e6a-a14d-480aacc01590.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/poap-moments-redesign-v2.png"
+    },
+    {
+      "id": "poap-design-system",
+      "source": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-7efa34e5-44f4-46b6-b842-4a7b65fbb79f.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/poap-design-system-v2.png"
+    },
+    {
+      "id": "guitarravisual",
+      "source": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-191afc93-c10f-4a1c-aeff-086eee264237.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/guitarravisual-v2.png"
+    },
+    {
+      "id": "remera-chenziqiang-argentina",
+      "source": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-c5a0f711-7a13-4a5d-9def-4afe9bddc037.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/remera-chenziqiang-argentina-v2.png"
+    },
+    {
+      "id": "bioy-casares",
+      "source": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-89e58957-ff40-40b1-8d24-905548a18dd3.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/bioy-casares-v2.png"
+    },
+    {
+      "id": "typography-composition",
+      "source": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-9e451e09-a87d-4d87-b4f6-62e6d09754a9.png",
+      "destination": "public/images/projects/title-backgrounds/mobile/typography-composition-v2.png"
+    }
+  ]
+}

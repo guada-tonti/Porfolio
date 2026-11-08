@@ -122,7 +122,7 @@ const catalogProjects: CatalogProject[] = [
   {
     id: 'poap-moments-redesign',
     slug: 'poap-moments-redesign',
-    title: 'POAP Moments Redesign',
+    title: 'POAP Moments Product Redesign',
     year: '2024',
     description: {
       en: 'A redesign of POAP Moments, a product for sharing photos, videos and phrases linked to a POAP.',

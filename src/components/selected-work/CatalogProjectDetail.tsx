@@ -15,19 +15,19 @@ import { BehanceProjectContent } from './BehanceProjectContent';
 export function CatalogProjectDetail({ project, currentLocale }: { project: CatalogProject; currentLocale: Locale }) {
   const isEs = currentLocale === 'es';
   return (
-    <article className="relative w-full max-w-5xl mx-auto px-6 md:px-12 py-10 md:py-16">
-      <Link href={`/${currentLocale}/work`} className="md:fixed md:top-[calc(var(--site-header-bottom,96px)_+_32px)] md:left-[max(48px,calc((100vw_-_1280px)/2_+_48px))] md:z-40 inline-flex items-center gap-1.5 rounded-full bg-white/85 backdrop-blur-xl px-3.5 py-2 text-xs font-mono uppercase tracking-wider text-zinc-600 hover:text-black hover:bg-white/95 mb-10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-500">
+    <article className="relative w-full max-w-5xl mx-auto px-6 md:px-12 pt-12 pb-10 md:py-16">
+      <Link href={`/${currentLocale}/work`} className="fixed z-40 top-[calc(var(--site-header-bottom,72px)_+_4px)] left-3 md:top-[calc(var(--site-header-bottom,96px)_+_32px)] md:left-[max(48px,calc((100vw_-_1280px)/2_+_48px))] md:z-40 inline-flex items-center gap-1.5 rounded-full bg-white/85 backdrop-blur-xl px-3.5 py-2 text-xs font-mono uppercase tracking-wider text-zinc-600 hover:text-black hover:bg-white/95 mb-0 md:mb-10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-500">
         <ArrowLeft className="w-3.5 h-3.5" />
         BACK
       </Link>
-      <ProjectHero backgroundSrc={(project.id === 'poap-moments-redesign' || project.id === 'poaps-design-web3-communities') ? '/images/projects/poap-moments-title-background-26.png' : project.id === 'philatelist' ? '/images/projects/philatelist-title-background-lines.png' : project.id === 'poap-design-system' ? '/images/projects/poap-design-system-title-background.png' : project.id === 'aerolab-home' ? '/images/projects/aerolab-title-background.png' : project.id === 'gig-flyers' ? '/images/projects/gig-flyers/title-background-retro.png' : generatedProjectBackgrounds[project.id]}>
-        <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-4">{project.localizedTitle?.[currentLocale] ?? project.title}</h1>
+      <ProjectHero projectId={project.id} backgroundSrc={(project.id === 'poap-moments-redesign' || project.id === 'poaps-design-web3-communities') ? '/images/projects/poap-moments-title-background-26.png' : project.id === 'philatelist' ? '/images/projects/philatelist-title-background-lines.png' : project.id === 'poap-design-system' ? '/images/projects/poap-design-system-title-background.png' : project.id === 'aerolab-home' ? '/images/projects/aerolab-title-background.png' : project.id === 'gig-flyers' ? '/images/projects/gig-flyers/title-background-retro.png' : generatedProjectBackgrounds[project.id]}>
+        <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-2 md:mb-4">{project.localizedTitle?.[currentLocale] ?? project.title}</h1>
         {project.tagline && (
           <p className="text-xl sm:text-2xl md:text-3xl italic font-serif text-zinc-800 tracking-tight mb-6">
             {project.tagline[currentLocale]}
           </p>
         )}
-        <p className="text-lg md:text-xl text-zinc-600 md:max-w-[720px] md:mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-zinc-600 md:max-w-[720px] md:mx-auto leading-relaxed">
           {project.id === 'poap-moments-redesign' && currentLocale === 'en' && project.heroDescription ? (
             <>{project.heroDescription.en.split('through ')[0]}through<span className="md:hidden"> </span><br className="hidden md:block" />{project.heroDescription.en.split('through ')[1]}</>
           ) : project.heroDescription?.[currentLocale] ?? project.description[currentLocale]}

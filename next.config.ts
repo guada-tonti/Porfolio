@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/*/resume/pdf': ['./src/lib/resume-pdf/fonts/*.ttf', './src/lib/resume-pdf/assets/*.jpg'],
   },
-  allowedDevOrigins: ['192.168.1.5'],
+  allowedDevOrigins: ['192.168.1.4', '192.168.1.5'],
   experimental: {
     instantInsights: { validationLevel: 'manual-warning' },
   },

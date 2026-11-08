@@ -1,9 +1,9 @@
 'use client';
 
 import './Header.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { Locale } from '@/data/types';
 import { dictionaries } from '@/data/content';
@@ -17,6 +17,21 @@ export function Header({ currentLocale }: HeaderProps) {
   const pathname = usePathname();
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
+  const mobileMenu = useRef<HTMLDetailsElement>(null);
+  const closeMenu = () => {
+    mobileMenu.current?.removeAttribute('open');
+    if (window.location.hash === '#mobile-navigation') {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  };
+  useEffect(() => {
+    if (window.location.hash === '#mobile-navigation' || sessionStorage.getItem('portfolio-mobile-menu-language') === pathname) {
+      mobileMenu.current?.setAttribute('open', '');
+      sessionStorage.removeItem('portfolio-mobile-menu-language');
+    } else {
+      closeMenu();
+    }
+  }, [pathname]);
 
   useEffect(() => {
     const updateScrolled = () => setIsScrolled(previous => previous ? window.scrollY > 16 : window.scrollY > 48);
@@ -32,6 +47,13 @@ export function Header({ currentLocale }: HeaderProps) {
     const measure = () => {
       frame = null;
       document.documentElement.style.setProperty('--site-header-bottom', `${surface.getBoundingClientRect().bottom}px`);
+      const logo = surface.querySelector<HTMLElement>('.site-header-logo');
+      if (logo) {
+        const bounds = logo.getBoundingClientRect();
+        document.documentElement.style.setProperty('--site-header-logo-left', `${bounds.left}px`);
+        document.documentElement.style.setProperty('--site-header-logo-top', `${bounds.top}px`);
+        document.documentElement.style.setProperty('--site-header-logo-height', `${bounds.height}px`);
+      }
     };
     const schedule = () => {
       if (frame === null) frame = requestAnimationFrame(measure);
@@ -48,6 +70,7 @@ export function Header({ currentLocale }: HeaderProps) {
       window.removeEventListener('scroll', schedule);
       window.removeEventListener('resize', schedule);
       document.documentElement.style.removeProperty('--site-header-bottom');
+      ['left', 'top', 'height'].forEach(part => document.documentElement.style.removeProperty(`--site-header-logo-${part}`));
     };
   }, []);
 
@@ -71,6 +94,7 @@ export function Header({ currentLocale }: HeaderProps) {
   ];
 
   return (
+    <>
     <header className="site-header-shell" data-scrolled={isScrolled} data-variant={currentLocale === 'en' ? 'traditional' : 'floating'}>
       <div className="site-header-surface">
       <div className="site-header-inner">
@@ -127,6 +151,7 @@ export function Header({ currentLocale }: HeaderProps) {
             onClick={(event) => {
               if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
               event.preventDefault();
+              closeMenu();
               router.push(getLocalizedPath('en') + window.location.search + window.location.hash);
             }}
             className={`px-1 py-0.5 transition-colors ${
@@ -144,6 +169,7 @@ export function Header({ currentLocale }: HeaderProps) {
             onClick={(event) => {
               if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
               event.preventDefault();
+              closeMenu();
               router.push(getLocalizedPath('es') + window.location.search + window.location.hash);
             }}
             className={`px-1 py-0.5 transition-colors ${
@@ -155,33 +181,58 @@ export function Header({ currentLocale }: HeaderProps) {
           >
             ES
           </Link>
+          <span className="md:hidden ml-3 h-10 w-10 shrink-0" aria-hidden="true" />
         </div>
       </div>
 
-      {/* Mobile Navigation bar */}
-      <nav
-        aria-label="Mobile Navigation"
-        className="flex md:hidden items-center justify-center gap-3 sm:gap-4 text-[10px] font-medium tracking-wider text-zinc-700 mt-4 pt-3 -mx-6 px-6 border-t border-zinc-100 overflow-x-auto"
-      >
-        {navItems.map((item) => {
-          const isActive = pathname ? pathname === item.href || pathname.startsWith(`${item.href}/`) : false;
-          return (
-            <Link
-              key={item.label}
-              href={item.href}
-              className={`whitespace-nowrap py-1 px-1.5 transition-colors ${
-                isActive
-                  ? 'text-black font-semibold border-b-[1.5px] border-black'
-                  : 'text-zinc-500 hover:text-black'
-              }`}
-            >
-              {currentLocale === 'es' && item.href === `/${currentLocale}/work` ? 'TRABAJOS' : item.label}
-            </Link>
-          );
-        })}
-      </nav>
+
       </div>
       </div>
     </header>
+    <details ref={mobileMenu} className="site-mobile-menu group/mobile md:hidden" onKeyDown={event => { if (event.key === 'Escape') closeMenu(); }}>
+      <summary aria-label={currentLocale === 'es' ? 'Abrir o cerrar menú' : 'Open or close menu'} className="site-mobile-menu-toggle list-none flex h-10 w-10 items-center justify-center rounded-sm text-zinc-800 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2">
+        <Menu className="h-5 w-5 group-open/mobile:hidden" strokeWidth={1.5} aria-hidden="true" />
+        <X className="hidden h-5 w-5 group-open/mobile:block" strokeWidth={1.5} aria-hidden="true" />
+      </summary>
+    </details>
+      <div id="mobile-navigation" className="site-mobile-menu-overlay fixed inset-0 z-[100] flex justify-end bg-black/35 text-zinc-950 pointer-events-auto" onClick={event => { if (event.target === event.currentTarget) closeMenu(); }}>
+        <div className="h-full w-full overflow-y-auto bg-white flex flex-col px-7 py-6 sm:px-10" onClick={event => event.stopPropagation()}>
+          <div className="flex items-center justify-between gap-6">
+            <Link href={`/${currentLocale}`} onClick={() => { if (pathname === `/${currentLocale}`) closeMenu(); }} aria-label="Guada Tonti Homepage" className="site-mobile-menu-brand rounded focus-visible:outline-2 focus-visible:outline-offset-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt="Guada Tonti" className="site-mobile-menu-logo w-auto object-contain" />
+            </Link>
+            <a href="#" aria-label={currentLocale === 'es' ? 'Cerrar menú' : 'Close menu'} onClick={event => { event.preventDefault(); closeMenu(); }} className="site-mobile-menu-close flex h-10 w-10 items-center justify-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2">
+              <X className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
+            </a>
+          </div>
+          <nav aria-label="Mobile Navigation" className="flex flex-1 flex-col items-center justify-center gap-6 py-12 sm:gap-9">
+            {[{ label: 'Home', href: `/${currentLocale}` }, ...navItems].map((item, index) => {
+              const active = pathname === item.href || (index > 0 && pathname?.startsWith(`${item.href}/`));
+              const labels = currentLocale === 'es' ? ['Home', 'Trabajos', 'Curriculum', 'Sobre mí', 'Contacto'] : ['Home', 'Work & Projects', 'Resume', 'About', 'Contact'];
+              return <Link key={item.href} href={item.href} prefetch={true} onClick={() => { if (pathname === item.href) closeMenu(); }} aria-current={active ? 'page' : undefined}
+                className={`relative flex items-baseline justify-center py-2 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 ${active ? 'text-zinc-950' : 'text-zinc-500 hover:text-zinc-950'}`}>
+                <span className="absolute right-full mr-5 text-sm font-mono text-zinc-300" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <span className={`text-[clamp(24px,6.5vw,36px)] leading-tight tracking-tight ${active ? 'underline underline-offset-8 decoration-1' : ''}`}>{labels[index]}</span>
+              </Link>;
+            })}
+          </nav>
+          <div className="pb-6 text-center">
+            <p className="text-[10px] font-mono tracking-wider text-zinc-400 uppercase mb-2">{currentLocale === 'es' ? 'Idioma' : 'Language'}</p>
+          <div className="flex items-center justify-center gap-4 text-xs font-medium" aria-label={currentLocale === 'es' ? 'Idioma' : 'Language'}>
+            {(['en', 'es'] as const).map((lang, index) => <React.Fragment key={lang}>
+              {index > 0 && <span className="text-zinc-300" aria-hidden="true">/</span>}
+              <Link href={`${getLocalizedPath(lang)}#mobile-navigation`} scroll={false} onClick={event => {
+              if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+              event.preventDefault();
+              if (lang === currentLocale) return;
+              sessionStorage.setItem('portfolio-mobile-menu-language', getLocalizedPath(lang));
+              router.push(getLocalizedPath(lang) + window.location.search + '#mobile-navigation', { scroll: false });
+            }} className={`py-2 focus-visible:outline-2 focus-visible:outline-offset-4 ${lang === currentLocale ? 'text-black underline underline-offset-8' : 'text-zinc-400'}`}>{lang === 'en' ? 'ENGLISH' : 'ESPAÑOL'}</Link></React.Fragment>)}
+          </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
