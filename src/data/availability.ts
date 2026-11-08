@@ -1,8 +1,8 @@
 // Edit weeklyAvailability to manage your schedule. No backend is required.
 // Keys are real ISO dates (YYYY-MM-DD): always the MONDAY starting that week.
-// Work weeks run Monday–Friday and are never split or duplicated.
+// Work weeks run Monday-Friday and are never split or duplicated.
 // Each week belongs to the month containing its Wednesday (most working days).
-// Its full Monday–Friday range and Monday-based configuration key are preserved.
+// Its full Monday-Friday range and Monday-based configuration key are preserved.
 // Missing entries mean "To be confirmed",
 // never "Available". Months three or more months ahead are closed unless explicitly opened below.
 export type AvailabilityStatus = 'available' | 'fulltime' | 'limited' | 'unavailable';
@@ -19,7 +19,7 @@ export const weeklyAvailability: Record<string, AvailabilityStatus> = {
   '2026-11-09': 'unavailable',
   '2026-11-16': 'unavailable',
   '2026-11-23': 'available',
-  '2026-11-30': 'available', // Same state for Nov 30 and Dec 1–4.
+  '2026-11-30': 'available', // Same state for Nov 30 and Dec 1-4.
   '2026-12-07': 'available',
   '2026-12-14': 'limited',
   '2026-12-21': 'unavailable',

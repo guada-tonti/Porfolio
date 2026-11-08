@@ -1,10 +1,12 @@
 import { MetadataRoute } from 'next';
+import { allCatalogProjects, draftProjectSlugs } from '@/data/catalog';
 import { projects } from '@/data/content';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://guadatonti.com';
   const locales = ['en', 'es'];
-  const routes = ['', '/about', '/resume', '/contact', '/work', '/work/remera-chenziqiang-argentina', '/work/health-clarity', '/work/philatelist', '/work/poap-design-system', '/work/poap-moments-redesign'];
+  const routes = ['', '/about', '/resume', '/contact', '/work'];
+  const projectSlugs = new Set([...projects.filter(project => !draftProjectSlugs.has(project.slug)).map(project => project.slug), ...allCatalogProjects.flatMap(project => project.slug ? [project.slug] : [])]);
 
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
@@ -18,9 +20,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     });
 
-    projects.forEach((proj) => {
+    projectSlugs.forEach((slug) => {
       sitemapEntries.push({
-        url: `${baseUrl}/${locale}/work/${proj.slug}`,
+        url: `${baseUrl}/${locale}/work/${slug}`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.7,

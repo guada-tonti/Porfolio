@@ -1,7 +1,9 @@
+import { importedBehanceProjects } from './behanceProjects';
 import type { DisciplineId, ProjectTypeId, OriginId } from './tags';
 
 export interface CatalogProject {
   id: string;
+  draft?: boolean;
   title: string;
   localizedTitle?: { en: string; es: string };
   tagline?: { en: string; es: string };
@@ -29,11 +31,11 @@ export interface CatalogProject {
   images?: { src: string; width: number; height: number; alt: { en: string; es: string } }[];
 }
 
-export const allCatalogProjects: CatalogProject[] = [
+const catalogProjects: CatalogProject[] = [
   {
     id: 'aerolab-home', slug: 'aerolab-home', behanceGallery: 'aerolab-home',
     tools: [{ id: 'sketch', name: 'Sketch' }],
-    title: 'UX/UI — Aerolab’s home', year: '2018',
+    title: 'UX/UI - Aerolab’s home', year: '2018',
     description: { en: 'Aerolab website redesign.', es: 'Rediseño del sitio web de Aerolab.' },
     overview: { en: 'Aerolab is a digital agency that designs and develops products for web and mobile. This project focused on redesigning its homepage in 2018, working alongside the marketing team to clarify the agency’s story and give its key projects a more prominent place.', es: 'Aerolab es una agencia digital que diseña y desarrolla productos para web y mobile. Este proyecto abordó el rediseño de su homepage en 2018, en colaboración con el equipo de marketing, para contar mejor la propuesta de la agencia y dar más protagonismo a sus proyectos principales.' },
     caseStudy: {
@@ -51,7 +53,7 @@ export const allCatalogProjects: CatalogProject[] = [
   {
     id: 'poaps-design-web3-communities', slug: 'poaps-design-web3-communities', behanceGallery: 'poaps-design-web3-communities',
     tools: [{ id: 'illustrator', name: 'Illustrator' }],
-    title: 'POAPs Design for Web3 Communities', year: '2020–2021',
+    title: 'POAPs Design for Web3 Communities', year: '2020-2021',
     description: { en: 'Design of digital collectible badges for POAP and Web3 communities.', es: 'Diseño de insignias digitales coleccionables para POAP y comunidades Web3.' },
     overview: {
       en: "Design of badges for POAP inc. during 2020 and 2021.\n\nWhat is a POAP?\nPOAPs are digital mementos, minted in celebration of life's remarkable moments. These badges are Non Fungible Tokens ( NFT ).\nEach POAP is a gift from an issuer to collectors, in celebration of a special shared memory. By minting these memories to the blockchain, collectors build a rich tapestry of tokenized experiences which unlock a world of possibilities.",
@@ -230,6 +232,7 @@ export const allCatalogProjects: CatalogProject[] = [
   },
   {
     id: 'family-photos',
+    draft: true,
     slug: 'family-photos',
     title: 'Family Photos',
     year: '2025',
@@ -271,6 +274,7 @@ export const allCatalogProjects: CatalogProject[] = [
   },
   {
     id: 'arcadeta',
+    draft: true,
     title: 'Arcadeta',
     year: '2025',
     description: {
@@ -311,6 +315,7 @@ export const allCatalogProjects: CatalogProject[] = [
   },
   {
     id: 'ecosistema-colaborativo',
+    draft: true,
     tools: [{ id: 'antigravity', name: 'Antigravity' }],
     title: 'Ecosistema colaborativo',
     year: '2025',
@@ -331,6 +336,7 @@ export const allCatalogProjects: CatalogProject[] = [
   },
   {
     id: 'flete-express',
+    draft: true,
     tools: [{ id: 'p5js', name: 'p5.js' }],
     title: 'Flete Express',
     year: '2025',
@@ -377,7 +383,13 @@ export const allCatalogProjects: CatalogProject[] = [
     legacyMetadata: { categories: [], type: 'Side Project', tags: ['B.B. Queen', 'Music', 'Concerts', 'Flyers'] },
     thumbnailBg: 'bg-[#26112e]',
   },
+  ...importedBehanceProjects,
 ];
+
+// Drafts retain their content and assets; remove draft: true to publish again.
+export const draftCatalogProjects = catalogProjects.filter(project => project.draft);
+export const draftProjectSlugs = new Set(draftCatalogProjects.flatMap(project => project.slug ? [project.slug] : []));
+export const allCatalogProjects = catalogProjects.filter(project => !project.draft);
 
 const priorityProjectIds = ['poap-moments-redesign', 'poap-design-system', 'guitarravisual', 'remera-chenziqiang-argentina', 'goal-scream-challenge'];
 export const orderedCatalogProjects = [

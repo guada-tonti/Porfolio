@@ -15,7 +15,7 @@ interface ResumePageProps {
 export async function generateMetadata({ params }: ResumePageProps): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'es' ? 'Curriculum — Guada Tonti' : 'Resume — Guada Tonti',
+    title: locale === 'es' ? 'Curriculum - Guada Tonti' : 'Resume - Guada Tonti',
     description: 'Product Designer with 12+ years of professional design experience. Product Design, Visual Systems & Creative Technology.',
   };
 }
@@ -115,9 +115,9 @@ export default async function ResumePage({ params }: ResumePageProps) {
                 {dict.resumePage.languagesTitle}
               </h2>
               <ul className="space-y-2 text-sm text-zinc-700 leading-relaxed">
-                <li><span className="font-semibold">{dict.resumePage.spanishLanguage}</span> — {dict.resumePage.nativeLevel}</li>
+                <li><span className="font-semibold">{dict.resumePage.spanishLanguage}</span> - {dict.resumePage.nativeLevel}</li>
                 <li>
-                  <span className="font-semibold">{dict.resumePage.englishLanguage}</span> — <span title={dict.resumePage.englishLevelContext}>{dict.resumePage.englishLevel}</span> ·{' '}
+                  <span className="font-semibold">{dict.resumePage.englishLanguage}</span> - <span title={dict.resumePage.englishLevelContext}>{dict.resumePage.englishLevel}</span> ·{' '}
                   <a href={efSetCertificateUrl} target="_blank" rel="noopener noreferrer"
                     aria-describedby="english-level-context"
                     className="inline-flex items-center gap-1 whitespace-nowrap underline underline-offset-4 decoration-zinc-300 hover:text-zinc-950 hover:decoration-zinc-600 transition-colors motion-reduce:transition-none rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-600">

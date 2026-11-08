@@ -19,7 +19,7 @@ export function CatalogProjectDetail({ project, currentLocale }: { project: Cata
         <ArrowLeft className="w-3.5 h-3.5" />
         BACK
       </Link>
-      <ProjectHero backgroundSrc={project.id === 'poap-moments-redesign' ? '/images/projects/poap-moments-title-background-26.png' : project.id === 'philatelist' ? '/images/projects/philatelist-title-background-lines.png' : project.id === 'poap-design-system' ? '/images/projects/poap-design-system-title-background.png' : undefined}>
+      <ProjectHero backgroundSrc={(project.id === 'poap-moments-redesign' || project.id === 'poaps-design-web3-communities') ? '/images/projects/poap-moments-title-background-26.png' : project.id === 'philatelist' ? '/images/projects/philatelist-title-background-lines.png' : project.id === 'poap-design-system' ? '/images/projects/poap-design-system-title-background.png' : project.id === 'aerolab-home' ? '/images/projects/aerolab-title-background.png' : project.id === 'gig-flyers' ? '/images/projects/gig-flyers/title-background-retro.png' : undefined}>
         <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-4">{project.localizedTitle?.[currentLocale] ?? project.title}</h1>
         {project.tagline && (
           <p className="text-xl sm:text-2xl md:text-3xl italic font-serif text-zinc-800 tracking-tight mb-6">
@@ -49,7 +49,7 @@ export function CatalogProjectDetail({ project, currentLocale }: { project: Cata
           <figure className="mb-14">
             <Image src={project.images[0].src} alt={project.images[0].alt[currentLocale]}
               width={project.images[0].width} height={project.images[0].height}
-              sizes="(min-width: 1024px) 928px, 100vw" className="w-full h-auto rounded-xl" preload />
+              sizes="(min-width: 1024px) 928px, 100vw" className={`w-full h-auto rounded-xl ${project.id === 'typography-composition' ? 'border border-zinc-200/80' : ''}`} preload />
           </figure>
         ) : project.id === 'philatelist' ? (
           <figure className="mb-14">
@@ -66,6 +66,13 @@ export function CatalogProjectDetail({ project, currentLocale }: { project: Cata
       <ProjectCaseContent tools={project.tools} locale={currentLocale} about={project.overview?.[currentLocale] ?? project.description[currentLocale]}
         role={project.caseStudy?.role?.[currentLocale]} overview={project.caseStudy?.summary?.[currentLocale] ?? project.description[currentLocale]}
         challenge={project.caseStudy?.challenge?.[currentLocale]} process={project.caseStudy?.process?.[currentLocale]} results={project.caseStudy?.results?.[currentLocale]}
+        afterResults={project.id === 'poap-moments-redesign' && (
+          <figure>
+            <Image src="/images/projects/moments-team-feedback-v2.png" width={3802} height={1446}
+              alt={isEs ? 'Reconocimiento del equipo al trabajo de Guada en POAP Moments, destacando la calidad visual y la coherencia estructural del producto.' : 'Team recognition of Guada’s work on POAP Moments, highlighting the product’s visual quality and structural coherence.'}
+              sizes="(min-width: 1024px) 580px, (min-width: 768px) 60vw, 100vw" className="w-full h-auto" />
+          </figure>
+        )}
         links={project.sourceUrl && <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-6 text-sm font-medium underline underline-offset-4">{isEs ? 'Ver el proyecto en Behance' : 'View the project on Behance'}</a>} />
       {project.behanceGallery ? <BehanceProjectContent project={project} currentLocale={currentLocale} /> : <>
       {project.images && project.images.length > 1 ? (

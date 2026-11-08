@@ -5,7 +5,7 @@ export function SaturnOVThumbnail() {
   return (
     <Image
       src="/images/projects/saturno-v-portada.png"
-      alt="Saturn V — Apollo 11"
+      alt="Saturn V - Apollo 11"
       width={2992}
       height={1632}
       sizes="(min-width: 1024px) 928px, 100vw"
@@ -18,7 +18,7 @@ export function GuitarraVisualThumbnail() {
   return (
     <Image
       src="/images/projects/guitarravisual-portada-blues.png"
-      alt="GuitarraVisual — Improvisar Blues"
+      alt="GuitarraVisual - Improvisar Blues"
       width={3014}
       height={1634}
       sizes="(min-width: 1024px) 928px, 100vw"
@@ -80,7 +80,7 @@ export function FamilyPhotosThumbnail() {
   return (
     <div className="w-full h-full bg-[#f8f6f0] p-3 flex flex-col relative overflow-hidden font-serif">
       {/* Background vintage texture subtle */}
-      <div className="text-[9px] font-sans text-zinc-400 tracking-wider uppercase mb-1">Archivo Familiar · 1952–2024</div>
+      <div className="text-[9px] font-sans text-zinc-400 tracking-wider uppercase mb-1">Archivo Familiar · 1952-2024</div>
       
       {/* Family Tree Nodes diagram */}
       <div className="flex-1 relative flex items-center justify-between px-2">

@@ -9,7 +9,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { Locale } from '@/data/types';
 import { projects, dictionaries } from '@/data/content';
-import { allCatalogProjects } from '@/data/catalog';
+import { allCatalogProjects, draftProjectSlugs } from '@/data/catalog';
 import { CatalogProjectDetail } from '@/components/selected-work/CatalogProjectDetail';
 import {
   SaturnOVThumbnail,
@@ -25,7 +25,7 @@ interface ProjectPageProps {
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
   ['en', 'es'].forEach((locale) => {
-    const detailSlugs = new Set([...projects.map(project => project.slug), ...allCatalogProjects.filter(project => project.overview).map(project => project.slug!)]);
+    const detailSlugs = new Set([...projects.filter(project => !draftProjectSlugs.has(project.slug)).map(project => project.slug), ...allCatalogProjects.filter(project => project.overview).map(project => project.slug!)]);
     detailSlugs.forEach((slug) => {
       params.push({ locale, slug });
     });
@@ -35,13 +35,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { locale, slug } = await params;
+  if (draftProjectSlugs.has(slug)) return { title: 'Project Not Found', robots: { index: false, follow: false } };
   const project = projects.find((p) => p.slug === slug) ?? allCatalogProjects.find(project => project.slug === slug && project.overview);
   if (!project) return { title: 'Project Not Found' };
 
   const currentLocale = locale === 'es' ? 'es' : 'en';
 
   return {
-    title: `${project.title} — Guada Tonti`,
+    title: `${project.title} - Guada Tonti`,
     description: 'heroDescription' in project && project.heroDescription
       ? project.heroDescription[currentLocale]
       : project.overview?.[currentLocale],
@@ -54,6 +55,8 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   if (locale !== 'en' && locale !== 'es') {
     notFound();
   }
+
+  if (draftProjectSlugs.has(slug)) notFound();
 
   const currentLocale = locale as Locale;
   const dict = dictionaries[currentLocale];
@@ -97,7 +100,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       </Link>
 
       {/* Header Info */}
-      <ProjectHero backgroundSrc={project.slug === 'guitarravisual' ? '/images/projects/guitarravisual-title-background.png' : undefined}>
+      <ProjectHero backgroundSrc={project.slug === 'guitarravisual' ? '/images/projects/guitarravisual-title-background.png' : project.slug === 'saturno-v' ? '/images/projects/saturno-v-title-background.png' : undefined}>
         <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-4">
           {project.title}
         </h1>

@@ -1,0 +1,47 @@
+{
+  "multi-signature-wallet": {
+    "src": "/images/projects/behance/multi-signature-wallet/cover.webp",
+    "width": 808,
+    "height": 632
+  },
+  "bairesdao": {
+    "src": "/images/projects/behance/bairesdao/cover.webp",
+    "width": 808,
+    "height": 632
+  },
+  "gitpoap": {
+    "src": "/images/projects/behance/gitpoap/cover.webp",
+    "width": 808,
+    "height": 632
+  },
+  "bioy-casares": {
+    "src": "/images/projects/behance/bioy-casares/cover.webp",
+    "width": 404,
+    "height": 316
+  },
+  "holobox": {
+    "src": "/images/projects/behance/holobox/cover.webp",
+    "width": 808,
+    "height": 632
+  },
+  "typography-composition": {
+    "src": "/images/projects/behance/typography-composition/cover.webp",
+    "width": 808,
+    "height": 632
+  },
+  "trivia-game": {
+    "src": "/images/projects/behance/trivia-game/cover.webp",
+    "width": 808,
+    "height": 632
+  },
+  "law-audiobooks": {
+    "src": "/images/projects/behance/law-audiobooks/cover.webp",
+    "width": 808,
+    "height": 632
+  },
+  "dubai-storage": {
+    "src": "/images/projects/behance/dubai-storage/cover.webp",
+    "width": 808,
+    "height": 632
+  }
+}

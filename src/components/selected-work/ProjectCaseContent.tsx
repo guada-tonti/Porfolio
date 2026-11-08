@@ -3,9 +3,9 @@ import type { ReactNode } from 'react';
 import type { Locale } from '@/data/types';
 import { dictionaries } from '@/data/content';
 
-export function ProjectCaseContent({ locale, about, role, overview, challenge, process, results, links, tools = [] }: {
+export function ProjectCaseContent({ locale, about, role, overview, challenge, process, results, links, afterResults, tools = [] }: {
   locale: Locale; about: string; role?: string; overview?: string; challenge?: string;
-  process?: string; results?: string; links?: ReactNode; tools?: { id: string; name: string }[];
+  process?: string; results?: string; links?: ReactNode; afterResults?: ReactNode; tools?: { id: string; name: string }[];
 }) {
   const labels = dictionaries[locale].projectDetail;
   const pending = locale === 'es' ? 'Contenido por completar.' : 'Content to be added.';
@@ -16,7 +16,7 @@ export function ProjectCaseContent({ locale, about, role, overview, challenge, p
     </p>
   ));
   return <div className="mb-14">
-    <section className="border-t border-zinc-200 pt-8 mb-10">
+    <section className="pt-8 mb-10">
       <h2 className={heading}>{locale === 'es' ? 'Sobre el proyecto' : 'About the project'}</h2>
       <div className="space-y-6">{paragraphs(about)}</div>
     </section>
@@ -45,6 +45,7 @@ export function ProjectCaseContent({ locale, about, role, overview, challenge, p
             <div className="space-y-6">{text ? paragraphs(text) : <p className="text-sm text-zinc-400">{pending}</p>}</div>
           </section>
         ))}
+        {afterResults}
       </div>
     </div>
   </div>;

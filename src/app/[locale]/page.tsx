@@ -19,13 +19,13 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
 
   return {
     title: isEs
-      ? 'Guada Tonti — Product Designer & Creative Technologist'
-      : 'Guada Tonti — Product Designer & Creative Technologist',
+      ? 'Guada Tonti - Product Designer & Creative Technologist'
+      : 'Guada Tonti - Product Designer & Creative Technologist',
     description: isEs
       ? '12 años diseñando por profesión. Y toda una vida creando. Productos digitales, diseño visual, experiencias interactivas, música, juegos y lo que se nos ocurra.'
       : '12 years designing professionally. And a lifetime of creating. Digital products, visual design, and interactive experiences.',
     openGraph: {
-      title: 'Guada Tonti — Product Designer & Creative Technologist',
+      title: 'Guada Tonti - Product Designer & Creative Technologist',
       description: isEs
         ? '12 años diseñando por profesión. Y toda una vida creando.'
         : '12 years designing professionally. And a lifetime of creating.',

@@ -132,13 +132,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
   {
     "role": "Independent Design & Creative Exploration",
     "company": "Independent",
-    "period": "Jul 2026 — Present",
+    "period": "Jul 2026 - Present",
     "description": "Working independently while exploring creative development, AI and interactive experiences through continued learning and personal projects."
   },
   {
     "role": "Senior UX/UI Designer",
-    "company": "POAP — The Proof of Attendance Protocol",
-    "period": "Jan 2021 – Jun 2026",
+    "company": "POAP - The Proof of Attendance Protocol",
+    "period": "Jan 2021 - Jun 2026",
     "progression": "Generalist Designer → UX/UI Designer → Senior UX/UI Designer",
   "pdfDescription": "Joined as POAP’s first full-time designer, supporting its growth from five people to an international team of 70+. Evolved from generalist design to product design and design system.",
     "description": "Joined POAP as its first full-time designer, supporting its growth from a five-person startup into an international team of 70+. My role evolved alongside the company, from a multidisciplinary generalist handling a wide range of design needs to a Senior UX/UI Designer focused on product design and design system."
@@ -146,43 +146,43 @@ export const dictionaries: Record<Locale, Dictionary> = {
   {
     "role": "Mid-level UX/UI Designer",
     "company": "Xivis",
-    "period": "Dec 2019 — Jan 2021",
+    "period": "Dec 2019 - Jan 2021",
     "description": "Digital product design at an agency specializing in Web3."
   },
   {
     "role": "Mid-level UX/UI Designer",
     "company": "Mobillers",
-    "period": "Oct 2018 — Dec 2019",
+    "period": "Oct 2018 - Dec 2019",
     "description": "UX/UI for gaming and augmented reality apps, from user flows and prototypes to testing, design systems and developer collaboration."
   },
   {
     "role": "Co-Founder & Designer",
     "company": "Agencia Bondiola",
-    "period": "Jun 2016 — Nov 2018",
+    "period": "Jun 2016 - Nov 2018",
     "description": "Co-founded a digital agency for social impact initiatives, combining branding, web and graphic design, photography, video and social campaigns."
   },
   {
     "role": "Jr. UX/UI Designer",
     "company": "Aerolab Digital",
-    "period": "Jun 2017 — Mar 2018",
+    "period": "Jun 2017 - Mar 2018",
     "description": "UX/UI internship contributing to Banco Galicia and Ualá, alongside redesigns of Aerolab’s homepage and blog."
   },
   {
     "role": "Jr. UX/UI Designer",
     "company": "Tril Corporation",
-    "period": "Nov 2016 — Apr 2017",
+    "period": "Nov 2016 - Apr 2017",
     "description": "UX/UI internship on a civic participation platform, Mercado Libre app prototypes and iOS stickers."
   },
   {
     "role": "Teaching Assistant",
-    "company": "FADU — Universidad de Buenos Aires",
-    "period": "Mar 2016 — Feb 2017",
+    "company": "FADU - Universidad de Buenos Aires",
+    "period": "Mar 2016 - Feb 2017",
     "description": "Teaching assistant for Medios Expresivos 2, Cátedra La Ferla."
   },
   {
     "role": "Jr. Designer",
     "company": "Banco Hipotecario",
-    "period": "Apr 2014 — Jan 2015",
+    "period": "Apr 2014 - Jan 2015",
     "description": "Marketing and advertising internship supporting the bank’s rebranding through digital and print communications, web styling and promotional materials."
   }
 ],
@@ -376,14 +376,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
       {
         "title": "English Studies",
         "institution": "Liceo Cultural Británico",
-        "year": "2007–2011"
+        "year": "2007-2011"
       }
     ]
   }
 },
       educationCourses: [
-        { title: 'AI for Multimedia Production', institution: 'Image Campus', period: 'Aug 2026 — Nov 2026', description: 'Specialization in AI-assisted development and advanced generative AI workflows for images, video, and interactive and immersive experiences.' },
-        { title: 'User Experience & Research Course', institution: 'Digital House', period: 'Jan 2019 — Jul 2019', description: '140 hours of in-person training in research and UX methodologies: Design Thinking, personas, user interviews, journey mapping, card sorting, surveys, heuristic evaluation, user testing and analytics.' },
+        { title: 'AI for Multimedia Production', institution: 'Image Campus', period: 'Aug 2026 - Nov 2026', description: 'Specialization in AI-assisted development and advanced generative AI workflows for images, video, and interactive and immersive experiences.' },
+        { title: 'User Experience & Research Course', institution: 'Digital House', period: 'Jan 2019 - Jul 2019', description: '140 hours of in-person training in research and UX methodologies: Design Thinking, personas, user interviews, journey mapping, card sorting, surveys, heuristic evaluation, user testing and analytics.' },
       ],
     },
     otherThingsPage: {
@@ -533,13 +533,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
   {
     "role": "Diseño independiente y exploración creativa",
     "company": "Independiente",
-    "period": "Jul 2026 — Actualidad",
+    "period": "Jul 2026 - Actualidad",
     "description": "Trabajo de forma independiente mientras exploro desarrollo creativo, IA y experiencias interactivas a través de formación continua y proyectos propios."
   },
   {
     "role": "Senior UX/UI Designer",
-    "company": "POAP — The Proof of Attendance Protocol",
-    "period": "Ene 2021 – Jun 2026",
+    "company": "POAP - The Proof of Attendance Protocol",
+    "period": "Ene 2021 - Jun 2026",
     "progression": "Generalist Designer → UX/UI Designer → Senior UX/UI Designer",
   "pdfDescription": "Primera diseñadora a tiempo completo de POAP, acompañando su crecimiento de cinco personas a un equipo internacional de más de 70. Evolución del diseño generalista al diseño de producto y sistema de diseño.",
     "description": "Me incorporé a POAP como su primera diseñadora a tiempo completo, acompañando su crecimiento desde una startup de cinco personas hasta un equipo internacional de más de 70. Mi rol evolucionó junto con la empresa: comencé como diseñadora generalista, cubriendo diversas necesidades de diseño, y progresivamente me especialicé en diseño de producto y sistema de diseño."
@@ -547,43 +547,43 @@ export const dictionaries: Record<Locale, Dictionary> = {
   {
     "role": "Mid-level UX/UI Designer",
     "company": "Xivis",
-    "period": "Dic 2019 — Ene 2021",
+    "period": "Dic 2019 - Ene 2021",
     "description": "Diseño de productos digitales en una agencia especializada en Web3."
   },
   {
     "role": "Mid-level UX/UI Designer",
     "company": "Mobillers",
-    "period": "Oct 2018 — Dic 2019",
+    "period": "Oct 2018 - Dic 2019",
     "description": "Diseño UX/UI para apps de gaming y realidad aumentada: flujos, prototipos, pruebas con usuarios, sistemas de diseño y colaboración con desarrollo."
   },
   {
     "role": "Cofundadora y diseñadora",
     "company": "Agencia Bondiola",
-    "period": "Jun 2016 — Nov 2018",
+    "period": "Jun 2016 - Nov 2018",
     "description": "Cofundé una agencia digital para iniciativas de impacto social, combinando branding, diseño gráfico y web, fotografía, video y campañas en redes."
   },
   {
     "role": "Jr. UX/UI Designer",
     "company": "Aerolab Digital",
-    "period": "Jun 2017 — Mar 2018",
+    "period": "Jun 2017 - Mar 2018",
     "description": "Pasantía UX/UI con participación en proyectos para Banco Galicia y Ualá, y en el rediseño de la home y el blog de Aerolab."
   },
   {
     "role": "Jr. UX/UI Designer",
     "company": "Tril Corporation",
-    "period": "Nov 2016 — Abr 2017",
+    "period": "Nov 2016 - Abr 2017",
     "description": "Pasantía UX/UI en una plataforma de participación ciudadana, prototipos para la app de Mercado Libre y stickers para iOS."
   },
   {
     "role": "Ayudante de cátedra",
-    "company": "FADU — Universidad de Buenos Aires",
-    "period": "Mar 2016 — Feb 2017",
+    "company": "FADU - Universidad de Buenos Aires",
+    "period": "Mar 2016 - Feb 2017",
     "description": "Ayudante de cátedra en Medios Expresivos 2, Cátedra La Ferla."
   },
   {
     "role": "Jr. Designer",
     "company": "Banco Hipotecario",
-    "period": "Abr 2014 — Ene 2015",
+    "period": "Abr 2014 - Ene 2015",
     "description": "Pasantía en Marketing y Publicidad, acompañando el cambio de imagen del banco con comunicación digital e impresa, estilos web y piezas promocionales."
   }
 ],
@@ -777,14 +777,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
       {
         "title": "Estudios de inglés",
         "institution": "Liceo Cultural Británico",
-        "year": "2007–2011"
+        "year": "2007-2011"
       }
     ]
   }
 },
       educationCourses: [
-        { title: 'IA para producción multimedia', institution: 'Image Campus', period: 'Ago 2026 — Nov 2026', description: 'Especialización en Desarrollo asistido por IA y workflows avanzados de IA generativa para imágenes, video y experiencias interactivas e inmersivas.' },
-        { title: 'Curso de Experiencia de Usuario e Investigación', institution: 'Digital House', period: 'Ene 2019 — Jul 2019', description: '140 horas de formación presencial en metodologías de research y UX: Design Thinking, personas, entrevistas a usuarios, mapas de recorrido, card sorting, encuestas, evaluación heurística, pruebas de usabilidad y analítica.' },
+        { title: 'IA para producción multimedia', institution: 'Image Campus', period: 'Ago 2026 - Nov 2026', description: 'Especialización en Desarrollo asistido por IA y workflows avanzados de IA generativa para imágenes, video y experiencias interactivas e inmersivas.' },
+        { title: 'Curso de Experiencia de Usuario e Investigación', institution: 'Digital House', period: 'Ene 2019 - Jul 2019', description: '140 horas de formación presencial en metodologías de research y UX: Design Thinking, personas, entrevistas a usuarios, mapas de recorrido, card sorting, encuestas, evaluación heurística, pruebas de usabilidad y analítica.' },
       ],
     },
     otherThingsPage: {

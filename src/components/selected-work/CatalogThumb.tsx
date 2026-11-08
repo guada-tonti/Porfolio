@@ -2,17 +2,18 @@
 
 import React from 'react';
 import behanceCovers from '@/data/behanceCovers.json';
+import importedCovers from '@/data/behanceImportedCovers.json';
 import Image from 'next/image';
 import { SaturnOVThumbnail, GuitarraVisualThumbnail } from './ProjectThumbnails';
 
 export function CatalogThumb({ id, title }: { id: string; title: string }) {
-  const cover = (behanceCovers as Record<string, { src: string; width: number; height: number }>)[id];
+  const cover = ({ ...behanceCovers, ...importedCovers } as Record<string, { src: string; width: number; height: number }>)[id];
   if (cover) return <Image src={cover.src} alt={title} width={cover.width} height={cover.height} sizes="(min-width: 1280px) 373px, (min-width: 768px) 50vw, 100vw" className="w-full h-full object-cover" />;
   switch (id) {
     case 'gig-flyers':
       return <Image src="/images/projects/gig-flyers/quinto-sueno.png" alt={title} width={1651} height={2184} sizes="(min-width: 1280px) 373px, (min-width: 768px) 50vw, 100vw" className="w-full h-full object-contain bg-[#26112e]" />;
     case 'poap-moments-redesign':
-      return <Image src="/images/projects/poap-moments-portada.png" alt={title} width={1404} height={881} sizes="(min-width: 1280px) 373px, (min-width: 768px) 50vw, 100vw" className="w-full h-full object-contain bg-white" />;
+      return <Image src="/images/projects/poap-moments-portada.png" alt={title} width={1404} height={881} sizes="(min-width: 1280px) 373px, (min-width: 768px) 50vw, 100vw" className="w-full h-full object-cover bg-white" />;
     case 'philatelist':
       return (
         <Image
@@ -101,7 +102,7 @@ export function CatalogThumb({ id, title }: { id: string; title: string }) {
             <div className="w-16 h-18 bg-white rounded shadow-sm border border-amber-950/15 p-1 transform rotate-2 flex flex-col items-center justify-center">
               <div className="text-base">👩‍🦳</div>
               <span className="text-[7px] font-bold text-zinc-800">Ana</span>
-              <span className="text-[6px] text-zinc-400">1950 — 2020</span>
+              <span className="text-[6px] text-zinc-400">1950 - 2020</span>
             </div>
           </div>
         </div>

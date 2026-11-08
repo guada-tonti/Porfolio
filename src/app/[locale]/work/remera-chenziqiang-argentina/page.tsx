@@ -17,7 +17,7 @@ const project = allCatalogProjects.find(project => project.id === 'remera-chenzi
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: `${project.localizedTitle?.[locale === 'es' ? 'es' : 'en'] ?? project.title} — Guada Tonti`,
+    title: `${project.localizedTitle?.[locale === 'es' ? 'es' : 'en'] ?? project.title} - Guada Tonti`,
     description: project.description[locale === 'es' ? 'es' : 'en'],
   };
 }

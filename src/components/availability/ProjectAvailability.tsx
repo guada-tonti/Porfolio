@@ -67,7 +67,7 @@ export function ProjectAvailability({ currentLocale, variant = 'compact' }: { cu
                       {item.weeks.map((week, index) => (
                         <li key={week.id} className="rounded px-2 py-4 text-[#20202B]"
                           style={{ backgroundColor: colors[week.status] }}
-                          aria-label={`${dateLabel(week.start)} – ${dateLabel(week.end)}: ${copy.status[week.status]}`}>
+                          aria-label={`${dateLabel(week.start)} - ${dateLabel(week.end)}: ${copy.status[week.status]}`}>
                           <p className="text-[10px] font-mono font-semibold uppercase mb-1.5">{copy.week} {index + 1}</p>
                           <p className="text-[10px] font-mono font-normal text-zinc-500 mb-2">
                             {weekRange(week.start, week.end)}
@@ -91,7 +91,7 @@ export function ProjectAvailability({ currentLocale, variant = 'compact' }: { cu
                     {item.weeks.map((week, index) => (
                       <li key={week.id} className="flex flex-col items-start gap-1.5 px-2 py-2 rounded-sm text-[10px] text-[#20202B]"
                         style={{ backgroundColor: colors[week.status] }}
-                        aria-label={`${dateLabel(week.start)} – ${dateLabel(week.end)}: ${copy.status[week.status]}`}>
+                        aria-label={`${dateLabel(week.start)} - ${dateLabel(week.end)}: ${copy.status[week.status]}`}>
                         <span className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
                           <span className="text-[10px] font-mono font-semibold uppercase">{copy.week} {index + 1}</span>
                           <span className="whitespace-nowrap">{weekRange(week.start, week.end)}</span>

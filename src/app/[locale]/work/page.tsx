@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: WorkPageProps): Promise<Metad
   const { locale } = await params;
   const isEs = locale === 'es';
   return {
-    title: isEs ? 'Trabajos y Proyectos — Guada Tonti' : 'Work & Projects — Guada Tonti',
+    title: isEs ? 'Trabajos y Proyectos - Guada Tonti' : 'Work & Projects - Guada Tonti',
     description: isEs
       ? 'Proyectos de diseño de producto, diseño gráfico, tecnología creativa, música y experimentos.'
       : 'Selected product design case studies, visual design systems, creative tech, music, and experiments.',

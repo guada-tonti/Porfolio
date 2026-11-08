@@ -12,7 +12,7 @@ interface ContactPageProps {
 export async function generateMetadata({ params }: ContactPageProps): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'es' ? 'Contacto — Guada Tonti' : 'Contact — Guada Tonti',
+    title: locale === 'es' ? 'Contacto - Guada Tonti' : 'Contact - Guada Tonti',
     description: 'Get in touch for design leadership, creative technology consulting, or worldwide freelance projects.',
   };
 }

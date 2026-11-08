@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: AboutPageProps): Promise<Meta
   const { locale } = await params;
   const isEs = locale === 'es';
   return {
-    title: isEs ? 'Sobre Guada Tonti — Trayectoria y Filosofía' : 'About Guada Tonti — Practice & Background',
+    title: isEs ? 'Sobre Guada Tonti - Trayectoria y Filosofía' : 'About Guada Tonti - Practice & Background',
     description: isEs
       ? 'Product Designer, Visual Designer y Creative Technologist con más de 12 años de experiencia profesional en diseño.'
       : 'Product Designer, Visual Designer, and Creative Technologist with 12+ years of professional design experience.',

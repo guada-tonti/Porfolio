@@ -1,11 +1,26 @@
 'use client';
 
 import { useEffect, useRef, type ReactNode } from 'react';
+import { useRouter } from 'next/navigation';
 
-export function FixedProjectNavigation({ children, label, className }: {
-  children: ReactNode; label: string; className: string;
+export function FixedProjectNavigation({ children, label, className, previousHref, nextHref }: {
+  children: ReactNode; label: string; className: string; previousHref: string; nextHref: string;
 }) {
   const ref = useRef<HTMLElement>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.defaultPrevented || event.repeat || event.isComposing || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      const target = event.target;
+      if (target instanceof HTMLElement && (target.isContentEditable || target.closest('input, textarea, select, video, audio, [contenteditable], [role="slider"], [role="spinbutton"], [role="textbox"], [role="combobox"], [role="listbox"], [role="menu"], [role="tablist"], [role="dialog"]'))) return;
+      event.preventDefault();
+      router.push(event.key === 'ArrowRight' ? nextHref : previousHref);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [router, previousHref, nextHref]);
 
   useEffect(() => {
     const nav = ref.current;
