@@ -880,8 +880,8 @@ export const projects: Project[] = [
     slug: 'bigotes',
     title: 'Bigotes',
     subtitle: {
-      en: 'Web app · Pet health · Personal tool',
-      es: 'Web app · Salud de mascotas · Herramienta personal',
+      en: 'Web app · Cat health · Personal tool',
+      es: 'Web app · Salud de gatos · Herramienta personal',
     },
     category: {
       en: 'Product & Health',
@@ -894,22 +894,22 @@ export const projects: Project[] = [
       es: 'Diseño de Producto End-to-End',
     },
     overview: {
-      en: 'A thoughtful pet wellness companion designed to log weight curves, medication reminders, feeding schedules, and veterinary records with warmth and clarity.',
-      es: 'Una aplicación para el bienestar y seguimiento veterinario de mascotas: curvas de peso, vacunas, alimentación y recordatorios médicos con calidez y claridad.',
+      en: 'A thoughtful cat wellness companion designed to log weight curves, medication reminders, feeding schedules, and veterinary records with warmth and clarity.',
+      es: 'Una aplicación para el bienestar y seguimiento veterinario de gatos: curvas de peso, vacunas, alimentación y recordatorios médicos con calidez y claridad.',
     },
     challenge: {
       en: 'Most veterinary tracking tools feel clinical or spreadsheet-heavy, causing users to drop off after a few days.',
       es: 'La mayoría de aplicaciones veterinarias son frías o complejas como planillas, lo que genera abandono tras pocos días.',
     },
     process: {
-      en: 'Crafted friendly avatar identifiers (Muza & Oli), quick-entry cards, and gentle notification digests that celebrate pet milestones.',
-      es: 'Creación de avatares amigables, tarjetas de carga ultrarrápida y resúmenes visuales para celebrar los hitos de salud de cada mascota.',
+      en: 'Crafted friendly avatar identifiers (Muza & Oli), quick-entry cards, and gentle notification digests that celebrate cat milestones.',
+      es: 'Creación de avatares amigables, tarjetas de carga ultrarrápida y resúmenes visuales para celebrar los hitos de salud de cada gato.',
     },
     results: {
-      en: 'Daily recurring usage by active pet owners and consistently positive feedback on ease of logging.',
-      es: 'Uso diario recurrente de familias con mascotas y comentarios positivos sobre la facilidad y calidez de la interfaz.',
+      en: 'Daily recurring usage by active cat owners and consistently positive feedback on ease of logging.',
+      es: 'Uso diario recurrente de familias con gatos y comentarios positivos sobre la facilidad y calidez de la interfaz.',
     },
-    liveUrl: 'https://example.com/bigotes',
+    liveUrl: 'https://bigotes.app',
   },
   {
     slug: 'family-photos',

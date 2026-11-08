@@ -1,3 +1,4 @@
+import { generatedProjectBackgrounds } from '@/data/generatedProjectBackgrounds';
 import { ProjectHero, ProjectHeroVisual } from '@/components/selected-work/ProjectHero';
 import { ProjectNavigation } from '@/components/selected-work/ProjectNavigation';
 import React from 'react';
@@ -14,7 +15,6 @@ import { CatalogProjectDetail } from '@/components/selected-work/CatalogProjectD
 import {
   SaturnOVThumbnail,
   GuitarraVisualThumbnail,
-  BigotesThumbnail,
   FamilyPhotosThumbnail,
 } from '@/components/selected-work/ProjectThumbnails';
 
@@ -76,7 +76,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       case 'guitarravisual':
         return <GuitarraVisualThumbnail />;
       case 'bigotes':
-        return <BigotesThumbnail />;
+        return <Image src="/images/projects/bigotes-cover-mockup-v3.jpg" alt="Bigotes" width={1556} height={992} sizes="(min-width: 1024px) 928px, 100vw" className="w-full h-auto" preload />;
       case 'family-photos':
         return <FamilyPhotosThumbnail />;
       default:
@@ -100,7 +100,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       </Link>
 
       {/* Header Info */}
-      <ProjectHero backgroundSrc={project.slug === 'guitarravisual' ? '/images/projects/guitarravisual-title-background.png' : project.slug === 'saturno-v' ? '/images/projects/saturno-v-title-background.png' : undefined}>
+      <ProjectHero backgroundSrc={project.slug === 'guitarravisual' ? '/images/projects/guitarravisual-title-background.png' : project.slug === 'saturno-v' ? '/images/projects/saturno-v-title-background.png' : generatedProjectBackgrounds[project.slug]}>
         <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-4">
           {project.title}
         </h1>
@@ -115,7 +115,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
       <ProjectHeroVisual>
       {/* Hero Visual Container */}
-      <div className="w-full aspect-[16/9] rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 mb-14 shadow-sm">
+      <div className={`w-full ${project.slug === 'bigotes' ? '' : 'aspect-[16/9]'} rounded-xl overflow-hidden bg-zinc-100 border border-zinc-200/80 mb-14 shadow-sm`}>
         {renderHeroVisual(project.slug)}
       </div>
 
@@ -124,6 +124,28 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         role={project.role[currentLocale]} overview={project.subtitle[currentLocale]}
         challenge={project.challenge[currentLocale]} process={project.process[currentLocale]} results={project.results[currentLocale]}
         links={project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-6 text-xs font-bold underline underline-offset-4">{dict.projectDetail.visitLive}<ArrowUpRight className="w-3.5 h-3.5" /></a>} />
+
+      {project.slug === 'bigotes' && (
+        <section className="my-14" aria-labelledby="bigotes-avatars-title">
+          <h2 id="bigotes-avatars-title" className="text-xs font-mono tracking-wider text-zinc-400 uppercase mb-3">{currentLocale === 'es' ? 'Diseño de Avatars' : 'Avatars design'}</h2>
+          <div className="grid grid-cols-5 gap-3 md:gap-8">
+          {[
+            ['black', 'Negro', 'Black'], ['blue', 'Azul', 'Blue'],
+            ['calico', 'Calicó', 'Calico'], ['ginger', 'Naranja', 'Ginger'],
+            ['siames', 'Siamés', 'Siamese'], ['silver', 'Plateado', 'Silver'],
+            ['tabby', 'Atigrado', 'Tabby'], ['tuxedo', 'Esmoquin', 'Tuxedo'],
+            ['white', 'Blanco', 'White'], ['nncat', 'Sin identificar', 'Unidentified'],
+          ].map(([id, es, en]) => (
+            <figure key={id} className="text-center">
+              <Image src={`/images/projects/bigotes/avatars/${id}.${id === 'nncat' ? 'png' : 'svg'}`}
+                alt={currentLocale === 'es' ? `Avatar de gato: ${es}` : `Cat avatar: ${en}`}
+                width={160} height={160} className="w-full max-w-40 aspect-square object-contain mx-auto" />
+              <figcaption className="mt-2 text-[10px] md:text-xs text-zinc-500">{id.charAt(0).toUpperCase() + id.slice(1).toLowerCase()}</figcaption>
+            </figure>
+          ))}
+          </div>
+        </section>
+      )}
 
       {project.slug === 'guitarravisual' && (
         <figure className="mb-14">

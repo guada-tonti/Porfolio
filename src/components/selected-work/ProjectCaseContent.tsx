@@ -3,6 +3,25 @@ import type { ReactNode } from 'react';
 import type { Locale } from '@/data/types';
 import { dictionaries } from '@/data/content';
 
+// Optical sizes compensate for each mark's proportions and internal whitespace.
+const toolLogoSizes: Record<string, number> = {
+  lovable: 21,
+  'gpt-image': 32,
+  chatgpt: 32,
+  'gemini-image': 24,
+  figma: 24,
+  illustrator: 22,
+  photoshop: 22,
+  indesign: 22,
+  notion: 22,
+  sketch: 23,
+  antigravity: 23,
+  posthog: 26,
+  'google-flow': 32,
+  rive: 24,
+  p5js: 25,
+};
+
 export function ProjectCaseContent({ locale, about, role, overview, challenge, process, results, links, afterResults, tools = [] }: {
   locale: Locale; about: string; role?: string; overview?: string; challenge?: string;
   process?: string; results?: string; links?: ReactNode; afterResults?: ReactNode; tools?: { id: string; name: string }[];
@@ -29,8 +48,8 @@ export function ProjectCaseContent({ locale, about, role, overview, challenge, p
           {tools.length > 0 ? (
             <ul className="flex flex-wrap gap-x-6 gap-y-4">
               {tools.map(tool => (
-                <li key={tool.id} tabIndex={0} aria-label={tool.name} className="group/tool relative flex items-center justify-center rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-4">
-                  <Image src={`/images/tools/${tool.id}.svg`} alt="" width={24} height={24} className={`w-6 h-6 object-contain ${tool.id === 'google-flow' ? 'invert' : ''}`} />
+                <li key={tool.id} tabIndex={0} aria-label={tool.name} className="group/tool relative flex h-6 w-6 shrink-0 items-center justify-center rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-4">
+                  <Image src={`/images/tools/${tool.id}.svg`} alt="" width={32} height={32} style={{ width: toolLogoSizes[tool.id] ?? 24, height: toolLogoSizes[tool.id] ?? 24 }} className={`shrink-0 max-w-none object-contain ${tool.id === 'google-flow' ? 'invert' : ''}`} />
                   <span aria-hidden="true" className="pointer-events-none invisible absolute top-[calc(100%+8px)] left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded px-2 py-1 text-[11px] font-normal leading-[1.4] text-white bg-[#20202b] group-hover/tool:visible group-focus/tool:visible" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{tool.name}</span>
                 </li>
               ))}

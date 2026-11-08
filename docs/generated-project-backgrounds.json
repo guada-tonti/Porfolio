@@ -1,0 +1,67 @@
+{
+  "tool": "Built-in image generation",
+  "reference": "saturno-v-title-background.png",
+  "prompt": "Thin monoline thematic side illustrations on nearly white panoramic banner, huge empty center, no text; preserve Saturn V reference proportions and stroke weight.",
+  "projects": [
+    {
+      "id": "bigotes",
+      "color": "muted plum purple",
+      "objects": "cat paw prints, a cat face outline, yarn ball, food bowl and small fish",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-dfb42623-9d3a-4fb0-92b9-8c5487f7c9e1.png"
+    },
+    {
+      "id": "typography-composition",
+      "color": "muted graphite gray with a hint of lavender",
+      "objects": "abstract oversized serif letterforms A and a, typographic baseline guides, small printing registration marks and a pen nib; decorative letterforms only, no words",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-c193c577-3019-47a2-9356-c312219bf87a.png"
+    },
+    {
+      "id": "bioy-casares",
+      "color": "muted burgundy red",
+      "objects": "open book, ribbon bookmark, small hourglass, fountain pen and delicate heart outline",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-d347edcf-a809-4bb3-865c-e35e9c3e2d82.png"
+    },
+    {
+      "id": "multi-signature-wallet",
+      "color": "muted indigo blue",
+      "objects": "secure vault, padlock, three connected guardian nodes, keys and a shield",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-993d43a6-8f48-4266-9278-5bab6848e388.png"
+    },
+    {
+      "id": "bairesdao",
+      "color": "muted sky blue",
+      "objects": "Buenos Aires obelisk, sun, connected community nodes and a small mate gourd",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-69ca61ef-ee2b-4bd3-a568-2227f3ed6d77.png"
+    },
+    {
+      "id": "gitpoap",
+      "color": "muted violet",
+      "objects": "git branching nodes, commit dots, award badge medallion and code angle brackets",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-de323983-cc29-4c1e-a6fd-9e288b9725df.png"
+    },
+    {
+      "id": "holobox",
+      "color": "muted sage green",
+      "objects": "armchair, floor lamp, small potted plant, wireframe cube and augmented reality corner brackets",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-50ae9213-ecb4-44ba-8aa2-7d2d79003900.png"
+    },
+    {
+      "id": "trivia-game",
+      "color": "muted golden orange",
+      "objects": "crown, question mark, trophy, timer and small answer-option tiles with no words",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-a1a7ce69-93ee-4693-ac06-e9a3a561289d.png"
+    },
+    {
+      "id": "law-audiobooks",
+      "color": "muted navy blue",
+      "objects": "headphones, open law book, scales of justice and small audio waveform",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-7f946917-77f3-4e26-a0ea-d04a557646e6.png"
+    },
+    {
+      "id": "dubai-storage",
+      "color": "muted warm orange",
+      "objects": "cardboard boxes, warehouse outline, small delivery truck and inventory barcode",
+      "path": "/Users/guada/.codex/generated_images/01a15673-f9c1-7aa1-a5ee-aca64004d0ff/exec-ed681d8d-95fe-4283-b21d-f2d44b667ca4.png"
+    }
+  ]
+}

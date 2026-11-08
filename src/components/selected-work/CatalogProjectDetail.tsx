@@ -1,3 +1,4 @@
+import { generatedProjectBackgrounds } from '@/data/generatedProjectBackgrounds';
 import { ProjectHero, ProjectHeroVisual } from '@/components/selected-work/ProjectHero';
 import { ProjectNavigation } from '@/components/selected-work/ProjectNavigation';
 import Link from 'next/link';
@@ -19,7 +20,7 @@ export function CatalogProjectDetail({ project, currentLocale }: { project: Cata
         <ArrowLeft className="w-3.5 h-3.5" />
         BACK
       </Link>
-      <ProjectHero backgroundSrc={(project.id === 'poap-moments-redesign' || project.id === 'poaps-design-web3-communities') ? '/images/projects/poap-moments-title-background-26.png' : project.id === 'philatelist' ? '/images/projects/philatelist-title-background-lines.png' : project.id === 'poap-design-system' ? '/images/projects/poap-design-system-title-background.png' : project.id === 'aerolab-home' ? '/images/projects/aerolab-title-background.png' : project.id === 'gig-flyers' ? '/images/projects/gig-flyers/title-background-retro.png' : undefined}>
+      <ProjectHero backgroundSrc={(project.id === 'poap-moments-redesign' || project.id === 'poaps-design-web3-communities') ? '/images/projects/poap-moments-title-background-26.png' : project.id === 'philatelist' ? '/images/projects/philatelist-title-background-lines.png' : project.id === 'poap-design-system' ? '/images/projects/poap-design-system-title-background.png' : project.id === 'aerolab-home' ? '/images/projects/aerolab-title-background.png' : project.id === 'gig-flyers' ? '/images/projects/gig-flyers/title-background-retro.png' : generatedProjectBackgrounds[project.id]}>
         <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-4">{project.localizedTitle?.[currentLocale] ?? project.title}</h1>
         {project.tagline && (
           <p className="text-xl sm:text-2xl md:text-3xl italic font-serif text-zinc-800 tracking-tight mb-6">
@@ -45,10 +46,16 @@ export function CatalogProjectDetail({ project, currentLocale }: { project: Cata
           <BeforeAfterComparison locale={currentLocale}
             beforeSrc="/images/projects/moments-comparison/before-clean.png"
             afterSrc="/images/projects/moments-comparison/after-home.png" />
+        ) : project.id === 'aerolab-home' ? (
+          <figure className="w-full overflow-hidden rounded-xl border border-zinc-200/80 mb-14">
+            <Image src="/images/projects/behance-test/aerolab-home/hero-iphone-xs.png"
+              alt={isEs ? 'Homepage de Aerolab en tres dispositivos, con el logo del barrilete' : 'Aerolab homepage on three devices with the kite logo'}
+              width={1521} height={1034} sizes="(min-width: 1024px) 928px, 100vw" className="w-full h-auto" unoptimized preload />
+          </figure>
         ) : project.images?.[0] ? (
           <figure className="mb-14">
             <Image src={project.images[0].src} alt={project.images[0].alt[currentLocale]}
-              width={project.images[0].width} height={project.images[0].height}
+              width={project.images[0].width} height={project.images[0].height} unoptimized={project.id === 'aerolab-home'}
               sizes="(min-width: 1024px) 928px, 100vw" className={`w-full h-auto rounded-xl ${project.id === 'typography-composition' ? 'border border-zinc-200/80' : ''}`} preload />
           </figure>
         ) : project.id === 'philatelist' ? (

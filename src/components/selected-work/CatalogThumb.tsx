@@ -39,40 +39,7 @@ export function CatalogThumb({ id, title }: { id: string; title: string }) {
       return <GuitarraVisualThumbnail />;
 
     case 'bigotes':
-      return (
-        <div className="w-full h-full bg-[#f4effc] relative p-3.5 flex flex-col justify-between overflow-hidden select-none">
-          <div className="flex items-center gap-1.5">
-            <span className="font-serif font-black text-lg text-zinc-900 tracking-tight">Bigotes</span>
-            <span className="text-sm">🐾</span>
-          </div>
-          <div className="flex items-center justify-between gap-3 mt-1">
-            {/* Cute pets portraits */}
-            <div className="flex -space-x-2">
-              <div className="w-9 h-9 rounded-full bg-amber-100 border-2 border-white shadow-sm flex items-center justify-center text-base">🐶</div>
-              <div className="w-9 h-9 rounded-full bg-purple-200 border-2 border-white shadow-sm flex items-center justify-center text-base">🐱</div>
-              <div className="w-9 h-9 rounded-full bg-zinc-700 border-2 border-white shadow-sm flex items-center justify-center text-base">🐕‍🦺</div>
-            </div>
-            {/* Mobile App Frame */}
-            <div className="w-24 bg-white rounded-t-lg shadow-md border border-purple-100 p-1.5 text-[7px] font-sans">
-              <div className="w-6 h-1 bg-zinc-200 rounded-full mx-auto mb-1" />
-              <div className="flex items-center justify-between border-b border-zinc-100 pb-0.5 mb-1">
-                <span className="font-bold text-purple-900">Registros</span>
-                <span className="text-zinc-400">Ficha</span>
-              </div>
-              <div className="space-y-1">
-                <div className="flex items-center gap-1">
-                  <span className="text-purple-600">⚖️</span>
-                  <span>4.2 kg</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <span className="text-amber-500">🥣</span>
-                  <span>Alimentación</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
+      return <Image src="/images/projects/bigotes-cover-mockup-v3.jpg" alt={title} width={1556} height={992} sizes="(min-width: 1280px) 373px, (min-width: 768px) 50vw, 100vw" className="w-full h-full object-cover" />;
 
     case 'health-clarity':
       return (

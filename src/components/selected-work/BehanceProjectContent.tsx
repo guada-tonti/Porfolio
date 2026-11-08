@@ -44,12 +44,6 @@ export function BehanceProjectContent({ project, currentLocale }: { project: Cat
   );
   return (
     <>
-      {['aerolab-home', 'poaps-design-web3-communities'].includes(project.id) && (
-        <p className="text-xs text-zinc-500 mb-8">
-          {isEs ? 'Prueba de integración · Traducciones y resúmenes editoriales generados, pendientes de revisión.' : 'Integration preview · Generated translations and editorial summaries pending review.'}
-        </p>
-      )}
-
       <div className={isTypography ? "grid grid-cols-2 items-start gap-6" : "space-y-6"} aria-label={isEs ? 'Contenido original en orden' : 'Original content in order'}>
         {elements.map(element => (
           <Fragment key={element.order}>
@@ -69,7 +63,7 @@ export function BehanceProjectContent({ project, currentLocale }: { project: Cat
                   if (assetIndex === null) return null;
                   const asset = gallery.assets[assetIndex];
                   const basis = element.layout?.[componentIndex]?.flexWidth;
-                  return <figure key={asset.src} className="mx-auto" style={{ width: isTypography && element === verticalElement ? 'calc((100% - 24px) / 2)' : '100%', maxWidth: isTypography ? undefined : basis ? Math.min(asset.width, basis) : asset.width, ...(basis ? { flex: `1 1 ${basis}px` } : {}) }}>{renderAsset(asset)}</figure>;
+                  return <figure key={asset.src} className="mx-auto" style={{ width: isTypography && element === verticalElement ? 'calc((100% - 24px) / 2)' : '100%', maxWidth: isTypography || (project.id === 'bioy-casares' && (asset.frames ?? 1) > 1) ? undefined : basis ? Math.min(asset.width, basis) : asset.width, ...(basis ? { flex: `1 1 ${basis}px` } : {}) }}>{renderAsset(asset)}</figure>;
                 })}
               </div>
             )}

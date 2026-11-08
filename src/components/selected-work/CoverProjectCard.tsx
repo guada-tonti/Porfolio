@@ -34,7 +34,7 @@ export function CoverProjectCard({ project, currentLocale }: { project: CatalogP
         <p className="text-xs leading-relaxed text-white/85 mb-3">{project.description[currentLocale]}</p>
         <div className="flex flex-wrap gap-1.5">
           {[...project.disciplines, ...project.types, project.origin].map(id => (
-            <span key={id} className="text-[10px] font-medium px-2.5 py-0.5 rounded-full" style={{ backgroundColor: tagById[id].background, color: tagById[id].color }}>{tagById[id].label[currentLocale]}</span>
+            <span key={id} className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white border border-zinc-200" style={{ color: tagById[id].color }}>{tagById[id].label[currentLocale]}</span>
           ))}
         </div>
       </div>

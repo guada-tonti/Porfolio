@@ -31,3 +31,8 @@ ComfyUI monochrome: https://raw.githubusercontent.com/lobehub/lobe-icons/master/
 - sketch: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/sketch.svg (Sketch design app, https://www.sketch.com/)
 - chatgpt: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/openai.svg (OpenAI mark)
 - p5js: https://raw.githubusercontent.com/devicons/devicon/master/icons/p5js/p5js-original.svg (Devicon, MIT, https://github.com/devicons/devicon/blob/master/LICENSE)
+
+- indesign: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/indesign.svg
+
+- gemini-image: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/gemini.svg (Gemini mark)
+- gpt-image: same OpenAI mark as chatgpt.svg, https://raw.githubusercontent.com/pheralb/svgl/main/static/library/openai.svg

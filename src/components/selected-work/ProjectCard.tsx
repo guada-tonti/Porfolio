@@ -31,8 +31,8 @@ export function ProjectCard({ project, currentLocale }: { project: CatalogProjec
                     {[...project.disciplines, ...project.types, project.origin].map((id) => (
                       <span
                         key={id}
-                        className="text-[10px] font-medium px-2.5 py-0.5 rounded-full"
-                        style={{ backgroundColor: tagById[id].background, color: tagById[id].color }}
+                        className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white border border-zinc-200"
+                        style={{ color: tagById[id].color }}
                       >
                         {tagById[id].label[currentLocale]}
                       </span>

@@ -34,6 +34,7 @@ export interface CatalogProject {
 const catalogProjects: CatalogProject[] = [
   {
     id: 'aerolab-home', slug: 'aerolab-home', behanceGallery: 'aerolab-home',
+    images: [{ src: '/images/projects/behance-test/aerolab-home/hero-iphone-xs.png', width: 1521, height: 1034, alt: { en: 'Aerolab homepage design shown on desktop and mobile', es: 'Diseño de la homepage de Aerolab en desktop y mobile' } }],
     tools: [{ id: 'sketch', name: 'Sketch' }],
     title: 'UX/UI - Aerolab’s home', year: '2018',
     description: { en: 'Aerolab website redesign.', es: 'Rediseño del sitio web de Aerolab.' },
@@ -95,7 +96,7 @@ const catalogProjects: CatalogProject[] = [
     slug: 'poap-design-system',
     behanceGallery: 'poap-design-system',
     title: 'POAP Design System',
-    year: '',
+    year: '2022-2023',
     description: {
       en: 'A unified design system for POAP, with typography, spacing, color, design tokens and consistent components.',
       es: 'Un sistema de diseño unificado para POAP: tipografía, espaciado, color, design tokens y componentes consistentes.',
@@ -190,13 +191,13 @@ const catalogProjects: CatalogProject[] = [
   },
   {
     id: 'bigotes',
-    tools: [{ id: 'lovable', name: 'Lovable' }],
+    tools: [{ id: 'lovable', name: 'Lovable' }, { id: 'gemini-image', name: 'Gemini Image' }, { id: 'gpt-image', name: 'GPT Image' }, { id: 'figma', name: 'Figma' }],
     slug: 'bigotes',
     title: 'Bigotes',
     year: '2026',
     description: {
-      en: 'A simple and friendly health tracker for your pets.',
-      es: 'Un registro de salud simple y amigable para tus mascotas.',
+      en: 'A simple and friendly health tracker for your cats.',
+      es: 'Un registro de salud simple y amigable para tus gatos.',
     },
     disciplines: ['product-design', 'creative-coding'],
     types: ['web-app'],
@@ -204,7 +205,7 @@ const catalogProjects: CatalogProject[] = [
     legacyMetadata: {
     categories: ['Product Design', 'Tools'],
     type: 'Side Project',
-    tags: ['Product Design', 'Web App', 'Tools', 'Side Project', 'Pets'],
+    tags: ['Product Design', 'Web App', 'Tools', 'Side Project', 'Cats'],
     },
     thumbnailBg: 'bg-[#f4eefb]',
     icon: '🐾',
@@ -263,11 +264,11 @@ const catalogProjects: CatalogProject[] = [
     },
     disciplines: ['web-design', 'creative-coding', 'data-visualization'],
     types: ['interactive-experience'],
-    origin: 'experimental',
+    origin: 'side-project',
     legacyMetadata: {
     categories: ['Web Design', 'Interactive'],
-    type: 'Experimental',
-    tags: ['Web Design', '3D', 'Interactive', 'Side Project', 'Experimental'],
+    type: 'Side Project',
+    tags: ['Web Design', '3D', 'Interactive', 'Side Project'],
     },
     thumbnailBg: 'bg-[#0b1329]',
     icon: '🚀',
@@ -391,8 +392,9 @@ export const draftCatalogProjects = catalogProjects.filter(project => project.dr
 export const draftProjectSlugs = new Set(draftCatalogProjects.flatMap(project => project.slug ? [project.slug] : []));
 export const allCatalogProjects = catalogProjects.filter(project => !project.draft);
 
-const priorityProjectIds = ['poap-moments-redesign', 'poap-design-system', 'guitarravisual', 'remera-chenziqiang-argentina', 'goal-scream-challenge'];
+const priorityProjectIds = ['poap-moments-redesign', 'poap-design-system', 'guitarravisual', 'remera-chenziqiang-argentina', 'bioy-casares', 'typography-composition', 'aerolab-home', 'poaps-design-web3-communities', 'philatelist', 'goal-scream-challenge'];
 export const orderedCatalogProjects = [
   ...priorityProjectIds.flatMap(id => allCatalogProjects.filter(project => project.id === id)),
-  ...allCatalogProjects.filter(project => !priorityProjectIds.includes(project.id)),
+  ...allCatalogProjects.filter(project => !priorityProjectIds.includes(project.id) && project.id !== 'gig-flyers'),
+  ...allCatalogProjects.filter(project => project.id === 'gig-flyers'),
 ];

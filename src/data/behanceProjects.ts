@@ -207,6 +207,7 @@ export const importedBehanceProjects: CatalogProject[] = [
   {
     "id": "bioy-casares",
     "slug": "bioy-casares",
+    "tools": [{ "id": "indesign", "name": "Adobe InDesign" }],
     "title": "Tiempo, Amor y Muerte - Bioy Casares",
     "year": "2014",
     "behanceGallery": "bioy-casares",
@@ -456,9 +457,9 @@ export const importedBehanceProjects: CatalogProject[] = [
     "thumbnailBg": "bg-zinc-100",
     "images": [
       {
-        "src": "/images/projects/behance/trivia-game/image-38.webp",
-        "width": 1920,
-        "height": 674,
+        "src": "/images/projects/behance/trivia-game/cover-original.png",
+        "width": 1670,
+        "height": 1320,
         "alt": {
           "en": "KingQ - Trivia Game - project overview",
           "es": "KingQ - Trivia Game - presentación del proyecto"
