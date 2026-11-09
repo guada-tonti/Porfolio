@@ -170,7 +170,7 @@ const catalogProjects: CatalogProject[] = [
   },
   {
     id: 'guitarravisual',
-    tools: [{ id: 'lovable', name: 'Lovable' }, { id: 'posthog', name: 'PostHog' }],
+    tools: [{ id: 'lovable', name: 'Lovable' }, { id: 'posthog', name: 'PostHog' }, { id: 'google-search-console', name: 'Google Search Console' }, { id: 'bing-webmaster', name: 'Bing Webmaster Tools' }],
     slug: 'guitarravisual',
     title: 'GuitarraVisual.com',
     year: '2026',

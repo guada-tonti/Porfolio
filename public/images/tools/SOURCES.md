@@ -36,3 +36,6 @@ ComfyUI monochrome: https://raw.githubusercontent.com/lobehub/lobe-icons/master/
 
 - gemini-image: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/gemini.svg (Gemini mark)
 - gpt-image: same OpenAI mark as chatgpt.svg, https://raw.githubusercontent.com/pheralb/svgl/main/static/library/openai.svg
+
+- google-search-console: https://gstatic.com/search-console/scfe/logo_search_console.svg
+- bing-webmaster: https://www.bing.com/webmasters/Content/PWA/iOS/logo/bing-logo-180.png

@@ -1,4 +1,5 @@
 import React from 'react';
+import { PageBackground } from '@/components/page-background/PageBackground';
 import { PageEntrance } from '@/components/motion/PageEntrance';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/header/Header';
@@ -26,7 +27,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <div className="min-h-screen flex flex-col bg-white text-zinc-900 selection:bg-zinc-200">
       <Header currentLocale={currentLocale} />
-      <main className="flex-1 w-full"><PageEntrance>{children}</PageEntrance></main>
+      <main className="flex-1 w-full"><PageBackground><PageEntrance>{children}</PageEntrance></PageBackground></main>
       <Footer currentLocale={currentLocale} />
     </div>
   );

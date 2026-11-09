@@ -17,6 +17,8 @@ const toolLogoSizes: Record<string, number> = {
   sketch: 23,
   antigravity: 23,
   posthog: 26,
+  'google-search-console': 27,
+  'bing-webmaster': 32,
   'google-flow': 32,
   rive: 24,
   p5js: 25,

@@ -1,0 +1,93 @@
+[
+  {
+    "name": "saturn-sketch",
+    "x": 110,
+    "y": 198,
+    "width": 168,
+    "height": 194
+  },
+  {
+    "name": "saturn-photo",
+    "x": 288,
+    "y": 173,
+    "width": 456,
+    "height": 315
+  },
+  {
+    "name": "color-palette",
+    "x": 753,
+    "y": 199,
+    "width": 145,
+    "height": 273
+  },
+  {
+    "name": "code-window",
+    "x": 903,
+    "y": 216,
+    "width": 376,
+    "height": 259
+  },
+  {
+    "name": "landscape",
+    "x": 166,
+    "y": 487,
+    "width": 365,
+    "height": 257
+  },
+  {
+    "name": "interface",
+    "x": 537,
+    "y": 500,
+    "width": 208,
+    "height": 292
+  },
+  {
+    "name": "voxel-world",
+    "x": 758,
+    "y": 488,
+    "width": 347,
+    "height": 336
+  },
+  {
+    "name": "wireframe",
+    "x": 1111,
+    "y": 452,
+    "width": 166,
+    "height": 340
+  },
+  {
+    "name": "chair-sketch",
+    "x": 161,
+    "y": 755,
+    "width": 297,
+    "height": 316
+  },
+  {
+    "name": "cat-astronaut",
+    "x": 554,
+    "y": 791,
+    "width": 313,
+    "height": 279
+  },
+  {
+    "name": "neural-network",
+    "x": 875,
+    "y": 823,
+    "width": 324,
+    "height": 261
+  },
+  {
+    "name": "landscape-nodes",
+    "x": 18,
+    "y": 419,
+    "width": 174,
+    "height": 293
+  },
+  {
+    "name": "cat-nodes",
+    "x": 422,
+    "y": 836,
+    "width": 166,
+    "height": 253
+  }
+]

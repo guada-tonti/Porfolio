@@ -59,7 +59,7 @@ export function Footer({ currentLocale }: FooterProps) {
   };
 
   return (
-    <footer className="w-full bg-white border-t border-zinc-200/80">
+    <footer className="relative z-10 w-full bg-white border-t border-zinc-200/80">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Wordmark and Copyright */}

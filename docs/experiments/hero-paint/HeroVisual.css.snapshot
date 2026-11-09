@@ -1,0 +1,21 @@
+.hero-final-visual {
+  position: relative;
+  width: 100%;
+  max-width: 490px;
+  margin-inline: auto;
+}
+.hero-final-image {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .hero-final-image {
+    width: 128%;
+    margin-left: -14%;
+    height: 640px;
+  }
+}

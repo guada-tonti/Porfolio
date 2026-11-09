@@ -19,3 +19,43 @@
     height: 640px;
   }
 }
+
+.hero-paint { --hero-paint-duration: 1670ms; width: 100%; height: auto; overflow: visible; }
+.hero-paint-reveal, .hero-pencil-reveal {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: hero-paint-draw calc(var(--hero-paint-duration) * 0.1967592593) cubic-bezier(.33,0,.22,1) forwards;
+}
+.hero-pencil-reveal { animation-duration: calc(var(--hero-paint-duration) * 0.2199074074); }
+@keyframes hero-paint-draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-paint-reveal, .hero-pencil-reveal { animation: none; stroke-dashoffset: 0; }
+}
+
+@media (min-width: 1024px) {
+  .hero-final-visual { transform: translateX(-24px); }
+}
+
+.hero-collage-scene {
+  --parallax-x: 0;
+  --parallax-y: 0;
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+  aspect-ratio: 1000 / 914;
+}
+.hero-collage-scene .hero-paint { display: block; }
+.hero-collage-foreground { position: absolute; inset: 0; pointer-events: none; }
+.hero-collage-card { position: absolute; pointer-events: auto; }
+.hero-collage-layer { width: 100%; height: 100%; display: block; pointer-events: none; user-select: none; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .hero-collage-foreground {
+    transform: translate3d(calc(var(--parallax-x) * -11px), calc(var(--parallax-y) * -11px), 0);
+    transition: transform 550ms cubic-bezier(.22,1,.36,1);
+  }
+  .hero-collage-layer {
+    transform: perspective(750px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transition: transform 450ms cubic-bezier(.22,1,.36,1);
+    backface-visibility: hidden;
+  }
+}

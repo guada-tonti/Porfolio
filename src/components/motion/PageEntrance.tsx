@@ -8,6 +8,8 @@ export function PageEntrance({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
   useLayoutEffect(() => {
+    // The home animates its text and paint separately; its background stays visible.
+    if (/^\/(en|es)\/?$/.test(pathname)) return;
     const element = root.current;
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (!element || preference.matches) return;

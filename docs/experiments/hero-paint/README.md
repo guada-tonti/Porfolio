@@ -1,0 +1,3 @@
+Original hero preserved at /public/images/hero/collage-2.jpg. To restore, copy HeroVisual.tsx.snapshot and HeroVisual.css.snapshot into src/components/hero, removing .snapshot. The paint experiment uses a reconstructed background; hidden areas in the source collage necessarily required reconstruction. Animation uses SVG stroke masks, runs once per mount and respects reduced motion.
+
+Individual foreground layers are in public/images/hero/layers/. Each SVG clips embedded pixels from the unchanged original collage, retaining exact content and coordinates. positions.json records original pixel bounds on the 1312 × 1199 canvas. Cables remain with their node groups.

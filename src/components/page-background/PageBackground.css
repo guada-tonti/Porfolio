@@ -1,0 +1,26 @@
+@media (min-width: 1024px) {
+  .section-home-background {
+    position: relative;
+    isolation: isolate;
+  }
+  .section-home-background::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max(640px, calc(100vh - 96px));
+    background: url('/images/hero/home-background-v1.svg') center / contain no-repeat;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-home-background-fixed::before {
+    position: fixed;
+    top: 96px;
+    bottom: 0;
+    height: auto;
+  }
+}

@@ -70,7 +70,7 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
   const allOrigin = { id: 'all' as const, label: { en: 'All types', es: 'Todos los tipos' }, background: '#FFFFFF', color: '#20202B', count: countOrigin(filterableProjects, filters, 'all') };
 
   return (
-    <section className="w-full bg-white pb-20 md:pb-28">
+    <section className="project-catalog w-full bg-white pb-20 md:pb-28">
         <section aria-labelledby="featured-projects-heading" className="mb-4">
           <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-10">
             <h2 id="featured-projects-heading" className="text-[11px] font-mono tracking-widest text-zinc-400 uppercase mb-4">
