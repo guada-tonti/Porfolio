@@ -1,6 +1,7 @@
 'use client';
 
 import './Header.css';
+import { BrandLogo } from './BrandLogo';
 import React, { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
@@ -95,7 +96,7 @@ export function Header({ currentLocale }: HeaderProps) {
 
   return (
     <>
-    <header className="site-header-shell" data-scrolled={isScrolled} data-variant={currentLocale === 'en' ? 'traditional' : 'floating'}>
+    <header className="site-header-shell" data-scrolled={isScrolled} data-variant="floating">
       <div className="site-header-surface">
       <div className="site-header-inner">
       {/* 
@@ -112,12 +113,7 @@ export function Header({ currentLocale }: HeaderProps) {
             className="group inline-flex items-center select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-black rounded"
             aria-label="Guada Tonti Homepage"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo.svg"
-              alt="Guada Tonti"
-              className="site-header-logo w-auto object-contain group-hover:scale-105"
-            />
+            <BrandLogo key={pathname} animateOnLoad={pathname === `/${currentLocale}` || pathname === `/${currentLocale}/`} />
           </Link>
         </div>
 
@@ -135,7 +131,7 @@ export function Header({ currentLocale }: HeaderProps) {
                 className={`px-1 py-0.5 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-black ${
                   isActive
                     ? 'text-black font-semibold border-b-[1.5px] border-black'
-                    : 'text-zinc-500 hover:text-black'
+                    : 'site-header-nav-inactive text-zinc-500 hover:text-black'
                 }`}
               >
                 {item.label}
@@ -148,11 +144,12 @@ export function Header({ currentLocale }: HeaderProps) {
         <div className="flex-1 flex items-center justify-end gap-1.5 text-[11px] font-medium tracking-wider text-zinc-700">
           <Link
             href={getLocalizedPath('en')}
+            scroll={false}
             onClick={(event) => {
               if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
               event.preventDefault();
               closeMenu();
-              router.push(getLocalizedPath('en') + window.location.search + window.location.hash);
+              router.push(getLocalizedPath('en') + window.location.search + window.location.hash, { scroll: false });
             }}
             className={`px-1 py-0.5 transition-colors ${
               currentLocale === 'en'
@@ -166,11 +163,12 @@ export function Header({ currentLocale }: HeaderProps) {
           <span className="text-zinc-300">/</span>
           <Link
             href={getLocalizedPath('es')}
+            scroll={false}
             onClick={(event) => {
               if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
               event.preventDefault();
               closeMenu();
-              router.push(getLocalizedPath('es') + window.location.search + window.location.hash);
+              router.push(getLocalizedPath('es') + window.location.search + window.location.hash, { scroll: false });
             }}
             className={`px-1 py-0.5 transition-colors ${
               currentLocale === 'es'

@@ -25,7 +25,9 @@ export function CoverProjectCard({ project, currentLocale }: { project: CatalogP
       }}
       onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setRevealed(false); }}
     >
-      <CatalogThumb id={project.id} title={project.localizedTitle?.[currentLocale] ?? project.title} />
+      <div className="catalog-cover-image">
+        <CatalogThumb id={project.id} title={project.localizedTitle?.[currentLocale] ?? project.title} />
+      </div>
       <div className="catalog-cover-details">
         <div className="flex items-baseline gap-2 mb-1.5">
           <h3 className="text-base font-bold tracking-tight">{project.localizedTitle?.[currentLocale] ?? project.title}</h3>

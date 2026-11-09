@@ -16,7 +16,7 @@ export function Hero({ currentLocale }: HeroProps) {
   const dict = dictionaries[currentLocale];
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 md:px-12 pt-6 md:pt-14 pb-16 md:pb-20">
+    <section className="w-full max-w-7xl mx-auto px-6 md:px-12 pt-6 md:pt-8 pb-16 md:pb-20">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Typography and CTAs */}
         <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
@@ -47,7 +47,7 @@ export function Hero({ currentLocale }: HeroProps) {
           </p>
 
           {/* Actions: Primary black pill button & secondary underlined text link */}
-          <div className="flex flex-wrap items-center gap-6 mb-12">
+          <div className="flex flex-wrap items-center gap-6 mb-12 md:mb-0 md:pb-16">
             <Link
               href={`/${currentLocale}/work`}
               className="inline-flex items-center gap-2 bg-zinc-950 hover:bg-zinc-800 text-white text-xs md:text-sm font-medium px-5 py-2.5 rounded-full shadow-sm hover:shadow transition-all group"

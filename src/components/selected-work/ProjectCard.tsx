@@ -7,13 +7,15 @@ export function ProjectCard({ project, currentLocale }: { project: CatalogProjec
   return (
                 <div className="group flex flex-col h-full bg-white transition-all">
                   {/* Thumbnail */}
-                  <div className="w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 relative shadow-xs border border-zinc-100 group-hover:-translate-y-1 transition-transform duration-300">
-                    <CatalogThumb id={project.id} title={project.localizedTitle?.[currentLocale] ?? project.title} />
+                  <div className="w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 relative shadow-xs border border-zinc-100">
+                    <div className="relative h-full w-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] [@media(hover:hover)_and_(pointer:fine)]:group-hover:scale-[1.035] motion-reduce:transform-none motion-reduce:transition-none">
+                      <CatalogThumb id={project.id} title={project.localizedTitle?.[currentLocale] ?? project.title} />
+                    </div>
                   </div>
 
                   {/* Title & Year */}
                   <div className="flex items-baseline gap-2 mb-1.5">
-                    <h3 className="text-base font-bold text-zinc-950 tracking-tight group-hover:underline underline-offset-2">
+                    <h3 className="text-base font-bold text-zinc-950 tracking-tight">
                       {project.localizedTitle?.[currentLocale] ?? project.title}
                     </h3>
                     <span className="text-xs font-mono text-zinc-400">

@@ -31,3 +31,15 @@ a:focus-visible .catalog-cover-details,
 @media (prefers-reduced-motion: reduce) {
   .catalog-cover-details { transition: none; transform: none; }
 }
+
+.catalog-cover-image {
+  position: absolute;
+  inset: 0;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .catalog-cover-card:hover .catalog-cover-image { transform: scale(1.035); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .catalog-cover-image { transition: none; transform: none !important; }
+}

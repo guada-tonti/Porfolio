@@ -154,3 +154,67 @@ body:has(.site-mobile-menu-overlay:target) { overflow: hidden; }
   top: var(--site-header-logo-top, 16px);
 }
 .site-mobile-menu-logo { height: var(--site-header-logo-height, 40px); }
+
+.site-header-nav-inactive { position: relative; }
+.site-header-nav-inactive::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) {
+  .site-header-nav-inactive:hover::after { transform: scaleX(1); }
+}
+.site-header-nav-inactive:focus-visible::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) {
+  .site-header-nav-inactive::after { transition: none; }
+}
+
+.brand-logo { position: relative; display: inline-block; aspect-ratio: 780 / 578; }
+.brand-logo-original { display: block; width: 100%; height: 100%; }
+.brand-logo-writing, .brand-logo-color { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.brand-logo-writing { opacity: 0; }
+.brand-logo-writing path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.brand-logo-color {
+  opacity: 0;
+  background:
+    radial-gradient(circle 12px at calc(var(--pointer-x, 50%) - 8px) calc(var(--pointer-y, 50%) - 5px), #ff618d 0%, transparent 100%),
+    radial-gradient(circle 15px at calc(var(--pointer-x, 50%) + 8px) calc(var(--pointer-y, 50%) - 3px), #8370ff 0%, transparent 100%),
+    radial-gradient(circle 13px at var(--pointer-x, 50%) calc(var(--pointer-y, 50%) + 8px), #35d8e7 0%, transparent 100%);
+  -webkit-mask: url('/logo.svg') center / contain no-repeat;
+  mask: url('/logo.svg') center / contain no-repeat;
+  transition: opacity 180ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .brand-logo:hover .brand-logo-color { opacity: 1; }
+}
+.brand-logo[data-writing] .brand-logo-original {
+  animation: brand-original-return 1670ms steps(1, end) both;
+}
+.brand-logo[data-writing] .brand-logo-writing {
+  animation: brand-writing-finish 1670ms steps(1, end) both;
+}
+.brand-logo[data-writing] .brand-logo-writing path {
+  animation: brand-write-stroke var(--stroke-duration) linear var(--stroke-delay) forwards;
+}
+@keyframes brand-write-stroke { to { stroke-dashoffset: 0; } }
+@keyframes brand-original-return { from { opacity: 0; } to { opacity: 1; } }
+@keyframes brand-writing-finish { from { opacity: 1; } to { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo[data-writing] .brand-logo-original { animation: none; opacity: 1; }
+  .brand-logo[data-writing] .brand-logo-writing { animation: none; opacity: 0; }
+  .brand-logo[data-writing] .brand-logo-writing path { animation: none; }
+  .brand-logo-color { transition: none; }
+}
+
+.brand-logo[data-writing] .brand-logo-color { visibility: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo[data-writing] .brand-logo-color { visibility: visible; }
+}

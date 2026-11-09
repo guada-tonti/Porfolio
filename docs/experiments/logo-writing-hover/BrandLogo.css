@@ -1,0 +1,29 @@
+.brand-logo { position: relative; display: inline-block; aspect-ratio: 780 / 578; }
+.brand-logo-original { display: block; width: 100%; height: 100%; }
+.brand-logo-writing, .brand-logo-color { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.brand-logo-writing { opacity: 0; }
+.brand-logo-writing path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.brand-logo-color {
+  opacity: 0;
+  background:
+    radial-gradient(circle 12px at calc(var(--pointer-x, 50%) - 8px) calc(var(--pointer-y, 50%) - 5px), #ff618d 0%, transparent 100%),
+    radial-gradient(circle 15px at calc(var(--pointer-x, 50%) + 8px) calc(var(--pointer-y, 50%) - 3px), #8370ff 0%, transparent 100%),
+    radial-gradient(circle 13px at var(--pointer-x, 50%) calc(var(--pointer-y, 50%) + 8px), #35d8e7 0%, transparent 100%);
+  -webkit-mask: url('/logo.svg') center / contain no-repeat;
+  mask: url('/logo.svg') center / contain no-repeat;
+  transition: opacity 180ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .brand-logo[data-effect='write']:hover .brand-logo-original { opacity: 0; }
+  .brand-logo[data-effect='write']:hover .brand-logo-writing { opacity: 1; }
+  .brand-logo[data-effect='write']:hover .brand-logo-writing path {
+    animation: brand-write-stroke var(--stroke-duration) linear var(--stroke-delay) forwards;
+  }
+  .brand-logo[data-effect='color']:hover .brand-logo-color { opacity: 1; }
+}
+@keyframes brand-write-stroke { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo[data-effect='write']:hover .brand-logo-original { opacity: 1; }
+  .brand-logo[data-effect='write']:hover .brand-logo-writing { opacity: 0; }
+  .brand-logo-color { transition: none; }
+}
