@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { Locale } from '@/data/types';
 import { dictionaries } from '@/data/content';
@@ -16,7 +17,11 @@ export function Hero({ currentLocale }: HeroProps) {
   const dict = dictionaries[currentLocale];
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 md:px-12 pt-6 md:pt-8 pb-16 md:pb-20">
+    <section className="relative isolate w-full max-w-7xl mx-auto px-6 md:px-12 pt-6 md:pt-8 pb-16 md:pb-20">
+      <picture aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 -z-10 w-screen overflow-hidden">
+        <source media="(max-width: 767px)" srcSet="/images/projects/title-backgrounds/mobile/typography-composition-v2.png" />
+        <Image src="/images/projects/title-backgrounds/typography-composition.png" alt="" fill sizes="100vw" loading="eager" className="object-contain object-center" />
+      </picture>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Typography and CTAs */}
         <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">

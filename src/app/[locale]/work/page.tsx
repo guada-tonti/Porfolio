@@ -28,7 +28,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
   const currentLocale = locale as Locale;
   return (
     <div className="w-full">
-      {/* Featured projects are temporarily hidden here; the home keeps them. */}
+      {/* Featured projects and the filterable catalog. */}
 
       {/* 2. Interactive Projects Catalog with categories, types and search */}
       <ProjectCatalog currentLocale={currentLocale} />

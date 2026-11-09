@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 import type { CatalogProject } from '@/data/catalog';
 import type { Locale } from '@/data/types';
-import { tagById } from '@/data/tags';
+import { tagById, getProjectTagLabel } from '@/data/tags';
 import { CatalogThumb } from './CatalogThumb';
 import { BehanceProjectContent } from './BehanceProjectContent';
 
@@ -36,7 +36,7 @@ export function CatalogProjectDetail({ project, currentLocale }: { project: Cata
           {project.year && <span className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white border border-zinc-200 text-[#20202B]">{project.year}</span>}
           {[...project.disciplines, ...project.types, project.origin].map(id => (
             <span key={id} className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white border border-zinc-200" style={{ color: tagById[id].color }}>
-              {tagById[id].label[currentLocale]}
+              {getProjectTagLabel(id, currentLocale)}
             </span>
           ))}
         </div>

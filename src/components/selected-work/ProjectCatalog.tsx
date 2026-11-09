@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Locale } from '@/data/types';
-import { orderedCatalogProjects, allCatalogProjects } from '@/data/catalog';
+import { orderedCatalogProjects } from '@/data/catalog';
 import { catalogCategories, catalogOrigins, type CategoryId, type OriginId } from '@/data/tags';
 import { matchesProject, countCategory, countOrigin } from '@/data/catalogFilters';
 import { ProjectCard } from './ProjectCard';
@@ -42,23 +42,56 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
     categories: id === 'all' || selectedCategories.includes(id) ? '' : id,
   });
   const orderedProjects = orderedCatalogProjects;
-  const filteredProjects = orderedProjects.filter(project => matchesProject(project, filters));
+  const featuredProjects = orderedProjects.slice(0, 3);
+  const featuredIds = new Set(featuredProjects.map(project => project.id));
+  const filterableProjects = [...orderedProjects.filter(project => !featuredIds.has(project.id)), ...featuredProjects];
+  const catalogPositions = [
+    ['poap-moments-redesign', 3],
+    ['poaps-design-web3-communities', 4],
+    ['aerolab-home', 5],
+    ['guitarravisual', 7],
+    ['poap-design-system', 8],
+  ] as const;
+  for (const [slug, position] of catalogPositions) {
+    const index = filterableProjects.findIndex(project => project.slug === slug);
+    if (index !== -1) {
+      const [project] = filterableProjects.splice(index, 1);
+      filterableProjects.splice(position, 0, project);
+    }
+  }
+  const filteredProjects = filterableProjects.filter(project => matchesProject(project, filters));
   const sortedCategories = catalogCategories
-    .map(tag => ({ ...tag, count: countCategory(allCatalogProjects, filters, tag.id) }))
+    .map(tag => ({ ...tag, count: countCategory(filterableProjects, filters, tag.id) }))
     .sort((a, b) => a.order - b.order);
   const sortedOrigins = catalogOrigins
-    .map(tag => ({ ...tag, count: countOrigin(allCatalogProjects, filters, tag.id) }))
+    .map(tag => ({ ...tag, count: countOrigin(filterableProjects, filters, tag.id) }))
     .sort((a, b) => a.order - b.order);
-  const allCategory = { id: 'all' as const, label: { en: 'All categories', es: 'Todas las categorías' }, background: '#FFFFFF', color: '#20202B', count: countCategory(allCatalogProjects, filters) };
-  const allOrigin = { id: 'all' as const, label: { en: 'All types', es: 'Todos los tipos' }, background: '#FFFFFF', color: '#20202B', count: countOrigin(allCatalogProjects, filters, 'all') };
+  const allCategory = { id: 'all' as const, label: { en: 'All categories', es: 'Todas las categorías' }, background: '#FFFFFF', color: '#20202B', count: countCategory(filterableProjects, filters) };
+  const allOrigin = { id: 'all' as const, label: { en: 'All types', es: 'Todos los tipos' }, background: '#FFFFFF', color: '#20202B', count: countOrigin(filterableProjects, filters, 'all') };
 
   return (
-    <section className="w-full bg-white pt-8 md:pt-10 pb-20 md:pb-28">
+    <section className="w-full bg-white pb-20 md:pb-28">
+        <section aria-labelledby="featured-projects-heading" className="mb-4">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 md:py-10">
+            <h2 id="featured-projects-heading" className="text-[11px] font-mono tracking-widest text-zinc-400 uppercase mb-4">
+              {isEs ? 'Destacados' : 'Featured'}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredProjects.map(project => (
+                <Link key={project.id} href={`/${currentLocale}/work/${project.slug}`} className="focus:outline-none focus-visible:ring-2 focus-visible:ring-black rounded-xl">
+                  <ProjectCard project={project} currentLocale={currentLocale} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      <div>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-5 mb-6 md:mb-10">
-          <div className="flex min-w-0 flex-1 flex-wrap items-start gap-x-6 gap-y-3">
+        <h2 className="text-[11px] font-mono tracking-widest text-zinc-400 uppercase mb-3">{isEs ? 'Ver todos' : 'View all'}</h2>
+        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-5 mb-4">
+          <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-3">
         {/* Category Filter Pills */}
-        <motion.div layout transition={pillTransition} className="relative flex max-w-full flex-wrap items-center gap-2">
+        <div className="contents">
           <AnimatePresence initial={false} mode="popLayout">
           {[allCategory, ...sortedCategories].filter(cat => !categoriesCollapsed || (cat.id === 'all' ? selectedCategories.length === 0 : selectedCategories.includes(cat.id))).map((cat) => {
             const count = cat.count;
@@ -103,11 +136,11 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
             >
               {categoriesCollapsed ? <ChevronRight className="h-3 w-3" aria-hidden="true" /> : <ChevronLeft className="h-3 w-3" aria-hidden="true" />}
             </motion.button>
-        </motion.div>
+        </div>
 
 
           {/* Type filters */}
-          <motion.div layout transition={pillTransition} className="relative flex max-w-full flex-wrap items-center gap-2">
+          <motion.div layout transition={pillTransition} className="relative ml-4 flex max-w-full shrink-0 flex-wrap items-center gap-2">
             <AnimatePresence initial={false} mode="popLayout">
             {[allOrigin, ...sortedOrigins].filter(t => !typesCollapsed || selectedType === t.id).map((t) => {
               const count = t.count;
@@ -162,7 +195,6 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
 
         </div>
 
-        {/* Project Cards Grid (3 Columns) */}
         {filteredProjects.length === 0 ? (
           <div className="text-center py-20 border border-dashed border-zinc-200 rounded-lg">
             <p className="text-sm text-zinc-500">
@@ -202,6 +234,7 @@ function ProjectCatalogContent({ currentLocale }: ProjectCatalogProps) {
             })}
           </div>
         )}
+      </div>
       </div>
     </section>
   );

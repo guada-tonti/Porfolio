@@ -112,9 +112,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       subtitle: 'Creating is also a way to reclaim our ability to act on the world.',
       openToLabel: 'Open to:',
       openToOptions: 'Freelance projects · Fixed-term contracts · Long-term contracts',
-      bioParagraph1: "One of the things I enjoy most about design is its ability to make information that feels complex, distant, and overwhelming become simple, accessible, and approachable. That is one of design’s greatest powers, and part of what drew me to it from the beginning. Reordering, grouping, shaping, and prioritizing information can make it easier for people to understand and navigate.",
-      bioParagraph2: "I have worked in design for more than 12 years. My practice spans several disciplines, with a particular focus on digital products and interaction.",
-      bioParagraph3: "I also studied frontend fundamentals early on, which helped me collaborate closely with developers. In recent years, I have started exploring the full process myself: taking an idea or hypothesis through to a product in production, then following its evolution by measuring how people interact with it.",
+      bioParagraph1: "I have worked in design for more than 12 years. My practice spans several disciplines, with a particular focus on digital products and interaction. I also studied frontend fundamentals early on, which helped me collaborate closely with developers. In recent years, I have started exploring the full process myself: taking an idea or hypothesis through to a product in production, then following its evolution by measuring how people interact with it.",
+      bioParagraph2: "One of the things I enjoy most about design is its ability to make information that feels complex, distant, and overwhelming become simple, accessible, and approachable. That is one of design’s greatest powers, and part of what drew me to it from the beginning. Reordering, grouping, shaping, and prioritizing information can make it easier for people to understand and navigate.",
+      bioParagraph3: "",
       experienceHeadline: '12+ years of professional design. A lifetime of exploring.',
     },
     resumePage: {
@@ -513,9 +513,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       subtitle: 'Crear también es una forma de recuperar nuestra capacidad de actuar sobre el mundo.',
       openToLabel: 'Disponible para:',
       openToOptions: 'Proyectos freelance · Contratos a plazo fijo · Contratos a largo plazo',
-      bioParagraph1: "Una de las cosas que más disfruto de diseñar es la posibilidad de transformar información que parece compleja, distante e inabarcable en algo simple, accesible y cercano. Ese es uno de los grandes poderes del diseño y parte de lo que me atrapó desde el principio. Reordenar, agrupar, moldear y jerarquizar información puede hacerla mucho más accesible cognitivamente para las personas.",
-      bioParagraph2: "Trabajo en diseño desde hace más de 12 años. Si bien mi práctica abarca varias áreas, me enfoco y especializo principalmente en productos digitales e interacción.",
-      bioParagraph3: "Desde el comienzo también me formé en conceptos de frontend, lo que me permitió trabajar fluidamente con programadores. En los últimos años empecé a experimentar por mí misma el proceso completo: desde una idea o hipótesis hasta un producto en producción, y seguir su evolución midiendo cómo interactúan las personas con él.",
+      bioParagraph1: "Trabajo en diseño desde hace más de 12 años. Si bien mi práctica abarca varias áreas, me enfoco y especializo principalmente en productos digitales e interacción. Desde el comienzo también me formé en conceptos de frontend, lo que me permitió trabajar fluidamente con programadores. En los últimos años empecé a experimentar por mí misma el proceso completo: desde una idea o hipótesis hasta un producto en producción, y seguir su evolución midiendo cómo interactúan las personas con él.",
+      bioParagraph2: "Una de las cosas que más disfruto de diseñar es la posibilidad que nos da de transformar información que parece compleja, distante e inabarcable en algo mucho mas simple, accesible y cercano. Es uno de los grandes poderes del diseño y parte de lo que me atrapó desde el principio. Reordenar, agrupar, moldear y jerarquizar información puede hacerla mucho más accesible cognitivamente para las personas.",
+      bioParagraph3: "",
       experienceHeadline: 'más de 12 años diseñando por profesión. Toda una vida creando.',
     },
     resumePage: {
@@ -843,10 +843,10 @@ export const projects: Project[] = [
   },
   {
     slug: 'guitarravisual',
-    title: 'GuitarraVisual',
+    title: 'GuitarraVisual.com',
     subtitle: {
-      en: 'Your daily guitar practice, visual and timed',
-      es: 'Tu práctica diaria de guitarra, visual y temporizada',
+      en: 'From MVP to a real product: rapid launch, metrics-driven iteration, and organic user acquisition through SEO.',
+      es: 'De MVP a producto real: lanzamiento rápido, iteración basada en métricas y adquisición orgánica de usuarios mediante SEO.',
     },
     category: {
       en: 'Music & Education',

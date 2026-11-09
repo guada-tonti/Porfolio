@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { allCatalogProjects } from '@/data/catalog';
-import { tagById } from '@/data/tags';
+import { tagById, getProjectTagLabel } from '@/data/tags';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -49,7 +49,7 @@ export default async function RemeraPage({ params }: Props) {
           {[...project.disciplines, ...project.types, project.origin].map(id => (
             <span key={id} className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white border border-zinc-200"
               style={{ color: tagById[id].color }}>
-              {tagById[id].label[locale]}
+              {getProjectTagLabel(id, locale)}
             </span>
           ))}
         </div>

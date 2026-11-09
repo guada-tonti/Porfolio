@@ -46,7 +46,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
         <div className="space-y-6 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
           <p>{dict.aboutPage.bioParagraph1}</p>
           <p>{dict.aboutPage.bioParagraph2}</p>
-          <p>{dict.aboutPage.bioParagraph3}</p>
+          {dict.aboutPage.bioParagraph3 && <p>{dict.aboutPage.bioParagraph3}</p>}
 
           <section className="pt-4" aria-labelledby="working-style-title">
             <h2 id="working-style-title" className="text-[11px] font-mono tracking-widest text-zinc-400 uppercase mb-6">

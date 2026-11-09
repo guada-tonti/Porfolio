@@ -38,13 +38,8 @@ export const importedBehanceProjects: CatalogProject[] = [
         "es": "El trabajo establece una identidad consistente y un conjunto de pantallas para la wallet. Muestra cómo la jerarquía visual y los estados explícitos pueden facilitar la comprensión de un modelo de seguridad compartida."
       }
     },
-    "disciplines": [
-      "product-design",
-      "graphic-design"
-    ],
-    "types": [
-      "web-app"
-    ],
+    "disciplines": ['product-design', 'graphic-design'],
+    "types": [],
     "origin": "work",
     "sourceUrl": "https://www.behance.net/gallery/136601027/UXUI-Multi-Signature-Wallet-(2021)",
     "legacyMetadata": {
@@ -110,10 +105,7 @@ export const importedBehanceProjects: CatalogProject[] = [
         "es": "El conjunto final incluye logo, ilustración y piezas de perfil y portada para Twitter. El proyecto muestra cómo un kit visual acotado y coherente puede construir una identidad local reconocible."
       }
     },
-    "disciplines": [
-      "graphic-design",
-      "illustration"
-    ],
+    "disciplines": ['graphic-design', 'illustration'],
     "types": [],
     "origin": "work",
     "sourceUrl": "https://www.behance.net/gallery/124458107/Logo-Social-Media-Assets-BairesDAO-(2021)",
@@ -174,13 +166,8 @@ export const importedBehanceProjects: CatalogProject[] = [
         "es": "El trabajo final conecta identidad, elementos reutilizables de UI y páginas responsive en un mismo lenguaje visual. Destaca el valor de explicar un concepto Web3 mediante patrones de contenido familiares y recorridos específicos para cada público."
       }
     },
-    "disciplines": [
-      "graphic-design",
-      "web-design"
-    ],
-    "types": [
-      "website"
-    ],
+    "disciplines": ['graphic-design'],
+    "types": [],
     "origin": "work",
     "sourceUrl": "https://www.behance.net/gallery/136617973/Logo-Landing-GitPOAP-(2021)",
     "legacyMetadata": {
@@ -241,9 +228,7 @@ export const importedBehanceProjects: CatalogProject[] = [
         "es": "El resultado es una edición encuadernada, documentada mediante dobles páginas, detalles y una vista animada de la tapa. El proyecto vincula el ritmo editorial con las decisiones materiales, desde la secuencia de lectura hasta la encuadernación final."
       }
     },
-    "disciplines": [
-      "graphic-design"
-    ],
+    "disciplines": ['graphic-design'],
     "types": [],
     "origin": "experimental",
     "sourceUrl": "https://www.behance.net/gallery/22725075/Editorial-Design-Bioy-Casares-Special-Edition-(2014)",
@@ -304,12 +289,8 @@ export const importedBehanceProjects: CatalogProject[] = [
         "es": "Las pantallas presentadas conectan inspiración, descubrimiento y detalle en una interfaz mobile consistente. Muestran cómo integrar la realidad aumentada en un recorrido de compra familiar, en lugar de tratarla como una función aislada."
       }
     },
-    "disciplines": [
-      "product-design"
-    ],
-    "types": [
-      "interactive-experience"
-    ],
+    "disciplines": ['product-design'],
+    "types": ['interactive-experience'],
     "origin": "work",
     "sourceUrl": "https://www.behance.net/gallery/240222227/Brand-UXUI-Holobox-DecoApp-with-AR-(2018)",
     "legacyMetadata": {
@@ -370,9 +351,7 @@ export const importedBehanceProjects: CatalogProject[] = [
         "es": "El resultado es una colección de composiciones tipográficas y una edición impresa. La exploración muestra cómo el ritmo y la jerarquía pueden surgir de la propia forma de las letras, incluso con una paleta deliberadamente acotada."
       }
     },
-    "disciplines": [
-      "graphic-design"
-    ],
+    "disciplines": ['graphic-design'],
     "types": [],
     "origin": "experimental",
     "sourceUrl": "https://www.behance.net/gallery/20420691/Experimental-Typography-composition-(2014)",
@@ -437,13 +416,8 @@ export const importedBehanceProjects: CatalogProject[] = [
         "es": "El resultado conecta el brand kit con un conjunto documentado de flujos, wireframes y pantallas UI. El trabajo destaca la importancia de los estados claros y el feedback cuando la interacción depende del tiempo y de decisiones rápidas."
       }
     },
-    "disciplines": [
-      "product-design",
-      "graphic-design"
-    ],
-    "types": [
-      "game"
-    ],
+    "disciplines": ['product-design', 'graphic-design'],
+    "types": ['game'],
     "origin": "work",
     "sourceUrl": "https://www.behance.net/gallery/212738825/UXUI-Trivia-Game-(2018)",
     "legacyMetadata": {
@@ -503,10 +477,7 @@ export const importedBehanceProjects: CatalogProject[] = [
         "es": "Las pantallas finales y el UI kit establecen una experiencia consistente entre biblioteca, lector y reproductor. El proyecto muestra cómo los componentes compartidos pueden conectar formatos de contenido diferentes y conservar los controles específicos de cada uno."
       }
     },
-    "disciplines": [
-      "product-design",
-      "design-system"
-    ],
+    "disciplines": ['product-design', 'design-system'],
     "types": [],
     "origin": "work",
     "sourceUrl": "https://www.behance.net/gallery/212743693/UXUI-Law-Audiobooks-(2018)",
@@ -567,14 +538,8 @@ export const importedBehanceProjects: CatalogProject[] = [
         "es": "El trabajo reúne logo ajustado, pautas visuales, ilustraciones y pantallas del dashboard en un sistema consistente. Muestra cómo la expresión de marca y el diseño funcional de información pueden acompañarse dentro de un producto operativo."
       }
     },
-    "disciplines": [
-      "product-design",
-      "graphic-design",
-      "illustration"
-    ],
-    "types": [
-      "web-app"
-    ],
+    "disciplines": ['product-design', 'graphic-design', 'illustration'],
+    "types": [],
     "origin": "work",
     "sourceUrl": "https://www.behance.net/gallery/198989669/Brand-UI-KIt-Design-Audit-Dubai-Storage-(2020)",
     "legacyMetadata": {

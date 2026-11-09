@@ -35,11 +35,17 @@ export function Header({ currentLocale }: HeaderProps) {
   }, [pathname]);
 
   useEffect(() => {
-    const updateScrolled = () => setIsScrolled(previous => previous ? window.scrollY > 16 : window.scrollY > 48);
+    const updateScrolled = () => setIsScrolled(previous => {
+      return previous ? window.scrollY > 16 : window.scrollY > 48;
+    });
     updateScrolled();
     window.addEventListener('scroll', updateScrolled, { passive: true });
-    return () => window.removeEventListener('scroll', updateScrolled);
-  }, []);
+    window.addEventListener('resize', updateScrolled);
+    return () => {
+      window.removeEventListener('scroll', updateScrolled);
+      window.removeEventListener('resize', updateScrolled);
+    };
+  }, [pathname, currentLocale]);
 
   useEffect(() => {
     const surface = document.querySelector<HTMLElement>('.site-header-surface');

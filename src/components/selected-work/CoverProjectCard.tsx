@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react';
 import type { CatalogProject } from '@/data/catalog';
 import type { Locale } from '@/data/types';
-import { tagById } from '@/data/tags';
+import { getProjectTagLabel } from '@/data/tags';
 import { CatalogThumb } from './CatalogThumb';
 import './CoverProjectCard.css';
 
@@ -34,9 +34,9 @@ export function CoverProjectCard({ project, currentLocale }: { project: CatalogP
           {project.year && <span className="text-[10px] font-mono text-white/65">{project.year}</span>}
         </div>
         <p className="text-xs leading-relaxed text-white/85 mb-3">{project.description[currentLocale]}</p>
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-x-1 gap-y-1.5">
           {[...project.disciplines, ...project.types, project.origin].map(id => (
-            <span key={id} className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white border border-zinc-200" style={{ color: tagById[id].color }}>{tagById[id].label[currentLocale]}</span>
+            <span key={id} className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white border border-zinc-200" style={{ color: 'var(--color-zinc-400, #a1a1aa)', fontFamily: 'var(--font-geist-mono), monospace' }}>{getProjectTagLabel(id, currentLocale)}</span>
           ))}
         </div>
       </div>
