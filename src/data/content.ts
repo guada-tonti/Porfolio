@@ -396,7 +396,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     contactPage: {
       title: "Let's connect",
-      subtitle: 'Open for select product design leadership, creative consulting, and interactive projects worldwide.',
+      subtitle: 'Available for product design projects, creative consulting, and interactive experiences worldwide.',
       emailLabel: 'Your Email',
       messageLabel: 'Your Message',
       sendButton: 'Send message',
