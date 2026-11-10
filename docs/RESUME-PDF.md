@@ -14,7 +14,7 @@ Downloads:
 
 ## Domain configuration
 
-src/data/site.ts has the verified fallback `https://porfolio-ashy-nine.vercel.app`. Set `NEXT_PUBLIC_SITE_URL=https://guadatonti.com` in Vercel **only once the domain and localized routes are available**, and redeploy. PDF visible labels and all internal links derive from that single URL. Locale prefixes are preserved. No request Host header is trusted. Local downloads also use the production domain, never localhost. Existing sitemap configuration was left alone to keep scope limited.
+src/data/site.ts defines the canonical public domain `https://guadatonti.com`. PDF labels and links always use that domain, including local/preview downloads; stale environment variables cannot replace it with a Vercel address. Locale prefixes are preserved. No request Host header is trusted. Sitemap configuration remains independent.
 
 ## QA
 

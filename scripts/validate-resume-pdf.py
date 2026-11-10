@@ -53,7 +53,9 @@ for locale, filename in [('en','Guada_Tonti_Resume_EN.pdf'), ('es','Guada_Tonti_
     assert not any('/work/' in u for u in uris)
     assert data['englishLevelContext'] not in text
     assert ('View certification' if locale == 'en' else 'Ver certificado') in text
-    assert all('localhost' not in u and '127.0.0.1' not in u for u in uris)
+    assert all('localhost' not in u and '127.0.0.1' not in u and 'vercel.app' not in u for u in uris)
+    assert 'guadatonti.com' in text
+    assert f'https://guadatonti.com/{locale}' in uris
     with pdfplumber.open(file) as pdf:
         for page in pdf.pages:
             assert len(page.chars) > 300, 'Empty or image-only page'
