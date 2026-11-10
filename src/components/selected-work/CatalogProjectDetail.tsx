@@ -20,7 +20,7 @@ export function CatalogProjectDetail({ project, currentLocale }: { project: Cata
         <ArrowLeft className="w-3.5 h-3.5" />
         BACK
       </Link>
-      <ProjectHero projectId={project.id} backgroundSrc={(project.id === 'poap-moments-redesign' || project.id === 'poaps-design-web3-communities') ? '/images/projects/poap-moments-title-background-26.png' : project.id === 'philatelist' ? '/images/projects/philatelist-title-background-lines.png' : project.id === 'poap-design-system' ? '/images/projects/poap-design-system-title-background.png' : project.id === 'aerolab-home' ? '/images/projects/aerolab-title-background.png' : project.id === 'gig-flyers' ? '/images/projects/gig-flyers/title-background-retro.png' : generatedProjectBackgrounds[project.id]}>
+      <ProjectHero projectId={project.id} backgroundSrc={(project.id === 'poap-moments-redesign' || project.id === 'poaps-design-web3-communities') ? '/images/projects/poap-moments-title-background-26.webp' : project.id === 'philatelist' ? '/images/projects/philatelist-title-background-lines.webp' : project.id === 'poap-design-system' ? '/images/projects/poap-design-system-title-background.webp' : project.id === 'aerolab-home' ? '/images/projects/aerolab-title-background.webp' : project.id === 'gig-flyers' ? '/images/projects/gig-flyers/title-background-retro.webp' : generatedProjectBackgrounds[project.id]}>
         <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-2 md:mb-4">{project.localizedTitle?.[currentLocale] ?? project.title}</h1>
         {project.tagline && (
           <p className="text-xl sm:text-2xl md:text-3xl italic font-serif text-zinc-800 tracking-tight mb-6">

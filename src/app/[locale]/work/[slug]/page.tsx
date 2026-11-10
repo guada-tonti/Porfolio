@@ -100,7 +100,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       </Link>
 
       {/* Header Info */}
-      <ProjectHero projectId={project.slug} backgroundSrc={project.slug === 'guitarravisual' ? '/images/projects/guitarravisual-title-background.png' : project.slug === 'saturno-v' ? '/images/projects/saturno-v-title-background.png' : generatedProjectBackgrounds[project.slug]}>
+      <ProjectHero projectId={project.slug} backgroundSrc={project.slug === 'guitarravisual' ? '/images/projects/guitarravisual-title-background.webp' : project.slug === 'saturno-v' ? '/images/projects/saturno-v-title-background.webp' : generatedProjectBackgrounds[project.slug]}>
         <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-2 md:mb-4">
           {project.title}
         </h1>

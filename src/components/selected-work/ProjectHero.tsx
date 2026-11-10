@@ -11,7 +11,7 @@ export function ProjectHero({ children, backgroundSrc, projectId }: { children: 
         {backgroundSrc && (
           <picture className={mobileBackground ? `absolute inset-x-0 -top-16 bottom-0 md:top-0 [clip-path:inset(0_0_50%_0)] md:[clip-path:none] ${projectId === 'dubai-storage' ? '-translate-y-3 md:translate-y-0' : ''}` : 'absolute inset-x-0 -top-16 bottom-0 md:top-0'}>
             {mobileBackground && <source media="(max-width: 767px)" srcSet={mobileBackground} />}
-            <Image src={backgroundSrc} alt="" fill sizes="100vw" loading="eager" className={mobileBackground ? 'object-fill md:object-cover object-center' : 'object-cover object-center'} />
+            <Image src={backgroundSrc} alt="" fill sizes="100vw" loading="eager" unoptimized={backgroundSrc.endsWith('.webp')} className={mobileBackground ? 'object-fill md:object-cover object-center' : 'object-cover object-center'} />
           </picture>
         )}
         {backgroundSrc && mobileBackground && (

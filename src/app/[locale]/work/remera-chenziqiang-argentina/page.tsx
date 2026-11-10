@@ -37,7 +37,7 @@ export default async function RemeraPage({ params }: Props) {
         BACK
       </Link>
 
-      <ProjectHero projectId={project.slug} backgroundSrc="/images/projects/remera-chenziqiang-title-background.png">
+      <ProjectHero projectId={project.slug} backgroundSrc="/images/projects/remera-chenziqiang-title-background.webp">
         <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-2 md:mb-4">
           {project.localizedTitle?.[locale] ?? project.title}
         </h1>

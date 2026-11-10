@@ -35,7 +35,7 @@ export default async function HealthClarityPage({ params }: Props) {
         <ArrowLeft className="w-3.5 h-3.5" />
         BACK
       </Link>
-      <ProjectHero projectId="health-clarity" backgroundSrc="/images/projects/health-clarity-title-background.png">
+      <ProjectHero projectId="health-clarity" backgroundSrc="/images/projects/health-clarity-title-background.webp">
         <h1 className="text-2xl sm:text-3xl md:text-[40px] font-black text-zinc-950 tracking-tight mb-2 md:mb-4">{project.title}</h1>
         <p className="text-base md:text-xl text-zinc-600 md:max-w-[720px] md:mx-auto leading-relaxed">{project.description[locale]}</p>
         <div className="flex flex-wrap justify-center items-center gap-1.5 mt-4">
