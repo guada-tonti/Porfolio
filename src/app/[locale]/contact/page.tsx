@@ -1,4 +1,5 @@
 import React from 'react';
+import { ContactForm } from '@/components/contact/ContactForm';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Mail, Globe, ArrowUpRight } from 'lucide-react';
@@ -44,48 +45,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
         {/* Contact Form */}
         <div className="md:col-span-7">
-          <form
-            onSubmit={undefined}
-            className="space-y-6"
-            action={`mailto:${contactEmail}`}
-            method="GET"
-          >
-            <div>
-              <label htmlFor="email" className="block text-xs font-mono uppercase tracking-wider text-zinc-700 mb-2">
-                {dict.contactPage.emailLabel}
-              </label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                required
-                placeholder="you@domain.com"
-                className="w-full px-4 py-3 rounded-none border border-zinc-300 focus:border-zinc-950 focus:outline-none text-sm transition-colors"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-xs font-mono uppercase tracking-wider text-zinc-700 mb-2">
-                {dict.contactPage.messageLabel}
-              </label>
-              <textarea
-                id="message"
-                name="body"
-                rows={5}
-                required
-                placeholder={isEs ? 'Contame sobre tu proyecto o consulta...' : 'Tell me about your project or inquiry...'}
-                className="w-full px-4 py-3 rounded-none border border-zinc-300 focus:border-zinc-950 focus:outline-none text-sm transition-colors resize-none"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="inline-flex items-center gap-2 bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-medium px-6 py-3 rounded-full transition-colors"
-            >
-              <span>{dict.contactPage.sendButton}</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </button>
-          </form>
+          <ContactForm locale={currentLocale} />
         </div>
 
         {/* Direct Coordinates */}
