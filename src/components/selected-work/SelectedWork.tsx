@@ -8,7 +8,7 @@ import { dictionaries } from '@/data/content';
 import { allCatalogProjects } from '@/data/catalog';
 import { ProjectCard } from './ProjectCard';
 
-const featuredProjectIds = ['poap-moments-redesign', 'poap-design-system', 'remera-chenziqiang-argentina'];
+const featuredProjectIds = ['poap-moments-redesign', 'poap-design-system', 'guitarravisual'];
 const featuredProjects = featuredProjectIds.flatMap(id => allCatalogProjects.filter(project => project.id === id));
 
 interface SelectedWorkProps {

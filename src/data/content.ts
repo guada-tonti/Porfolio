@@ -845,7 +845,7 @@ export const projects: Project[] = [
     slug: 'guitarravisual',
     title: 'GuitarraVisual.com',
     subtitle: {
-      en: 'From MVP to a real product: rapid launch, metrics-driven iteration, and organic user acquisition through SEO.',
+      en: 'From MVP to launch: AI-assisted development, product analytics with PostHog, and SEO-driven growth.',
       es: 'De MVP a producto real: lanzamiento rápido, iteración basada en métricas y adquisición orgánica de usuarios mediante SEO.',
     },
     category: {
