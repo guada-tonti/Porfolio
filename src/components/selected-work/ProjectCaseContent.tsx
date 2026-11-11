@@ -66,8 +66,8 @@ export function ProjectCaseContent({ locale, about, role, overview, challenge, p
             <div className="space-y-6">{text ? paragraphs(text) : <p className="text-sm text-zinc-400">{pending}</p>}</div>
           </section>
         ))}
-        {afterResults}
       </div>
+      {afterResults && <div className="md:col-span-full">{afterResults}</div>}
     </div>
   </div>;
 }

@@ -839,7 +839,7 @@ export const projects: Project[] = [
       en: 'High user dwell time (over 4.5 minutes average), recognized in international web design showcases, and zero lag on mobile devices.',
       es: 'Permanencia promedio de más de 4.5 minutos, menciones en exhibiciones internacionales de diseño web y rendimiento fluido en móviles.',
     },
-    liveUrl: 'https://example.com/saturno-v',
+    liveUrl: 'https://guada-tonti.github.io/SaturnoV/',
   },
   {
     slug: 'guitarravisual',

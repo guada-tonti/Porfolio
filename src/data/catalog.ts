@@ -98,7 +98,7 @@ const catalogProjects: CatalogProject[] = [
     title: 'POAP Design System',
     year: '2022-2023',
     description: {
-      en: 'A unified design system for POAP, with typography, spacing, color, design tokens and consistent components.',
+      en: 'A Figma design system with reusable components, Auto Layout, variables, design tokens, and style guidelines.',
       es: 'Un sistema de diseño unificado para POAP: tipografía, espaciado, color, design tokens y componentes consistentes.',
     },
     overview: {
