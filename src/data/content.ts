@@ -56,6 +56,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     footer: {
       copyright: 'Guada Tonti. All rights reserved.',
+      builtWith: 'This portfolio was built using Codex (OpenAI).',
       rightsReserved: 'All rights reserved.',
       locationCity: 'Buenos Aires, Argentina',
       locationStatus: 'Working worldwide',
@@ -457,6 +458,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     footer: {
       copyright: 'Guada Tonti. Todos los derechos reservados.',
+      builtWith: 'Este portfolio se hizo con Codex (OpenAI).',
       rightsReserved: 'Todos los derechos reservados.',
       locationCity: 'Buenos Aires, Argentina',
       locationStatus: 'Working worldwide',

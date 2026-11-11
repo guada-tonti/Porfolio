@@ -117,6 +117,7 @@ export interface Dictionary {
   };
   footer: {
     copyright: string;
+    builtWith: string;
     rightsReserved: string;
     locationCity: string;
     locationStatus: string;

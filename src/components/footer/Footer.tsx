@@ -77,9 +77,12 @@ export function Footer({ currentLocale }: FooterProps) {
               />
             </Link>
 
-            <span className="text-[10px] md:text-[11px] text-zinc-400 font-sans">
-              © {currentYear} {dict.footer.copyright}
-            </span>
+            <div className="flex flex-col gap-1 font-sans text-zinc-400">
+              <span className="text-[10px] md:text-[11px]">
+                © {currentYear} {dict.footer.copyright}
+              </span>
+              <span className="text-[9px] md:text-[10px]">{dict.footer.builtWith}</span>
+            </div>
           </div>
 
           {/* Navigation Links in Center */}
