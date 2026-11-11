@@ -163,6 +163,49 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </figure>
       )}
 
+      {project.slug === 'guitarravisual' && (
+        <div className="mb-14 space-y-6">
+          {[
+            { src: "/images/projects/guitarravisual-fretboard-notes.png", width: 3008, height: 1636, es: "Notas en el mástil", en: "Fretboard notes" },
+            { src: "/images/projects/guitarravisual-ear-training.png", width: 3024, height: 1640, es: "Reconocimiento de intervalos", en: "Interval ear training" },
+            { src: "/images/projects/guitarravisual-progressions.png", width: 3022, height: 1644, es: "Reconocimiento de progresiones", en: "Chord progression recognition" },
+            { src: "/images/projects/guitarravisual-fretboard-intervals.png", width: 3024, height: 1640, es: "Intervalos en el mástil", en: "Fretboard intervals" },
+            { src: "/images/projects/guitarravisual-blues.png", width: 3024, height: 1626, es: "Improvisación de blues", en: "Blues improvisation" },
+            { src: "/images/projects/guitarravisual-routine-complete.png", width: 3020, height: 1628, es: "Rutina completada", en: "Completed routine" },
+            { src: "/images/projects/guitarravisual-practice-profile.png", width: 3024, height: 1642, es: "Perfil y estadísticas de práctica", en: "Profile and practice stats" },
+          ].map(({ src, width, height, es, en }) => (
+            <Image key={src} src={src} width={width} height={height}
+              alt={currentLocale === 'es' ? es : en}
+              sizes="(min-width: 1024px) 928px, 100vw" className="w-full h-auto rounded-sm" />
+          ))}
+        </div>
+      )}
+
+      {project.slug === 'guitarravisual' && (
+        <section className="mb-14 space-y-6" aria-labelledby="guitarravisual-analytics">
+          <div className="space-y-3">
+            <h2 id="guitarravisual-analytics" className="text-xl font-semibold">
+              {currentLocale === 'es' ? 'Analítica de producto y búsqueda' : 'Product and search analytics'}
+            </h2>
+            <p className="text-zinc-600">
+              {currentLocale === 'es'
+                ? 'Implementé PostHog para seguir la actividad y observar cómo se usaba GuitarraVisual, y Google Search Console para medir su rendimiento en las búsquedas de Google. En PostHog descubrí que una parte importante del tráfico venía del ecosistema de Bing, un buscador que no suelo usar. Ese hallazgo me llevó a incorporar Bing Webmaster Tools para medir también el rendimiento en ese canal.'
+                : 'I set up PostHog to track activity and see how people used GuitarraVisual, and Google Search Console to measure its performance in Google Search. PostHog showed that a significant share of traffic came from the Bing ecosystem, even though I rarely use Bing myself. That finding led me to add Bing Webmaster Tools to measure search performance there as well.'}
+            </p>
+          </div>
+          {[
+            { src: "/images/projects/guitarravisual-posthog-replay.png", width: 3008, height: 1596, es: "Grabación de una sesión en PostHog", en: "PostHog session replay" },
+            { src: "/images/projects/guitarravisual-posthog-activity.png", width: 3012, height: 1632, es: "Registro de actividad en PostHog", en: "PostHog activity log" },
+            { src: "/images/projects/guitarravisual-posthog-analytics.png", width: 3024, height: 1626, es: "Panel de analítica web de PostHog", en: "PostHog web analytics dashboard" },
+            { src: "/images/projects/guitarravisual-bing-performance.png", width: 3024, height: 1612, es: "Rendimiento de búsqueda en Bing Webmaster Tools", en: "Bing Webmaster Tools search performance" },
+          ].map(({ src, width, height, es, en }) => (
+            <Image key={src} src={src} width={width} height={height}
+              alt={currentLocale === 'es' ? es : en}
+              sizes="(min-width: 1024px) 928px, 100vw" className="w-full h-auto rounded-sm" />
+          ))}
+        </section>
+      )}
+
       <ProjectNavigation slug={project.slug} locale={currentLocale} />
     </article>
   );
