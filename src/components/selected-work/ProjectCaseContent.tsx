@@ -24,9 +24,9 @@ const toolLogoSizes: Record<string, number> = {
   p5js: 25,
 };
 
-export function ProjectCaseContent({ locale, about, role, overview, challenge, process, results, links, afterResults, tools = [] }: {
+export function ProjectCaseContent({ locale, about, role, overview, challenge, process, results, links, afterFirstChallengeParagraph, afterResults, tools = [] }: {
   locale: Locale; about: string; role?: string; overview?: string; challenge?: string;
-  process?: string; results?: string; links?: ReactNode; afterResults?: ReactNode; tools?: { id: string; name: string }[];
+  process?: string; results?: string; links?: ReactNode; afterFirstChallengeParagraph?: ReactNode; afterResults?: ReactNode; tools?: { id: string; name: string }[];
 }) {
   const labels = dictionaries[locale].projectDetail;
   const pending = locale === 'es' ? 'Contenido por completar.' : 'Content to be added.';
@@ -63,7 +63,13 @@ export function ProjectCaseContent({ locale, about, role, overview, challenge, p
       <div className="md:col-span-8 space-y-10">
         {[[labels.overview, overview], [labels.challenge, challenge], [labels.process, process], [labels.results, results]].map(([title, text]) => (
           <section key={title}><h2 className={heading}>{title}</h2>
-            <div className="space-y-6">{text ? paragraphs(text) : <p className="text-sm text-zinc-400">{pending}</p>}</div>
+            <div className="space-y-6">
+              {text ? paragraphs(text).flatMap((paragraph, index) =>
+                title === labels.challenge && index === 0
+                  ? [paragraph, afterFirstChallengeParagraph]
+                  : [paragraph]
+              ) : <p className="text-sm text-zinc-400">{pending}</p>}
+            </div>
           </section>
         ))}
       </div>

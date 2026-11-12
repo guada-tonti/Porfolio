@@ -60,16 +60,31 @@ export default async function RemeraPage({ params }: Props) {
         src="/images/projects/remera-chenziqiang-argentina-portada.png"
         alt={isEs ? 'Vista del frente y dorso de la remera ChenZiqiang Argentina en un estudio' : 'Studio view of the front and back of the ChenZiqiang Argentina T-shirt'}
         width={1312} height={1199} sizes="(min-width: 1024px) 928px, 100vw"
-        className="w-full h-auto rounded-xl mb-14" preload
+        className="aspect-[3/2] w-full object-cover object-[center_37%] rounded-xl mb-14" preload
       />
       </ProjectHeroVisual>
       <ProjectCaseContent tools={project.tools} locale={locale} role={isEs ? 'Diseño gráfico freelance' : 'Freelance graphic design'}
         overview={project.description[locale]} about={isEs
               ? 'Una remera para la escuela de taichi Chenjiagou en Argentina, diseñada con motivo de la visita de su maestro Chen Ziqiang. La propuesta combina la identificación de la escuela en el frente con una composición gráfica de taichi en el dorso.'
-              : 'A T-shirt for the Chenjiagou tai chi school in Argentina, designed to mark a visit from its master Chen Ziqiang. The design combines the school identity on the front with a tai chi graphic composition on the back.'} />
+              : 'A T-shirt for the Chenjiagou tai chi school in Argentina, designed to mark a visit from its master Chen Ziqiang. The design combines the school identity on the front with a tai chi graphic composition on the back.'} challenge={isEs
+          ? 'El cliente pidió reproducir con precisión la postura de Chen Ziqiang en la gráfica del dorso, mostrando solo los brazos, desde los hombros hasta las manos. Sugirió enmarcar el gesto en un círculo que evocara el taijitu.\n\nSin el torso como estructura, el desafío era que los brazos conservaran la posición y la naturalidad del gesto original. El círculo tenía que acompañar ese movimiento sin dar la impresión de que los brazos salían del símbolo.'
+          : 'The client asked for the back graphic to capture Chen Ziqiang’s pose precisely, showing only the arms from shoulders to hands. They suggested framing the gesture in a circle that echoed the taijitu.\n\nWithout the torso to provide structure, the challenge was to preserve the position of the arms and the natural feel of the original gesture. The circle needed to complement the movement without making the arms look like they were sticking out of the symbol.'}
+        afterFirstChallengeParagraph={
+          <figure key="challenge-references">
+            <div className="grid grid-cols-[minmax(0,1.777778fr)_minmax(0,1.564309fr)] items-start gap-2">
+              <Image src="/images/projects/remera-chenziqiang-pose.jpg" width={1600} height={900}
+                alt={isEs ? 'Postura de taichi de Chen Ziqiang' : 'Chen Ziqiang’s tai chi pose'} className="w-full h-auto rounded-sm" />
+              <Image src="/images/projects/remera-chenziqiang-brief.jpg" width={973} height={622}
+                alt={isEs ? 'Composición sugerida por el cliente' : 'Composition suggested by the client'} className="w-full h-auto rounded-sm" />
+            </div>
+            <figcaption className="mt-2 text-xs text-zinc-400">
+              {isEs ? 'Referencias del cliente' : 'Client references'}
+            </figcaption>
+          </figure>
+        } />
 
 
-      <section className="border-t border-zinc-200 pt-12">
+      <section className="pt-12">
         <h2 className="text-2xl font-bold text-zinc-950 tracking-tight mb-8">{isEs ? 'El diseño' : 'The design'}</h2>
         <figure className="mb-10">
           <Image src="/images/projects/remera-chenziqiang-argentina-dorso.jpg"
