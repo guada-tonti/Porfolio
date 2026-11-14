@@ -99,6 +99,32 @@ export default async function RemeraPage({ params }: Props) {
           <figcaption className="text-xs text-zinc-500 mt-3">{isEs ? 'Mockup del frente y dorso.' : 'Front and back mockup.'}</figcaption>
         </figure>
       </section>
+      <section className="mt-12 space-y-6">
+        <h2 className="text-2xl font-bold tracking-tight text-zinc-950">
+          {isEs ? 'Separación de tintas para serigrafía' : 'Screen printing ink separations'}
+        </h2>
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            { name: 'original', width: 1025, label: isEs ? 'Diseño original' : 'Original design' },
+            { name: 'simulation-1', width: 1026, label: isEs ? 'Simulación para serigrafía' : 'Screen print simulation' },
+          ].map(({ name, width, label }) => (
+            <figure key={name}>
+              <Image src={`/images/projects/remera-screenprint-${name}.jpg`} width={width} height={1450}
+                alt={label} sizes="(min-width: 1024px) 456px, 50vw" className="h-auto w-full rounded-sm" />
+              <figcaption className="mt-2 text-xs text-zinc-500">{label}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <div className="grid grid-cols-3 gap-4">
+          {(isEs ? ['Tinta blanca', 'Tinta celeste', 'Tinta roja'] : ['White ink', 'Light blue ink', 'Red ink']).map((label, index) => (
+            <figure key={label}>
+              <Image src={`/images/projects/remera-screenprint-ink-${index + 1}.jpg`} width={1026} height={1450}
+                alt={label} sizes="(min-width: 1024px) 300px, 33vw" className="h-auto w-full rounded-sm border border-zinc-200" />
+              <figcaption className="mt-2 text-xs text-zinc-500">{label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
       <ProjectNavigation slug={project.slug!} locale={locale} />
     </article>
   );
