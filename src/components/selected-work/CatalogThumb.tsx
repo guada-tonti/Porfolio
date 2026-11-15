@@ -12,8 +12,8 @@ export function CatalogThumb({ id, title }: { id: string; title: string }) {
   switch (id) {
     case 'world-environment-day':
       return (
-        <Image src="/images/projects/world-environment-day-firefly.jpg" alt={title}
-          width={2135} height={2944} sizes="(min-width: 1280px) 373px, (min-width: 768px) 50vw, 100vw"
+        <Image src="/images/projects/world-environment-day-hero-cool.png" alt={title}
+          width={1613} height={975} sizes="(min-width: 1280px) 373px, (min-width: 768px) 50vw, 100vw"
           className="h-full w-full bg-zinc-100 object-contain" />
       );
 
