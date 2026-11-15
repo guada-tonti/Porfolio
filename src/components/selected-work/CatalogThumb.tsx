@@ -10,6 +10,13 @@ export function CatalogThumb({ id, title }: { id: string; title: string }) {
   const cover = ({ ...behanceCovers, ...importedCovers } as Record<string, { src: string; width: number; height: number }>)[id];
   if (cover) return <Image src={cover.src} alt={title} width={cover.width} height={cover.height} sizes="(min-width: 1280px) 373px, (min-width: 768px) 50vw, 100vw" className="w-full h-full object-cover" />;
   switch (id) {
+    case 'world-environment-day':
+      return (
+        <Image src="/images/projects/world-environment-day-firefly.jpg" alt={title}
+          width={2135} height={2944} sizes="(min-width: 1280px) 373px, (min-width: 768px) 50vw, 100vw"
+          className="h-full w-full bg-zinc-100 object-contain" />
+      );
+
     case 'gig-flyers':
       return <Image src="/images/projects/gig-flyers/quinto-sueno.png" alt={title} width={1651} height={2184} sizes="(min-width: 1280px) 373px, (min-width: 768px) 50vw, 100vw" className="w-full h-full object-contain bg-[#26112e]" />;
     case 'poap-moments-redesign':

@@ -33,6 +33,20 @@ export interface CatalogProject {
 
 const catalogProjects: CatalogProject[] = [
   {
+    id: 'world-environment-day', slug: 'world-environment-day',
+    title: 'World Environment Day Poster',
+    localizedTitle: { en: 'World Environment Day Poster', es: 'Afiche del Día Mundial del Medio Ambiente' },
+    year: '2014',
+    description: { en: 'An illustrated poster that brings a tree and a human heart together, designed for screen printing.', es: 'Un afiche ilustrado que une un árbol y un corazón humano, diseñado para imprimirse en serigrafía.' },
+    overview: { en: 'The illustration connects the branches of a tree to the vessels of a human heart, echoing the poster’s message of interdependence.', es: 'La ilustración conecta las ramas de un árbol con los vasos de un corazón humano, retomando el mensaje del afiche: «porque nos necesitamos».' },
+    disciplines: ['graphic-design', 'illustration'], types: [], origin: 'side-project',
+    legacyMetadata: { categories: [], type: '', tags: [] },
+    thumbnailBg: 'bg-zinc-100',
+    images: [{ src: '/images/projects/world-environment-day-hero-cool.png', width: 1613, height: 975, alt: { en: 'Green World Environment Day poster on white paper against a neutral background', es: 'Afiche verde del Día Mundial del Medio Ambiente sobre papel blanco y fondo neutro' } },
+      { src: '/images/projects/world-environment-day-screenprint-white.png', width: 1068, height: 1473, alt: { en: 'Screen printed poster on white paper against a neutral background', es: 'Afiche serigrafiado sobre papel blanco sobre un fondo neutro' } },
+    ],
+  },
+  {
     id: 'aerolab-home', slug: 'aerolab-home', behanceGallery: 'aerolab-home',
     images: [{ src: '/images/projects/behance-test/aerolab-home/hero-iphone-xs.png', width: 1521, height: 1034, alt: { en: 'Aerolab homepage design shown on desktop and mobile', es: 'Diseño de la homepage de Aerolab en desktop y mobile' } }],
     tools: [{ id: 'sketch', name: 'Sketch' }],
@@ -395,6 +409,7 @@ export const allCatalogProjects = catalogProjects.filter(project => !project.dra
 const priorityProjectIds = ['poap-moments-redesign', 'poap-design-system', 'guitarravisual', 'remera-chenziqiang-argentina', 'bioy-casares', 'typography-composition', 'aerolab-home', 'poaps-design-web3-communities', 'philatelist', 'goal-scream-challenge'];
 export const orderedCatalogProjects = [
   ...priorityProjectIds.flatMap(id => allCatalogProjects.filter(project => project.id === id)),
-  ...allCatalogProjects.filter(project => !priorityProjectIds.includes(project.id) && project.id !== 'gig-flyers'),
+  ...allCatalogProjects.filter(project => !priorityProjectIds.includes(project.id) && project.id !== 'gig-flyers' && project.id !== 'world-environment-day'),
   ...allCatalogProjects.filter(project => project.id === 'gig-flyers'),
+  ...allCatalogProjects.filter(project => project.id === 'world-environment-day'),
 ];
